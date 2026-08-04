@@ -293,3 +293,25 @@ def receive_user_file_or_message(message):
 # اجرای ربات
 print("Bot is running and waiting for messages...")
 bot.infinity_polling()
+# --- بخش اضافه شده برای سازگاری با رندر (Render) ---
+import os
+import threading
+from flask import Flask
+
+app = Flask(__name__)
+
+
+@app.route("/")
+def home():
+  return "Bot is running!"
+
+
+def run_web():
+  port = int(os.environ.get("PORT", 10000))
+  app.run(host="0.0.0.0", port=port)
+
+
+if __name__ == "__main__":
+  # باز کردن پورت وب در پس‌زمینه برای جلوگیری از خطای رندر
+  t = threading.Thread(target=run_web)
+  t.start()
