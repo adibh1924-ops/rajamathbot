@@ -4,7 +4,7 @@ from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 # ==========================================
 # 🛠️ تنظیمات اصلی ربات (نهایی و کامل)
 # ==========================================
-TOKEN = '8646732923:AAHAirWLT825tUT2HpgDmvTNGKH85E_Fdzc'
+TOKEN = '8877477958:AAFmHWautnT39uFMeN67wfSl6REdV1j3kg8'
 CHANNEL_USERNAME = "@math_rajae"  # آیدی کانال شما
 ADMIN_ID = 6622616311  # آیدی عددی شما (تنظیم شد)
 
