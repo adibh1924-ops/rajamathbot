@@ -23,7 +23,7 @@ bot = telebot.TeleBot(TOKEN)
 CHARTS_DATA = {
     "chart_1402": {
         "title": "چارت درسی ورودی ۱۴۰۲ آموزش ریاضی",
-        "file_id": "YOUR_FILE_ID_1402",
+        "file_id": "AgACAgQAAxkBAAOGanH6bG4kG20QflJyM9TrerI4iW0AAqUNaxsi_JFTvNIgzU3eSLwBAAMCAAN3AAM9BA",
     },
     "chart_1403": {
         "title": "چارت درسی ورودی ۱۴۰۳ آموزش ریاضی",
@@ -31,7 +31,7 @@ CHARTS_DATA = {
     },
     "chart_1404": {
         "title": "چارت درسی ورودی ۱۴۰۴ آموزش ریاضی",
-        "file_id": "YOUR_FILE_ID_1404",
+        "file_id": "AgACAgQAAxkBAAOEanH513C1MmWK2ibWsZHwrhX8YasAAqQNaxsi_JFTA6t73gu1p-sBAAMCAAN3AAM9BA",
     },
 }
 
