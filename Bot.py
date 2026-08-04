@@ -86,14 +86,11 @@ BOOKS_DATA = {
     },
     "book_math1": {
         "title": "ریاضی عمومی ۱",
-        "files": [
-            {"name": "📖 کتاب مرجع", "file_id": "FILE_ID_PDF_1"},
-            {"name": "📝 جزوه دست‌نویس", "file_id": "FILE_ID_PDF_2"},
-        ],
+        "files": [{"name": "📝 جزوه دست‌نویس", "file_id": "FILE_ID_PDF_2"}],
     },
     "book_math2": {
         "title": "ریاضی عمومی ۲",
-        "files": [{"name": "📖 کتاب مرجع ریاضی ۲", "file_id": "FILE_ID_PDF_3"}],
+        "files": [{"name": "📝 جزوه ریاضی ۲", "file_id": "FILE_ID_PDF_3"}],
     },
     "book_eq": {
         "title": "معادلات دیفرانسیل",
@@ -123,6 +120,25 @@ BOOKS_DATA = {
         "title": "آمار و احتمال",
         "files": [{"name": "جزوه آمار و احتمال", "file_id": "FILE_ID_PDF_10"}],
     },
+}
+
+# منابع و رفرنس‌ها (تفکیک‌شده به تخصصی و عمومی)
+REFERENCES_SPECIALIZED = {
+    "ref_math1": {
+        "title": "ریاضی عمومی ۱ (کتاب مرجع)",
+        "files": [{"name": "📖 کتاب مرجع ریاضی ۱", "file_id": "FILE_ID_PDF_1"}],
+    },
+    "ref_math2": {
+        "title": "ریاضی عمومی ۲ (کتاب مرجع)",
+        "files": [{"name": "📖 کتاب مرجع ریاضی ۲", "file_id": "FILE_ID_PDF_REF_2"}],
+    },
+}
+
+REFERENCES_GENERAL = {
+    "ref_general1": {
+        "title": "دروس عمومی و معارف",
+        "files": [{"name": "📖 منابع دروس عمومی", "file_id": "FILE_ID_GEN_1"}],
+    }
 }
 
 PODCASTS_DATA = [
@@ -214,7 +230,7 @@ MAGAZINES_DATA = [
 
 
 # ==========================================
-# 🔘 توابع ساخت کیبوردها و منوها
+# 🔘 توابع ساخت کیبوردها و منوها (با چینش جدید)
 # ==========================================
 
 
@@ -231,17 +247,25 @@ def get_join_channel_menu():
 
 
 def get_main_reply_keyboard():
+  # چیدمان دکمه‌ها از راست به چپ بر اساس درخواست شما:
+  # ردیف ۱: لینک‌های مفید - نشریات و پادکست
+  # ردیف ۲: ویدیوهای آموزشی - چارت‌های درسی
+  # ردیف ۳: جزوات - منابع و رفرنس
+  # ردیف ۴: پشتیبانی و ارسال فایل - راه‌های ارتباطی
   keyboard = ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
-  btn1 = KeyboardButton("📚 چارت‌های درسی")
-  btn2 = KeyboardButton("🎬 ویدیوهای آموزشی")
-  btn3 = KeyboardButton("📄 جزوات و منابع")
-  btn4 = KeyboardButton("🎙️ نشریات و پادکست")
-  btn5 = KeyboardButton("🔗 لینک‌های مفید")
-  btn6 = KeyboardButton("📞 پشتیبانی و ارسال فایل")
+  btn1 = KeyboardButton("🔗 لینک‌های مفید")
+  btn2 = KeyboardButton("🎙️ نشریات و پادکست")
+  btn3 = KeyboardButton("🎬 ویدیوهای آموزشی")
+  btn4 = KeyboardButton("📚 چارت‌های درسی")
+  btn5 = KeyboardButton("📄 جزوات")
+  btn6 = KeyboardButton("📖 منابع و رفرنس")
+  btn7 = KeyboardButton("📞 پشتیبانی و ارسال فایل")
+  btn8 = KeyboardButton("☎️ راه‌های ارتباطی")
 
   keyboard.add(btn1, btn2)
   keyboard.add(btn3, btn4)
   keyboard.add(btn5, btn6)
+  keyboard.add(btn7, btn8)
   return keyboard
 
 
@@ -275,6 +299,40 @@ def get_handouts_menu():
   markup.add(
       InlineKeyboardButton("🔙 بازگشت به منوی اصلی", callback_data="back_to_main")
   )
+  return markup
+
+
+# منوی انتخاب نوع منابع و رفرنس
+def get_references_main_menu():
+  markup = InlineKeyboardMarkup()
+  markup.row_width = 1
+  markup.add(
+      InlineKeyboardButton(
+          "📐 دروس تخصصی ریاضی", callback_data="ref_specialized"
+      ),
+      InlineKeyboardButton("📚 دروس عمومی", callback_data="ref_general"),
+      InlineKeyboardButton(
+          "🔙 بازگشت به منوی اصلی", callback_data="back_to_main"
+      ),
+  )
+  return markup
+
+
+def get_references_specialized_menu():
+  markup = InlineKeyboardMarkup()
+  markup.row_width = 2
+  for key, val in REFERENCES_SPECIALIZED.items():
+    markup.add(InlineKeyboardButton(f"🔹 {val['title']}", callback_data=key))
+  markup.add(InlineKeyboardButton("🔙 بازگشت", callback_data="menu_references"))
+  return markup
+
+
+def get_references_general_menu():
+  markup = InlineKeyboardMarkup()
+  markup.row_width = 2
+  for key, val in REFERENCES_GENERAL.items():
+    markup.add(InlineKeyboardButton(f"🔹 {val['title']}", callback_data=key))
+  markup.add(InlineKeyboardButton("🔙 بازگشت", callback_data="menu_references"))
   return markup
 
 
@@ -320,14 +378,14 @@ def get_magazines_list_menu():
 def get_useful_links_menu():
   markup = InlineKeyboardMarkup()
   markup.row_width = 1
-  # لینک‌های مفید دانشگاه شهید رجائی با امکان هایپرلینک روی متن‌ها
   markup.add(
       InlineKeyboardButton(
           "سایت دانشگاه تربیت دبیر شهید رجائی",
           url="https://www.sru.ac.ir",
       ),
       InlineKeyboardButton(
-          "سایت گلستان رجائی", url="https://portal.sru.ac.ir/forms/authenticateuser/main.htm"
+          "سایت گلستان رجائی",
+          url="https://portal.sru.ac.ir/forms/authenticateuser/main.htm",
       ),
       InlineKeyboardButton(
           "سامانه ال‌ام‌اس رجائی", url="https://lms.sru.ac.ir"
@@ -441,6 +499,36 @@ def handle_callback(call):
         reply_markup=get_podcasts_magazines_menu(),
     )
 
+  elif call.data == "menu_references":
+    bot.answer_callback_query(call.id)
+    bot.edit_message_text(
+        chat_id=call.message.chat.id,
+        message_id=call.message.message_id,
+        text="📖 **منابع و رفرنس‌های درسی**\n\nدسته بندی مورد نظر رو انتخاب کن:",
+        parse_mode="Markdown",
+        reply_markup=get_references_main_menu(),
+    )
+
+  elif call.data == "ref_specialized":
+    bot.answer_callback_query(call.id)
+    bot.edit_message_text(
+        chat_id=call.message.chat.id,
+        message_id=call.message.message_id,
+        text="📐 **دروس تخصصی ریاضی**\n\nدرس مورد نظر رو انتخاب کن:",
+        parse_mode="Markdown",
+        reply_markup=get_references_specialized_menu(),
+    )
+
+  elif call.data == "ref_general":
+    bot.answer_callback_query(call.id)
+    bot.edit_message_text(
+        chat_id=call.message.chat.id,
+        message_id=call.message.message_id,
+        text="📚 **دروس عمومی**\n\nگزینه مورد نظر رو انتخاب کن:",
+        parse_mode="Markdown",
+        reply_markup=get_references_general_menu(),
+    )
+
   elif call.data == "sub_podcasts":
     bot.answer_callback_query(call.id)
     bot.edit_message_text(
@@ -550,7 +638,8 @@ def handle_callback(call):
     course = BOOKS_DATA[call.data]
     bot.send_message(
         call.message.chat.id,
-        f"📁 منابع و جزوات مربوط به درس **{course['title']}**:",
+        f"📁 جزوات مربوط به درس **{course['title']}**:",
+        parse_mode="Markdown",
     )
     for file_info in course["files"]:
       if file_info["file_id"].startswith("FILE_ID_"):
@@ -565,6 +654,28 @@ def handle_callback(call):
             caption=f"📁 {file_info['name']}",
         )
 
+  elif call.data in REFERENCES_SPECIALIZED or call.data in REFERENCES_GENERAL:
+    bot.answer_callback_query(call.id)
+    ref_dict = {**REFERENCES_SPECIALIZED, **REFERENCES_GENERAL}
+    course = ref_dict[call.data]
+    bot.send_message(
+        call.message.chat.id,
+        f"📖 رفرنس و منبع مربوط به **{course['title']}**:",
+        parse_mode="Markdown",
+    )
+    for file_info in course["files"]:
+      if file_info["file_id"].startswith("FILE_ID_"):
+        bot.send_message(
+            call.message.chat.id,
+            f"🔸 {file_info['name']} (فایل هنوز بارگذاری نشده است)",
+        )
+      else:
+        bot.send_document(
+            call.message.chat.id,
+            file_info["file_id"],
+            caption=f"📖 {file_info['name']}",
+        )
+
 
 # ==========================================
 # 📱 مدیریت کلیک روی دکمه‌های کیبورد پایین صفحه (Reply Keyboard)
@@ -572,12 +683,14 @@ def handle_callback(call):
 @bot.message_handler(
     func=lambda message: message.text
     in [
-        "📚 چارت‌های درسی",
-        "🎬 ویدیوهای آموزشی",
-        "📄 جزوات و منابع",
-        "🎙️ نشریات و پادکست",
         "🔗 لینک‌های مفید",
+        "🎙️ نشریات و پادکست",
+        "🎬 ویدیوهای آموزشی",
+        "📚 چارت‌های درسی",
+        "📄 جزوات",
+        "📖 منابع و رفرنس",
         "📞 پشتیبانی و ارسال فایل",
+        "☎️ راه‌های ارتباطی",
     ]
 )
 def handle_reply_keyboard_buttons(message):
@@ -608,12 +721,20 @@ def handle_reply_keyboard_buttons(message):
         reply_markup=get_videos_menu(),
     )
 
-  elif text == "📄 جزوات و منابع":
+  elif text == "📄 جزوات":
     bot.send_message(
         message.chat.id,
-        "📄 **بانک جزوات و منابع ریاضی**\n\nکدوم درس رو نیاز داری؟",
+        "📄 **بانک جزوات ریاضی**\n\nکدوم درس رو نیاز داری؟",
         parse_mode="Markdown",
         reply_markup=get_handouts_menu(),
+    )
+
+  elif text == "📖 منابع و رفرنس":
+    bot.send_message(
+        message.chat.id,
+        "📖 **بخش منابع و رفرنس‌ها**\n\nدسته بندی مورد نظر رو انتخاب کن:",
+        parse_mode="Markdown",
+        reply_markup=get_references_main_menu(),
     )
 
   elif text == "🎙️ نشریات و پادکست":
@@ -640,6 +761,15 @@ def handle_reply_keyboard_buttons(message):
     )
     sent_msg = bot.send_message(message.chat.id, sup_text, parse_mode="Markdown")
     bot.register_next_step_handler(sent_msg, receive_user_file_or_message)
+
+  elif text == "☎️ راه‌های ارتباطی":
+    comm_text = (
+        "☎️ **راه‌های ارتباطی با انجمن علمی ریاضی:**\n\n"
+        f"📢 کانال تلگرام: {CHANNEL_USERNAME}\n"
+        "💬 ارتباط با ادمین: @Admin_Username\n"
+        "🌐 ایمیل انجمن: math.association@sru.ac.ir"
+    )
+    bot.send_message(message.chat.id, comm_text, parse_mode="Markdown")
 
 
 # ==========================================
