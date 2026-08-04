@@ -33,6 +33,10 @@ CHARTS_DATA = {
         "title": "چارت درسی ورودی ۱۴۰۴ آموزش ریاضی",
         "file_id": "AgACAgQAAxkBAAOEanH513C1MmWK2ibWsZHwrhX8YasAAqQNaxsi_JFTA6t73gu1p-sBAAMCAAN3AAM9BA",
     },
+    "chart_bachelor": {
+        "title": "فایل برنامه درسی رشته کارشناسی آموزش ریاضی",
+        "file_id": "FILE_ID_BACHELOR",  # هر زمان فایل را فرستادید آیدی را جایگزین کنید
+    },
 }
 
 VIDEOS_DATA = {
@@ -118,6 +122,33 @@ BOOKS_DATA = {
     },
 }
 
+# بانک داده‌های پادکست‌ها
+PODCASTS_DATA = [
+    "معرفی رشته آموزش ریاضی در سه پارت",
+    "معرفی پادکست دلتا",
+    "منطق فازی و دنباله فیبوناچی",
+    "مصاحبه با دکتر میثم سلیمانی ملکان",
+    "عدد پی",
+    "روز جهانی زن در ریاضی",
+    "شب یلدا",
+    "پادکست ویژه مرحوم دکتر ریحانی",
+    "منطق یا دیوانگی",
+    "معرفی پادکست زندگی پشت فرمول‌ها",
+    "روت موفانگ",
+    "نقاشی با اعداد",
+    "اخگر خاکستر طوس",
+]
+
+# بانک داده‌های نشریات
+MAGAZINES_DATA = [
+    "نشریه شماره یک دلتا",
+    "نشریه شماره دوم دلتا",
+    "نشریه دلتا پریم",
+    "نشریه شماره سوم دلتا",
+    "نشریه شماره چهارم دلتا",
+    "نشریه شماره پنجم دلتا",
+]
+
 
 # ==========================================
 # 🔘 توابع ساخت کیبوردها و منوها
@@ -137,7 +168,6 @@ def get_join_channel_menu():
 
 
 def get_main_reply_keyboard():
-  # ساخت کیبورد شستی (پایین صفحه) با ظاهر مرتب و دو ستونه
   keyboard = ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
   btn1 = KeyboardButton("📚 چارت‌های درسی")
   btn2 = KeyboardButton("🎬 ویدیوهای آموزشی")
@@ -181,6 +211,70 @@ def get_handouts_menu():
     markup.add(InlineKeyboardButton(f"🔹 {val['title']}", callback_data=key))
   markup.add(
       InlineKeyboardButton("🔙 بازگشت به منوی اصلی", callback_data="back_to_main")
+  )
+  return markup
+
+
+def get_podcasts_magazines_menu():
+  markup = InlineKeyboardMarkup()
+  markup.row_width = 1
+  markup.add(
+      InlineKeyboardButton("🎧 پادکست‌ها", callback_data="sub_podcasts"),
+      InlineKeyboardButton("📚 نشریات", callback_data="sub_magazines"),
+      InlineKeyboardButton(
+          "🔙 بازگشت به منوی اصلی", callback_data="back_to_main"
+      ),
+  )
+  return markup
+
+
+def get_podcasts_list_menu():
+  markup = InlineKeyboardMarkup()
+  markup.row_width = 1
+  for idx, pod in enumerate(PODCASTS_DATA):
+    markup.add(
+        InlineKeyboardButton(
+            f"🎙️ {pod}", callback_data=f"podcast_{idx}"
+        )
+    )
+  markup.add(
+      InlineKeyboardButton("🔙 بازگشت", callback_data="menu_podcasts")
+  )
+  return markup
+
+
+def get_magazines_list_menu():
+  markup = InlineKeyboardMarkup()
+  markup.row_width = 1
+  for idx, mag in enumerate(MAGAZINES_DATA):
+    markup.add(
+        InlineKeyboardButton(
+            f"📄 {mag}", callback_data=f"magazine_{idx}"
+        )
+    )
+  markup.add(
+      InlineKeyboardButton("🔙 بازگشت", callback_data="menu_podcasts")
+  )
+  return markup
+
+
+def get_useful_links_menu():
+  markup = InlineKeyboardMarkup()
+  markup.row_width = 1
+  markup.add(
+      InlineKeyboardButton(
+          "🏛️ کانال‌ها و سایت‌های دانشگاه تربیت دبیر شهید رجائی",
+          url="https://www.sru.ac.ir",
+      ),
+      InlineKeyboardButton(
+          "📐 کانال‌های انجمن علمی ریاضی", url=f"https://t.me/{CHANNEL_USERNAME.replace('@', '')}"
+      ),
+      InlineKeyboardButton(
+          "🔗 سایت‌ها و کانال‌های کاربردی", url="https://golestan.sru.ac.ir"
+      ),
+      InlineKeyboardButton(
+          "🔙 بازگشت به منوی اصلی", callback_data="back_to_main"
+      ),
   )
   return markup
 
@@ -260,7 +354,6 @@ def handle_callback(call):
               " پیش ببری 👇"
           ),
       )
-      # ارسال منوی کیبورد شستی به کاربر بعد از تایید
       bot.send_message(
           call.message.chat.id,
           "منوی اصلی ربات:",
@@ -277,7 +370,7 @@ def handle_callback(call):
     bot.edit_message_text(
         chat_id=call.message.chat.id,
         message_id=call.message.message_id,
-        text="📚 **بخش چارت‌های درسی**\n\nورودی خودت رو انتخاب کن:",
+        text="📚 **بخش چارت‌های درسی**\n\nورودی یا برنامه خودت رو انتخاب کن:",
         parse_mode="Markdown",
         reply_markup=get_chart_menu(),
     )
@@ -302,6 +395,66 @@ def handle_callback(call):
         reply_markup=get_handouts_menu(),
     )
 
+  elif call.data == "menu_podcasts":
+    bot.answer_callback_query(call.id)
+    bot.edit_message_text(
+        chat_id=call.message.chat.id,
+        message_id=call.message.message_id,
+        text="🎙 **نشریات و پادکست‌های انجمن علمی ریاضی**\n\nبخش مورد نظر رو انتخاب کن:",
+        parse_mode="Markdown",
+        reply_markup=get_podcasts_magazines_menu(),
+    )
+
+  elif call.data == "sub_podcasts":
+    bot.answer_callback_query(call.id)
+    bot.edit_message_text(
+        chat_id=call.message.chat.id,
+        message_id=call.message.message_id,
+        text="🎧 **پادکست‌های تخصصی ریاضی**\n\nیکی از پادکست‌ها رو انتخاب کن:",
+        parse_mode="Markdown",
+        reply_markup=get_podcasts_list_menu(),
+    )
+
+  elif call.data == "sub_magazines":
+    bot.answer_callback_query(call.id)
+    bot.edit_message_text(
+        chat_id=call.message.chat.id,
+        message_id=call.message.message_id,
+        text="📚 **نشریات علمی دلتا**\n\nشماره مورد نظر رو انتخاب کن:",
+        parse_mode="Markdown",
+        reply_markup=get_magazines_list_menu(),
+    )
+
+  elif call.data.startswith("podcast_"):
+    bot.answer_callback_query(call.id)
+    idx = int(call.data.split("_")[1])
+    pod_title = PODCASTS_DATA[idx]
+    bot.send_message(
+        call.message.chat.id,
+        f"🎧 **{pod_title}**\n\n(فایل صوتی این پادکست به زودی در اینجا قرار می‌گیرد)",
+        parse_mode="Markdown",
+    )
+
+  elif call.data.startswith("magazine_"):
+    bot.answer_callback_query(call.id)
+    idx = int(call.data.split("_")[1])
+    mag_title = MAGAZINES_DATA[idx]
+    bot.send_message(
+        call.message.chat.id,
+        f"📄 **{mag_title}**\n\n(فایل نشریه به زودی در اینجا بارگذاری می‌شود)",
+        parse_mode="Markdown",
+    )
+
+  elif call.data == "menu_links":
+    bot.answer_callback_query(call.id)
+    bot.edit_message_text(
+        chat_id=call.message.chat.id,
+        message_id=call.message.message_id,
+        text="🔗 **لینک‌های مهم و کاربردی:**\n\nلطفاً دسته‌بندی مورد نظر رو انتخاب کن:",
+        parse_mode="Markdown",
+        reply_markup=get_useful_links_menu(),
+    )
+
   elif call.data == "back_to_main":
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
@@ -314,9 +467,15 @@ def handle_callback(call):
   elif call.data in CHARTS_DATA:
     bot.answer_callback_query(call.id)
     item = CHARTS_DATA[call.data]
-    bot.send_photo(
-        call.message.chat.id, item["file_id"], caption=f"📄 {item['title']}"
-    )
+    if item["file_id"].startswith("FILE_ID_"):
+      bot.send_message(
+          call.message.chat.id,
+          f"🔸 {item['title']}\n(فایل این بخش هنوز بارگذاری نشده است)",
+      )
+    else:
+      bot.send_photo(
+          call.message.chat.id, item["file_id"], caption=f"📄 {item['title']}"
+      )
 
   elif call.data in VIDEOS_DATA:
     bot.answer_callback_query(call.id)
@@ -381,7 +540,7 @@ def handle_reply_keyboard_buttons(message):
   if text == "📚 چارت‌های درسی":
     bot.send_message(
         message.chat.id,
-        "📚 **بخش چارت‌های درسی**\n\nورودی خودت رو انتخاب کن:",
+        "📚 **بخش چارت‌های درسی و برنامه‌ها**\n\nگزینه مورد نظر خودت رو انتخاب کن:",
         parse_mode="Markdown",
         reply_markup=get_chart_menu(),
     )
@@ -403,25 +562,19 @@ def handle_reply_keyboard_buttons(message):
     )
 
   elif text == "🎙️ نشریات و پادکست":
-    pod_text = (
-        "🎙 **نشریات و پادکست‌های انجمن علمی ریاضی**\n\nمحتواهای صوتی و نشریات"
-        " جذاب ما به زودی اینجا آپدیت میشن! 🎧✨"
-    )
     bot.send_message(
-        message.chat.id, pod_text, parse_mode="Markdown", reply_markup=None
+        message.chat.id,
+        "🎙 **نشریات و پادکست‌های انجمن علمی ریاضی**\n\nبخش مورد نظر رو انتخاب کن:",
+        parse_mode="Markdown",
+        reply_markup=get_podcasts_magazines_menu(),
     )
 
   elif text == "🔗 لینک‌های مفید":
-    links_text = (
-        "🔗 **لینک‌های مهم و کاربردی:**\n\n🔹 [سامانه"
-        " گلستان](https://golestan.sru.ac.ir)\n🔹 [کانال تلگرامی"
-        " انجمن](https://t.me/math_rajae)\n🔹 سایت دانشکده ریاضی"
-    )
     bot.send_message(
         message.chat.id,
-        links_text,
+        "🔗 **لینک‌های مهم و کاربردی:**\n\nلطفاً دسته‌بندی مورد نظر رو انتخاب کن:",
         parse_mode="Markdown",
-        disable_web_page_preview=True,
+        reply_markup=get_useful_links_menu(),
     )
 
   elif text == "📞 پشتیبانی و ارسال فایل":
