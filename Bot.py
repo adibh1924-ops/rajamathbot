@@ -11,7 +11,7 @@ from telebot.types import (
 # ==========================================
 TOKEN = "8877477958:AAFmHWautnT39uFMeN67wfSl6REdV1j3kg8"
 CHANNEL_USERNAME = "@math_rajae"  # آیدی کانال شما
-ADMIN_ID = 6622616311  # آیدی عددی شما (تنظیم شد)
+ADMIN_ID = 6622616311  # آیدی عددی شما
 
 bot = telebot.TeleBot(TOKEN)
 
@@ -35,7 +35,7 @@ CHARTS_DATA = {
     },
     "chart_bachelor": {
         "title": "فایل برنامه درسی رشته کارشناسی آموزش ریاضی",
-        "file_id": "FILE_ID_BACHELOR",  # هر زمان فایل را فرستادید آیدی را جایگزین کنید
+        "file_id": "BQACAgQAAxkBAAOaanIBK0zSWRzrTdKSd6UUZlExWZQAAgQUAAJ5c7lQunZ9IDogQUg9BA",  # هر زمان فایل را فرستادید آیدی را جایگزین کنید
     },
 }
 
@@ -43,10 +43,13 @@ VIDEOS_DATA = {
     "vid_math1": {
         "title": "ریاضی عمومی ۱",
         "items": [
-            {"name": "جلسه اول: تابع و حد", "link": "https://t.me/c/xxxx/1"},
+            {
+                "name": "جلسه اول: تابع و حد",
+                "file_id": "FILE_ID_VID_1",
+            },  # فایل‌آیدیِ پست کانال (حاوی ویدیو و کپشن اصلیِ لینک‌دار)
             {
                 "name": "جلسه دوم: مشتق و کاربردها",
-                "link": "https://t.me/c/xxxx/2",
+                "file_id": "FILE_ID_VID_2",
             },
         ],
     },
@@ -55,7 +58,7 @@ VIDEOS_DATA = {
         "items": [
             {
                 "name": "جلسه اول: بردارها و هندسه تحلیلی",
-                "link": "https://t.me/c/xxxx/3",
+                "file_id": "FILE_ID_VID_3",
             }
         ],
     },
@@ -64,14 +67,14 @@ VIDEOS_DATA = {
         "items": [
             {
                 "name": "جلسه اول: معادلات مرتبه اول",
-                "link": "https://t.me/c/xxxx/4",
+                "file_id": "FILE_ID_VID_4",
             }
         ],
     },
     "vid_eng": {
         "title": "ریاضیات مهندسی",
         "items": [
-            {"name": "جلسه اول: آنالیز مختلط", "link": "https://t.me/c/xxxx/5"}
+            {"name": "جلسه اول: آنالیز مختلط", "file_id": "FILE_ID_VID_5"}
         ],
     },
 }
@@ -122,31 +125,34 @@ BOOKS_DATA = {
     },
 }
 
-# بانک داده‌های پادکست‌ها
+# بانک داده‌های پادکست‌ها (همراه با file_id اختصاصی برای ارسال فایل اصلی کانال)
 PODCASTS_DATA = [
-    "معرفی رشته آموزش ریاضی در سه پارت",
-    "معرفی پادکست دلتا",
-    "منطق فازی و دنباله فیبوناچی",
-    "مصاحبه با دکتر میثم سلیمانی ملکان",
-    "عدد پی",
-    "روز جهانی زن در ریاضی",
-    "شب یلدا",
-    "پادکست ویژه مرحوم دکتر ریحانی",
-    "منطق یا دیوانگی",
-    "معرفی پادکست زندگی پشت فرمول‌ها",
-    "روت موفانگ",
-    "نقاشی با اعداد",
-    "اخگر خاکستر طوس",
+    {
+        "name": "معرفی رشته آموزش ریاضی در سه پارت",
+        "file_id": "FILE_ID_POD_0",
+    },
+    {"name": "معرفی پادکست دلتا", "file_id": "FILE_ID_POD_1"},
+    {"name": "منطق فازی و دنباله فیبوناچی", "file_id": "FILE_ID_POD_2"},
+    {"name": "مصاحبه با دکتر میثم سلیمانی ملکان", "file_id": "FILE_ID_POD_3"},
+    {"name": "عدد پی", "file_id": "FILE_ID_POD_4"},
+    {"name": "روز جهانی زن در ریاضی", "file_id": "FILE_ID_POD_5"},
+    {"name": "شب یلدا", "file_id": "FILE_ID_POD_6"},
+    {"name": "پادکست ویژه مرحوم دکتر ریحانی", "file_id": "FILE_ID_POD_7"},
+    {"name": "منطق یا دیوانگی", "file_id": "FILE_ID_POD_8"},
+    {"name": "معرفی پادکست زندگی پشت فرمول‌ها", "file_id": "FILE_ID_POD_9"},
+    {"name": "روت موفانگ", "file_id": "FILE_ID_POD_10"},
+    {"name": "نقاشی با اعداد", "file_id": "FILE_ID_POD_11"},
+    {"name": "اخگر خاکستر طوس", "file_id": "FILE_ID_POD_12"},
 ]
 
-# بانک داده‌های نشریات
+# بانک داده‌های نشریات (همراه با file_id اختصاصی برای ارسال فایل اصلی کانال)
 MAGAZINES_DATA = [
-    "نشریه شماره یک دلتا",
-    "نشریه شماره دوم دلتا",
-    "نشریه دلتا پریم",
-    "نشریه شماره سوم دلتا",
-    "نشریه شماره چهارم دلتا",
-    "نشریه شماره پنجم دلتا",
+    {"name": "نشریه شماره یک دلتا", "file_id": "FILE_ID_MAG_0"},
+    {"name": "نشریه شماره دوم دلتا", "file_id": "FILE_ID_MAG_1"},
+    {"name": "نشریه دلتا پریم", "file_id": "FILE_ID_MAG_2"},
+    {"name": "نشریه شماره سوم دلتا", "file_id": "FILE_ID_MAG_3"},
+    {"name": "نشریه شماره چهارم دلتا", "file_id": "FILE_ID_MAG_4"},
+    {"name": "نشریه شماره پنجم دلتا", "file_id": "FILE_ID_MAG_5"},
 ]
 
 
@@ -234,12 +240,10 @@ def get_podcasts_list_menu():
   for idx, pod in enumerate(PODCASTS_DATA):
     markup.add(
         InlineKeyboardButton(
-            f"🎙️ {pod}", callback_data=f"podcast_{idx}"
+            f"🎙️ {pod['name']}", callback_data=f"podcast_{idx}"
         )
     )
-  markup.add(
-      InlineKeyboardButton("🔙 بازگشت", callback_data="menu_podcasts")
-  )
+  markup.add(InlineKeyboardButton("🔙 بازگشت", callback_data="menu_podcasts"))
   return markup
 
 
@@ -249,12 +253,10 @@ def get_magazines_list_menu():
   for idx, mag in enumerate(MAGAZINES_DATA):
     markup.add(
         InlineKeyboardButton(
-            f"📄 {mag}", callback_data=f"magazine_{idx}"
+            f"📄 {mag['name']}", callback_data=f"magazine_{idx}"
         )
     )
-  markup.add(
-      InlineKeyboardButton("🔙 بازگشت", callback_data="menu_podcasts")
-  )
+  markup.add(InlineKeyboardButton("🔙 بازگشت", callback_data="menu_podcasts"))
   return markup
 
 
@@ -267,7 +269,8 @@ def get_useful_links_menu():
           url="https://www.sru.ac.ir",
       ),
       InlineKeyboardButton(
-          "📐 کانال‌های انجمن علمی ریاضی", url=f"https://t.me/{CHANNEL_USERNAME.replace('@', '')}"
+          "📐 کانال‌های انجمن علمی ریاضی",
+          url=f"https://t.me/{CHANNEL_USERNAME.replace('@', '')}",
       ),
       InlineKeyboardButton(
           "🔗 سایت‌ها و کانال‌های کاربردی", url="https://golestan.sru.ac.ir"
@@ -275,14 +278,6 @@ def get_useful_links_menu():
       InlineKeyboardButton(
           "🔙 بازگشت به منوی اصلی", callback_data="back_to_main"
       ),
-  )
-  return markup
-
-
-def get_back_menu():
-  markup = InlineKeyboardMarkup()
-  markup.add(
-      InlineKeyboardButton("🔙 بازگشت به منوی اصلی", callback_data="back_to_main")
   )
   return markup
 
@@ -365,36 +360,6 @@ def handle_callback(call):
       )
     return
 
-  elif call.data == "menu_chart":
-    bot.answer_callback_query(call.id)
-    bot.edit_message_text(
-        chat_id=call.message.chat.id,
-        message_id=call.message.message_id,
-        text="📚 **بخش چارت‌های درسی**\n\nورودی یا برنامه خودت رو انتخاب کن:",
-        parse_mode="Markdown",
-        reply_markup=get_chart_menu(),
-    )
-
-  elif call.data == "menu_videos":
-    bot.answer_callback_query(call.id)
-    bot.edit_message_text(
-        chat_id=call.message.chat.id,
-        message_id=call.message.message_id,
-        text="🎬 **بخش ویدیوهای آموزشی**\n\nدرس مد نظرت رو انتخاب کن:",
-        parse_mode="Markdown",
-        reply_markup=get_videos_menu(),
-    )
-
-  elif call.data == "menu_handouts":
-    bot.answer_callback_query(call.id)
-    bot.edit_message_text(
-        chat_id=call.message.chat.id,
-        message_id=call.message.message_id,
-        text="📄 **بانک جزوات و منابع ریاضی**\n\nکدوم درس رو نیاز داری؟",
-        parse_mode="Markdown",
-        reply_markup=get_handouts_menu(),
-    )
-
   elif call.data == "menu_podcasts":
     bot.answer_callback_query(call.id)
     bot.edit_message_text(
@@ -428,32 +393,28 @@ def handle_callback(call):
   elif call.data.startswith("podcast_"):
     bot.answer_callback_query(call.id)
     idx = int(call.data.split("_")[1])
-    pod_title = PODCASTS_DATA[idx]
-    bot.send_message(
-        call.message.chat.id,
-        f"🎧 **{pod_title}**\n\n(فایل صوتی این پادکست به زودی در اینجا قرار می‌گیرد)",
-        parse_mode="Markdown",
-    )
+    pod = PODCASTS_DATA[idx]
+    if pod["file_id"].startswith("FILE_ID_"):
+      bot.send_message(
+          call.message.chat.id,
+          f"🎧 **{pod['name']}**\n(فایل صوتی هنوز بارگذاری نشده است)",
+      )
+    else:
+      # ارسال فایل صوتی پادکست بدون پارامتر caption تا کپشن اصلی کانال حفظ شود
+      bot.send_audio(call.message.chat.id, pod["file_id"])
 
   elif call.data.startswith("magazine_"):
     bot.answer_callback_query(call.id)
     idx = int(call.data.split("_")[1])
-    mag_title = MAGAZINES_DATA[idx]
-    bot.send_message(
-        call.message.chat.id,
-        f"📄 **{mag_title}**\n\n(فایل نشریه به زودی در اینجا بارگذاری می‌شود)",
-        parse_mode="Markdown",
-    )
-
-  elif call.data == "menu_links":
-    bot.answer_callback_query(call.id)
-    bot.edit_message_text(
-        chat_id=call.message.chat.id,
-        message_id=call.message.message_id,
-        text="🔗 **لینک‌های مهم و کاربردی:**\n\nلطفاً دسته‌بندی مورد نظر رو انتخاب کن:",
-        parse_mode="Markdown",
-        reply_markup=get_useful_links_menu(),
-    )
+    mag = MAGAZINES_DATA[idx]
+    if mag["file_id"].startswith("FILE_ID_"):
+      bot.send_message(
+          call.message.chat.id,
+          f"📄 **{mag['name']}**\n(فایل نشریه هنوز بارگذاری نشده است)",
+      )
+    else:
+      # ارسال سند نشریه بدون پارامتر caption تا کپشن و هایپرلینک اصلی کانال حفظ شود
+      bot.send_document(call.message.chat.id, mag["file_id"])
 
   elif call.data == "back_to_main":
     bot.answer_callback_query(call.id)
@@ -464,6 +425,7 @@ def handle_callback(call):
         reply_markup=get_main_reply_keyboard(),
     )
 
+  # 🟢 بخش چارت‌های درسی (بدون کپشنِ کانال، و دارای کپشن سفارشی ربات)
   elif call.data in CHARTS_DATA:
     bot.answer_callback_query(call.id)
     item = CHARTS_DATA[call.data]
@@ -477,19 +439,26 @@ def handle_callback(call):
           call.message.chat.id, item["file_id"], caption=f"📄 {item['title']}"
       )
 
+  # 🟢 بخش ویدیوهای آموزشی (ارسال فایل ویدیو همراه با کپشن و هایپرلینک اصلی کانال)
   elif call.data in VIDEOS_DATA:
     bot.answer_callback_query(call.id)
     course = VIDEOS_DATA[call.data]
-    text = f"🎥 **ویدیوهای آموزشی درس {course['title']}:**\n\n"
-    for idx, vid in enumerate(course["items"], 1):
-      text += f"{idx}. [{vid['name']}]({vid['link']})\n"
     bot.send_message(
         call.message.chat.id,
-        text,
+        f"🎥 فایل‌های ویدیویی درس **{course['title']}**:",
         parse_mode="Markdown",
-        disable_web_page_preview=True,
     )
+    for vid in course["items"]:
+      if vid["file_id"].startswith("FILE_ID_"):
+        bot.send_message(
+            call.message.chat.id,
+            f"🔸 {vid['name']} (فایل ویدیو هنوز بارگذاری نشده است)",
+        )
+      else:
+        # ارسال ویدیو بدون caption تا کپشن اصلی کانال با هایپرلینک‌ها حفظ شود
+        bot.send_video(call.message.chat.id, vid["file_id"])
 
+  # 🟢 بخش جزوات و منابع (ارسال سند همراه با کپشن و هایپرلینک اصلی کانال)
   elif call.data in BOOKS_DATA:
     bot.answer_callback_query(call.id)
     course = BOOKS_DATA[call.data]
@@ -504,11 +473,8 @@ def handle_callback(call):
             f"🔸 {file_info['name']} (فایل هنوز بارگذاری نشده است)",
         )
       else:
-        bot.send_document(
-            call.message.chat.id,
-            file_info["file_id"],
-            caption=file_info["name"],
-        )
+        # ارسال سند بدون caption تا کپشن اصلی کانال حفظ شود
+        bot.send_document(call.message.chat.id, file_info["file_id"])
 
 
 # ==========================================
@@ -603,6 +569,9 @@ def get_file_id_for_admin(message):
     elif message.video:
       file_id = message.video.file_id
       file_type = "ویدیو (Video)"
+    elif message.audio:
+      file_id = message.audio.file_id
+      file_type = "فایل صوتی / پادکست (Audio)"
     elif message.voice:
       file_id = message.voice.file_id
       file_type = "وویس (Voice)"
