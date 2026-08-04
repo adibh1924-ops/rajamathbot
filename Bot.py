@@ -293,25 +293,7 @@ def receive_user_file_or_message(message):
 # اجرای ربات
 print("Bot is running and waiting for messages...")
 bot.infinity_polling()
-import os
-import threading
-from flask import Flask
-
-# --- بخش وب‌سرور برای گرفتن پورت رندر ---
-app = Flask(__name__)
-
-
-@app.route("/")
-def home():
-  return "Bot is running!"
-
-
-def run_web():
-  port = int(os.environ.get("PORT", 10000))
-  app.run(host="0.0.0.0", port=port)
-
-
-# استارت کردن وب‌سرور در پس‌زمینه همین الان در شروع برنامه
-web_thread = threading.Thread(target=run_web)
-web_thread.daemon = True
-web_thread.start()
+# اجرای اصلی ربات روی کویب
+if __name__ == "__main__":
+    print("Bot is running and waiting for messages...")
+    bot.infinity_polling()
