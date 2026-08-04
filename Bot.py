@@ -1,5 +1,10 @@
 import telebot
-from telebot.types import InlineKeyboardButton, InlineKeyboardMarkup
+from telebot.types import (
+    InlineKeyboardButton,
+    InlineKeyboardMarkup,
+    KeyboardButton,
+    ReplyKeyboardMarkup,
+)
 
 # ==========================================
 # 🛠️ تنظیمات اصلی ربات (نهایی و کامل)
@@ -21,7 +26,7 @@ CHARTS_DATA = {
         "file_id": "YOUR_FILE_ID_1402",
     },
     "chart_1403": {
-        "title":  "چارت درسی ورودی ۱۴۰۳ آموزش ریاضی",
+        "title": "چارت درسی ورودی ۱۴۰۳ آموزش ریاضی",
         "file_id": "AgACAgQAAxkBAAM4anHhlDbTt7tudmTIHWuecys2urkAAm4NaxvbzdhSP08pJBBJKmsBAAMCAAN5AAM9BA",
     },
     "chart_1404": {
@@ -115,38 +120,36 @@ BOOKS_DATA = {
 
 
 # ==========================================
-# 🔘 توابع ساخت منوها (ویرایش شده با دکمه لینک کانال)
+# 🔘 توابع ساخت کیبوردها و منوها
 # ==========================================
 
 
 def get_join_channel_menu():
   markup = InlineKeyboardMarkup()
   channel_url = f"https://t.me/{CHANNEL_USERNAME.replace('@', '')}"
-  markup.add(InlineKeyboardButton("📢 ورود به کانال رسمی", url=channel_url))
+  markup.add(InlineKeyboardButton("📢 ورود به کانال رسمی انجمن", url=channel_url))
   markup.add(
       InlineKeyboardButton(
-          "🔄 بررسی دوباره عضویت", callback_data="check_sub_again"
+          "🔄 بررسی دوباره عضویتم", callback_data="check_sub_again"
       )
   )
   return markup
 
 
-def get_main_menu():
-  markup = InlineKeyboardMarkup()
-  markup.row_width = 2
-  markup.add(
-      InlineKeyboardButton("📚 چارت درسی", callback_data="menu_chart"),
-      InlineKeyboardButton("🎬 ویدیوهای آموزشی", callback_data="menu_videos"),
-      InlineKeyboardButton(
-          "📄 جزوات و منابع ریاضی", callback_data="menu_handouts"
-      ),
-      InlineKeyboardButton("🎙 منشورات و پادکست", callback_data="menu_podcasts"),
-      InlineKeyboardButton("🔗 لینک‌های مفید", callback_data="menu_links"),
-      InlineKeyboardButton(
-          "📞 پشتیبانی و ارسال فایل", callback_data="menu_support"
-      ),
-  )
-  return markup
+def get_main_reply_keyboard():
+  # ساخت کیبورد شستی (پایین صفحه) با ظاهر مرتب و دو ستونه
+  keyboard = ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
+  btn1 = KeyboardButton("📚 چارت‌های درسی")
+  btn2 = KeyboardButton("🎬 ویدیوهای آموزشی")
+  btn3 = KeyboardButton("📄 جزوات و منابع")
+  btn4 = KeyboardButton("🎙️ نشریات و پادکست")
+  btn5 = KeyboardButton("🔗 لینک‌های مفید")
+  btn6 = KeyboardButton("📞 پشتیبانی و ارسال فایل")
+
+  keyboard.add(btn1, btn2)
+  keyboard.add(btn3, btn4)
+  keyboard.add(btn5, btn6)
+  return keyboard
 
 
 def get_chart_menu():
@@ -214,9 +217,9 @@ def send_welcome(message):
 
   if not check_subscription(user_id):
     warning_text = (
-        f"سلام {user_name} عزیز! 🌹\n\n"
-        "❌ برای استفاده از امکانات ربات، لطفاً ابتدا در کانال ما عضو شوید و سپس"
-        " روی دکمه «بررسی دوباره عضویت» کلیک کنید:"
+        f"سلام {user_name} جان! 👋🧮\n\n"
+        "❌ برای اینکه بتونی از امکانات خفن ربات استفاده کنی، لطفاً اول تو کانال"
+        " زیر عضو شو و بعد روی دکمه‌ی بررسی دوباره بزن:"
     )
     bot.send_message(
         message.chat.id, warning_text, reply_markup=get_join_channel_menu()
@@ -224,14 +227,17 @@ def send_welcome(message):
     return
 
   welcome_text = (
-      f"✨ سلام {user_name} عزیز به ربات انجمن علمی ریاضی خوش آمدید! 🌸\n\n"
-      "لطفاً از منوی رنگی زیر بخش مورد نظر خود را انتخاب کنید:"
+      f"✨ سلام {user_name} عزیز؛ به ربات انجمن علمی ریاضی خوش اومدی! 🚀🎓\n\n"
+      "از منوی جذابی که پایین صفحه برات گذاشتم، می‌تونی خیلی راحت به تمام"
+      " امکانات دسترسی داشته باشی. خسته نباشی قهرمان! 💪✨"
   )
-  bot.send_message(message.chat.id, welcome_text, reply_markup=get_main_menu())
+  bot.send_message(
+      message.chat.id, welcome_text, reply_markup=get_main_reply_keyboard()
+  )
 
 
 # ==========================================
-# 🎯 مدیریت کلیک‌ها
+# 💬 مدیریت کلیک‌های شیشه‌ای (داخل پیام‌ها)
 # ==========================================
 @bot.callback_query_handler(func=lambda call: True)
 def handle_callback(call):
@@ -239,22 +245,30 @@ def handle_callback(call):
 
   if call.data != "check_sub_again" and not check_subscription(user_id):
     bot.answer_callback_query(
-        call.id, "❌ ابتدا باید در کانال عضو شوید!", show_alert=True
+        call.id, "❌ اول باید تو کانال عضو بشی رفیق!", show_alert=True
     )
     return
 
   if call.data == "check_sub_again":
     if check_subscription(user_id):
-      bot.answer_callback_query(call.id, "✅ عضویت شما تایید شد!")
+      bot.answer_callback_query(call.id, "✅ عضویتت تأیید شد!")
       bot.edit_message_text(
           chat_id=call.message.chat.id,
           message_id=call.message.message_id,
-          text="✨ خوش آمدید! لطفاً از منوی زیر استفاده کنید:",
-          reply_markup=get_main_menu(),
+          text=(
+              "🎉 دمت گرم که عضو شدی! حالا از منوی پایین صفحه می‌تونی راحت کارتو"
+              " پیش ببری 👇"
+          ),
+      )
+      # ارسال منوی کیبورد شستی به کاربر بعد از تایید
+      bot.send_message(
+          call.message.chat.id,
+          "منوی اصلی ربات:",
+          reply_markup=get_main_reply_keyboard(),
       )
     else:
       bot.answer_callback_query(
-          call.id, "❌ شما هنوز در کانال عضو نشده‌اید!", show_alert=True
+          call.id, "❌ هنوزه تو کانال عضو نشدی که!", show_alert=True
       )
     return
 
@@ -263,7 +277,7 @@ def handle_callback(call):
     bot.edit_message_text(
         chat_id=call.message.chat.id,
         message_id=call.message.message_id,
-        text="📚 **بخش چارت درسی**\n\nلطفاً ورودی خود را انتخاب کنید:",
+        text="📚 **بخش چارت‌های درسی**\n\nورودی خودت رو انتخاب کن:",
         parse_mode="Markdown",
         reply_markup=get_chart_menu(),
     )
@@ -273,7 +287,7 @@ def handle_callback(call):
     bot.edit_message_text(
         chat_id=call.message.chat.id,
         message_id=call.message.message_id,
-        text="🎬 **بخش ویدیوهای آموزشی**\n\nدرس مورد نظر را انتخاب کنید:",
+        text="🎬 **بخش ویدیوهای آموزشی**\n\nدرس مد نظرت رو انتخاب کن:",
         parse_mode="Markdown",
         reply_markup=get_videos_menu(),
     )
@@ -283,63 +297,18 @@ def handle_callback(call):
     bot.edit_message_text(
         chat_id=call.message.chat.id,
         message_id=call.message.message_id,
-        text="📄 **بانک جزوات و منابع ریاضی**\n\nدرس مورد نظر خود را انتخاب"
-        " کنید:",
+        text="📄 **بانک جزوات و منابع ریاضی**\n\nکدوم درس رو نیاز داری؟",
         parse_mode="Markdown",
         reply_markup=get_handouts_menu(),
     )
 
-  elif call.data == "menu_podcasts":
-    bot.answer_callback_query(call.id)
-    text = (
-        "🎙 **نشریات و پادکست‌های انجمن علمی"
-        " ریاضی**\n\nلیست شماره‌های نشریه و پادکست‌های صوتی در این بخش قرار"
-        " دارد."
-    )
-    bot.edit_message_text(
-        chat_id=call.message.chat.id,
-        message_id=call.message.message_id,
-        text=text,
-        parse_mode="Markdown",
-        reply_markup=get_back_menu(),
-    )
-
-  elif call.data == "menu_links":
-    bot.answer_callback_query(call.id)
-    text = (
-        "🔗 **لینک‌های مفید و کاربردی:**\n\n🔹 سامانه گلستان\n🔹 کانال تلگرامی"
-        " انجمن\n🔹 سایت دانشکده"
-    )
-    bot.edit_message_text(
-        chat_id=call.message.chat.id,
-        message_id=call.message.message_id,
-        text=text,
-        parse_mode="Markdown",
-        reply_markup=get_back_menu(),
-    )
-
-  elif call.data == "menu_support":
-    bot.answer_callback_query(call.id)
-    text = (
-        "📞 **ارتباط با پشتیبانی و ارسال فایل**\n\nپیام یا فایل خود را ارسال"
-        " کنید تا به دست ادمین برسد:"
-    )
-    bot.edit_message_text(
-        chat_id=call.message.chat.id,
-        message_id=call.message.message_id,
-        text=text,
-        parse_mode="Markdown",
-        reply_markup=get_back_menu(),
-    )
-    bot.register_next_step_handler(call.message, receive_user_file_or_message)
-
   elif call.data == "back_to_main":
     bot.answer_callback_query(call.id)
-    bot.edit_message_text(
-        chat_id=call.message.chat.id,
-        message_id=call.message.message_id,
-        text="✨ منوی اصلی ربات:",
-        reply_markup=get_main_menu(),
+    bot.delete_message(call.message.chat.id, call.message.message_id)
+    bot.send_message(
+        call.message.chat.id,
+        "🏠 برگشتیم به منوی اصلی:",
+        reply_markup=get_main_reply_keyboard(),
     )
 
   elif call.data in CHARTS_DATA:
@@ -373,7 +342,7 @@ def handle_callback(call):
       if file_info["file_id"].startswith("FILE_ID_"):
         bot.send_message(
             call.message.chat.id,
-            f"🔸 {file_info['name']} (فایل هنوز تنظیم نشده است)",
+            f"🔸 {file_info['name']} (فایل هنوز بارگذاری نشده است)",
         )
       else:
         bot.send_document(
@@ -384,13 +353,93 @@ def handle_callback(call):
 
 
 # ==========================================
+# 📱 مدیریت کلیک روی دکمه‌های کیبورد پایین صفحه (Reply Keyboard)
+# ==========================================
+@bot.message_handler(
+    func=lambda message: message.text
+    in [
+        "📚 چارت‌های درسی",
+        "🎬 ویدیوهای آموزشی",
+        "📄 جزوات و منابع",
+        "🎙️ نشریات و پادکست",
+        "🔗 لینک‌های مفید",
+        "📞 پشتیبانی و ارسال فایل",
+    ]
+)
+def handle_reply_keyboard_buttons(message):
+  user_id = message.from_user.id
+  if not check_subscription(user_id):
+    bot.send_message(
+        message.chat.id,
+        "❌ رفیق اول باید تو کانال عضو بشی!",
+        reply_markup=get_join_channel_menu(),
+    )
+    return
+
+  text = message.text
+
+  if text == "📚 چارت‌های درسی":
+    bot.send_message(
+        message.chat.id,
+        "📚 **بخش چارت‌های درسی**\n\nورودی خودت رو انتخاب کن:",
+        parse_mode="Markdown",
+        reply_markup=get_chart_menu(),
+    )
+
+  elif text == "🎬 ویدیوهای آموزشی":
+    bot.send_message(
+        message.chat.id,
+        "🎬 **بخش ویدیوهای آموزشی**\n\nدرس مد نظرت رو انتخاب کن:",
+        parse_mode="Markdown",
+        reply_markup=get_videos_menu(),
+    )
+
+  elif text == "📄 جزوات و منابع":
+    bot.send_message(
+        message.chat.id,
+        "📄 **بانک جزوات و منابع ریاضی**\n\nکدوم درس رو نیاز داری؟",
+        parse_mode="Markdown",
+        reply_markup=get_handouts_menu(),
+    )
+
+  elif text == "🎙️ نشریات و پادکست":
+    pod_text = (
+        "🎙 **نشریات و پادکست‌های انجمن علمی ریاضی**\n\nمحتواهای صوتی و نشریات"
+        " جذاب ما به زودی اینجا آپدیت میشن! 🎧✨"
+    )
+    bot.send_message(
+        message.chat.id, pod_text, parse_mode="Markdown", reply_markup=None
+    )
+
+  elif text == "🔗 لینک‌های مفید":
+    links_text = (
+        "🔗 **لینک‌های مهم و کاربردی:**\n\n🔹 [سامانه"
+        " گلستان](https://golestan.sru.ac.ir)\n🔹 [کانال تلگرامی"
+        " انجمن](https://t.me/math_rajae)\n🔹 سایت دانشکده ریاضی"
+    )
+    bot.send_message(
+        message.chat.id,
+        links_text,
+        parse_mode="Markdown",
+        disable_web_page_preview=True,
+    )
+
+  elif text == "📞 پشتیبانی و ارسال فایل":
+    sup_text = (
+        "📞 **ارتباط با پشتیبانی و ارسال فایل**\n\nهر گونه پیشنهاد، انتقاد یا"
+        " فایلی داری بفرست تا به دست ادمین برسه: 👇"
+    )
+    sent_msg = bot.send_message(message.chat.id, sup_text, parse_mode="Markdown")
+    bot.register_next_step_handler(sent_msg, receive_user_file_or_message)
+
+
+# ==========================================
 # 📥 دریافت فایل و پیام کاربر (و استخراج file_id برای ادمین)
 # ==========================================
 @bot.message_handler(
     content_types=["photo", "document", "video", "audio", "voice"]
 )
 def get_file_id_for_admin(message):
-  # اگر فرستنده خودِ شما (ادمین) هستید، file_id فایل را بگیرید
   if message.from_user.id == ADMIN_ID:
     if message.photo:
       file_id = message.photo[-1].file_id
@@ -413,7 +462,6 @@ def get_file_id_for_admin(message):
     )
     bot.reply_to(message, response_text, parse_mode="Markdown")
   else:
-    # اگر کاربر عادی بود، فرآیند بخش پشتیبانی و ارسال فایل طی شود
     receive_user_file_or_message(message)
 
 
@@ -424,16 +472,16 @@ def receive_user_file_or_message(message):
 
   user_id = message.from_user.id
   user_name = message.from_user.first_name
-  header_text = f"📩 دریافت فایل یا پیام جدید از طرف: [{user_name}](tg://user?id={user_id})\nشناسه کاربر: `{user_id}`"
+  header_text = f"📩 پیام یا فایل جدید از طرف: [{user_name}](tg://user?id={user_id})\nشناسه کاربر: `{user_id}`"
 
   try:
     bot.send_message(ADMIN_ID, header_text, parse_mode="Markdown")
     bot.forward_message(ADMIN_ID, message.chat.id, message.message_id)
     bot.reply_to(
-        message, "✅ پیام و فایل شما با موفقیت به دست ادمین رسید. سپاس! 🌹"
+        message, "✅ پیام یا فایل شما با موفقیت به دست ادمین رسید. مرسی! 🌹"
     )
   except Exception as e:
-    bot.reply_to(message, "❌ خطا در ارسال فایل یا پیام.")
+    bot.reply_to(message, "❌ خطا در ارسال پیام به ادمین.")
     print(f"Error: {e}")
 
 
