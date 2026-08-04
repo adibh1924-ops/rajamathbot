@@ -35,7 +35,7 @@ CHARTS_DATA = {
     },
     "chart_bachelor": {
         "title": "فایل برنامه درسی رشته کارشناسی آموزش ریاضی",
-        "file_id": "BQACAgQAAxkBAAOaanIBK0zSWRzrTdKSd6UUZlExWZQAAgQUAAJ5c7lQunZ9IDogQUg9BA",
+        "file_id": "BQACAgQAAxkBAAIBDWpyCr87cp8z5QHP_hGzmlQ5XTHzAAIbEwACH7LBUSWnbHWURFFgPQQ",
     },
 }
 
@@ -327,7 +327,7 @@ def get_useful_links_menu():
           url="https://www.sru.ac.ir",
       ),
       InlineKeyboardButton(
-          "سایت گلستان رجائی", url="https://golestan.sru.ac.ir"
+          "سایت گلستان رجائی", url="https://portal.sru.ac.ir/forms/authenticateuser/main.htm"
       ),
       InlineKeyboardButton(
           "سامانه ال‌ام‌اس رجائی", url="https://lms.sru.ac.ir"
@@ -335,16 +335,16 @@ def get_useful_links_menu():
       InlineKeyboardButton(
           "سامانه نگارستان رجائی", url="https://negarestan.sru.ac.ir"
       ),
-      InlineKeyboardButton("سماد رجائی", url="https://samad.sru.ac.ir"),
+      InlineKeyboardButton("سماد رجائی", url="https://food.sru.ac.ir/index.rose"),
       InlineKeyboardButton(
-          "سامانه کتابخانه رجائی", url="https://library.sru.ac.ir"
+          "سامانه کتابخانه رجائی", url="https://lib.sru.ac.ir/dl/usersearch/"
       ),
       InlineKeyboardButton(
           "سایت کارورزی دانشگاه رجائی", url="https://karvarzi.sru.ac.ir"
       ),
       InlineKeyboardButton(
           "سامانه رویدادهای پژوهشی دانشگاه رجائی",
-          url="https://research.sru.ac.ir",
+          url="https://events.sru.ac.ir/users/login.php",
       ),
       InlineKeyboardButton(
           "🔙 بازگشت به منوی اصلی", callback_data="back_to_main"
