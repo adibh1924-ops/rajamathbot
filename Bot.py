@@ -22,7 +22,7 @@ CHARTS_DATA = {
     },
     "chart_1403": {
         "title": "چارت درسی ورودی ۱۴۰۳ آموزش ریاضی",
-        "file_id": "AgACAgQAAxkBAAEhQtpqceHPHyViXJ7xlIg8TWvw0y61NQACbg1rG9vN2FL1IJ8tikHSGQEAAwIAA3kAAz0E",
+        "file_id": "YOUR_FILE_ID_1403",
     },
     "chart_1404": {
         "title": "چارت درسی ورودی ۱۴۰۴ آموزش ریاضی",
