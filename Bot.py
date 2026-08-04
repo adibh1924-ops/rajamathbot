@@ -423,7 +423,7 @@ def get_useful_links_sru_sites_menu():
             url="https://events.sru.ac.ir/users/login.php",
         ),
         InlineKeyboardButton(
-            "سامانه تکدا", url="https://tarsim.sru.ac.ir"
+            "سامانه تکدا", url="http://takda.sru.ac.ir"
         ),  # لینک سامانه تکدا (قابل ویرایش)
         InlineKeyboardButton(
             "🔙 بازگشت", callback_data="menu_useful_links"
@@ -438,25 +438,25 @@ def get_useful_links_uni_channels_menu():
     markup.row_width = 1
     markup.add(
         InlineKeyboardButton(
-            "کانال رسمی دانشگاه", url="https://t.me/SRU_Official"
+            "کانال رسمی دانشگاه", url="https://eitaa.com/sruinfo"
         ),
         InlineKeyboardButton(
-            "کانال معاونت فرهنگی", url="https://t.me/SRU_Cultural"
+            "کانال معاونت فرهنگی", url="https://eitaa.com/srufarhang"
         ),
         InlineKeyboardButton(
-            "کانال معاونت پژوهش و فناوری", url="https://t.me/SRU_Research"
+            "کانال معاونت پژوهش و فناوری", url="https://eitaa.com/SRTTU_Research"
         ),
         InlineKeyboardButton(
-            "کانال مرکز آموزش‌های مجازی", url="https://t.me/SRU_Virtual"
+            "کانال مرکز آموزش‌های مجازی", url="https://eitaa.com/sru_elearning"
         ),
         InlineKeyboardButton(
-            "کانال امور دانشجویی", url="https://t.me/SRU_StudentAffairs"
+            "کانال امور دانشجویی", url="https://eitaa.com/portal_srttu1402"
         ),
         InlineKeyboardButton(
-            "کانال دانشکده علوم پایه", url="https://t.me/SRU_ScienceFaculty"
+            "کانال دانشکده علوم پایه", url="https://eitaa.com/science401"
         ),
         InlineKeyboardButton(
-            "کانال نهاد رهبری", url="https://t.me/SRU_LeaderOffice"
+            "کانال نهاد رهبری", url="https://eitaa.com/nahadrajaee"
         ),
         InlineKeyboardButton(
             "🔙 بازگشت", callback_data="menu_useful_links"
@@ -474,29 +474,29 @@ def get_useful_links_student_channels_menu():
             "کانال انجمن علمی ریاضی", url="https://t.me/math_rajae"
         ),
         InlineKeyboardButton(
-            "کانال رسانه دانشجویی", url="https://t.me/SRU_Media"
+            "کانال رسانه دانشجویی", url="https://t.me/srttu_ir"
         ),
         InlineKeyboardButton(
-            "کانال انجمن‌های علمی دانشگاه", url="https://t.me/SRU_ScientificAssoc"
+            "کانال انجمن‌های علمی دانشگاه", url="https://t.me/AnjomanMarkazi_Srttu"
         ),
         InlineKeyboardButton(
-            "کانال شورای صنفی دانشگاه", url="https://t.me/SRU_Senfi"
+            "کانال شورای صنفی دانشگاه", url="https://t.me/srttu_senfi"
         ),
         InlineKeyboardButton(
             "کانال کانون‌های فرهنگی هنری دانشگاه",
-            url="https://t.me/SRU_CulturalArt",
+            url="https://t.me/kanonfarhangisru",
         ),
         InlineKeyboardButton(
             "کانال بسیج دانشگاه", url="https://t.me/SRU_Basij"
         ),
         InlineKeyboardButton(
-            "کانال جامعه اسلامی دانشگاه", url="https://t.me/SRU_Jamee"
+            "کانال جامعه اسلامی دانشگاه", url="https://t.me/JADSRTTU"
         ),
         InlineKeyboardButton(
-            "کانال انجمن اسلامی مستقل", url="https://t.me/SRU_Mostaghel"
+            "کانال انجمن اسلامی مستقل", url="https://t.me/Mostaghel_Srttu"
         ),
         InlineKeyboardButton(
-            "هیئت محبان اهل بیت", url="https://t.me/SRU_Moheban"
+            "هیئت محبان اهل بیت", url="https://t.me/mohebban_srttu"
         ),
         InlineKeyboardButton(
             "🔙 بازگشت", callback_data="menu_useful_links"
