@@ -121,10 +121,8 @@ BOOKS_DATA = {
 
 def get_join_channel_menu():
   markup = InlineKeyboardMarkup()
-  # دکمه شیشه‌ای هدایت مستقیم به کانال با لینک
   channel_url = f"https://t.me/{CHANNEL_USERNAME.replace('@', '')}"
   markup.add(InlineKeyboardButton("📢 ورود به کانال رسمی", url=channel_url))
-  # دکمه بررسی مجدد عضویت
   markup.add(
       InlineKeyboardButton(
           "🔄 بررسی دوباره عضویت", callback_data="check_sub_again"
@@ -386,8 +384,39 @@ def handle_callback(call):
 
 
 # ==========================================
-# 📥 دریافت فایل و پیام کاربر
+# 📥 دریافت فایل و پیام کاربر (و استخراج file_id برای ادمین)
 # ==========================================
+@bot.message_handler(
+    content_types=["photo", "document", "video", "audio", "voice"]
+)
+def get_file_id_for_admin(message):
+  # اگر فرستنده خودِ شما (ادمین) هستید، file_id فایل را بگیرید
+  if message.from_user.id == ADMIN_ID:
+    if message.photo:
+      file_id = message.photo[-1].file_id
+      file_type = "عکس (Photo)"
+    elif message.document:
+      file_id = message.document.file_id
+      file_type = "سند/فایل (Document)"
+    elif message.video:
+      file_id = message.video.file_id
+      file_type = "ویدیو (Video)"
+    elif message.voice:
+      file_id = message.voice.file_id
+      file_type = "وویس (Voice)"
+    else:
+      return
+
+    response_text = (
+        f"✅ فایل‌آیدیِ این {file_type}:\n\n`{file_id}`\n\n(برای کپی کردن کافیست"
+        " روی متن بالا ضربه بزنید)"
+    )
+    bot.reply_to(message, response_text, parse_mode="Markdown")
+  else:
+    # اگر کاربر عادی بود، فرآیند بخش پشتیبانی و ارسال فایل طی شود
+    receive_user_file_or_message(message)
+
+
 def receive_user_file_or_message(message):
   if message.text == "/start":
     send_welcome(message)
