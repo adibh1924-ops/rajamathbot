@@ -21,8 +21,8 @@ CHARTS_DATA = {
         "file_id": "YOUR_FILE_ID_1402",
     },
     "chart_1403": {
-        "title": "AgACAgQAAxkBAAM4anHhlDbTt7tudmTIHWuecys2urkAAm4NaxvbzdhSP08pJBBJKmsBAAMCAAN5AAM9BA",
-        "file_id": "YOUR_FILE_ID_1403",
+        "title":  "چارت درسی ورودی ۱۴۰۳ آموزش ریاضی",
+        "file_id": "AgACAgQAAxkBAAM4anHhlDbTt7tudmTIHWuecys2urkAAm4NaxvbzdhSP08pJBBJKmsBAAMCAAN5AAM9BA",
     },
     "chart_1404": {
         "title": "چارت درسی ورودی ۱۴۰۴ آموزش ریاضی",
