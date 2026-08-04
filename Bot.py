@@ -125,34 +125,39 @@ BOOKS_DATA = {
     },
 }
 
-# بانک داده‌های پادکست‌ها (همراه با file_id اختصاصی برای ارسال فایل اصلی کانال)
+# بانک داده‌های پادکست‌ها (گزینه اول شامل ۳ فایل‌افزاری/پارت است)
 PODCASTS_DATA = [
     {
         "name": "معرفی رشته آموزش ریاضی در سه پارت",
-        "file_id": "FILE_ID_POD_0",
+        "is_multi": True,
+        "file_ids": [
+            "CQACAgQAAxkBAAOcanIBZ8V-yCiLTbL43tLh6yf9-H8AAuMNAAJBTWBTb8nkuvkc2pQ9BA",  # فایل آیدی پارت اول
+            "CQACAgQAAxkBAAOsanIC0lZPIyeCPlV3zVMpfExVsPcAAuUNAAJBTWBTW-em0w7X2t49BA",  # فایل آیدی پارت دوم
+            "CQACAgQAAxkBAAOuanIC2YDTGFy3yHDdQUisFsW-HHgAAuYNAAJBTWBTbr7A423Aa1U9BA",  # فایل آیدی پارت سوم
+        ],
     },
-    {"name": "معرفی پادکست دلتا", "file_id": "FILE_ID_POD_1"},
-    {"name": "منطق فازی و دنباله فیبوناچی", "file_id": "FILE_ID_POD_2"},
-    {"name": "مصاحبه با دکتر میثم سلیمانی ملکان", "file_id": "FILE_ID_POD_3"},
-    {"name": "عدد پی", "file_id": "FILE_ID_POD_4"},
-    {"name": "روز جهانی زن در ریاضی", "file_id": "FILE_ID_POD_5"},
-    {"name": "شب یلدا", "file_id": "FILE_ID_POD_6"},
-    {"name": "پادکست ویژه مرحوم دکتر ریحانی", "file_id": "FILE_ID_POD_7"},
-    {"name": "منطق یا دیوانگی", "file_id": "FILE_ID_POD_8"},
-    {"name": "معرفی پادکست زندگی پشت فرمول‌ها", "file_id": "FILE_ID_POD_9"},
-    {"name": "روت موفانگ", "file_id": "FILE_ID_POD_10"},
-    {"name": "نقاشی با اعداد", "file_id": "FILE_ID_POD_11"},
-    {"name": "اخگر خاکستر طوس", "file_id": "FILE_ID_POD_12"},
+    {"name": "معرفی پادکست دلتا", "file_id": "CQACAgQAAxkBAAOwanIDUX0W50F4PhITgqEWiHeUxNcAAnAQAAJE8iBSBZDjAAEwnUq9PQQ"},
+    {"name": "منطق فازی و دنباله فیبوناچی", "file_id": "CQACAgQAAxkBAAOyanIDWw5hhleYOGCyRgn0bPXt6_sAAhwVAAJPYvBTT5VGPspyduY9BA"},
+    {"name": "مصاحبه با دکتر میثم سلیمانی ملکان", "file_id": "CQACAgQAAxkBAAO0anIDZr1mKPtRx5uwn6Ir4WIZ6LkAAmkQAAJ9EulQOMRaVORMgYY9BA"},
+    {"name": "عدد پی", "file_id": "CQACAgQAAxkBAAO2anIDccXn5v0SNUKBY9rvi_OJPTIAAioRAALMV5hTwc1Ly4KqeHA9BA"},
+    {"name": "روز جهانی زن در ریاضی", "file_id": "CQACAgQAAxkBAAO4anIDed29-OL4NOT6tySiWknx_2QAAu0iAALDkAABUnlYjRaXuFQhPQQ"},
+    {"name": "شب یلدا", "file_id": "CQACAgQAAxkBAAO6anIDgDVqv_YXm-tho1l_HBTqw7AAAssYAAI85jBTgLyb77iEqJs9BA"},
+    {"name": "پادکست ویژه مرحوم دکتر ریحانی", "file_id": "CQACAgQAAxkBAAO8anIDiFZOvW74qsOjNzF937WOcJYAAkcZAAIvCxlQakaLbTYOT-c9BA"},
+    {"name": "منطق یا دیوانگی", "file_id": "CQACAgQAAxkBAAO-anIDkefMJt9RNPZe3Qi5__0h5_gAAnMYAALEmjBSJbhgBTY2Ow49BA"},
+    {"name": "معرفی پادکست زندگی پشت فرمول‌ها", "file_id": "CQACAgQAAxkBAAPAanIDmVvudOofVB6bnThY4-I8a6MAAnoeAAK_8jBQMbcPenTe5Bs9BA"},
+    {"name": "روت موفانگ", "file_id": "CQACAgQAAxkBAAPCanIDocImPF0MqMXztrXrG_Em5GMAArYcAALb8lhQb-yAm68cefQ9BA"},
+    {"name": "نقاشی با اعداد", "file_id": "CQACAgQAAxkBAAPEanIDqYcaQVSRsNo6KpK7Vo3VIroAAsUeAAIHJ3hT7FUpHh_165o9BA"},
+    {"name": "اخگر خاکستر طوس", "file_id": "CQACAgQAAxkBAAPGanIDsSlINGuEfU27xhsTlp-imcMAAg4dAAIHJ4BTqJ0_8iaYc3g9BA"},
 ]
 
 # بانک داده‌های نشریات (همراه با file_id اختصاصی برای ارسال فایل اصلی کانال)
 MAGAZINES_DATA = [
-    {"name": "نشریه شماره یک دلتا", "file_id": "FILE_ID_MAG_0"},
-    {"name": "نشریه شماره دوم دلتا", "file_id": "FILE_ID_MAG_1"},
-    {"name": "نشریه دلتا پریم", "file_id": "FILE_ID_MAG_2"},
-    {"name": "نشریه شماره سوم دلتا", "file_id": "FILE_ID_MAG_3"},
-    {"name": "نشریه شماره چهارم دلتا", "file_id": "FILE_ID_MAG_4"},
-    {"name": "نشریه شماره پنجم دلتا", "file_id": "FILE_ID_MAG_5"},
+    {"name": "نشریه شماره یک دلتا", "file_id": "BQACAgQAAxkBAAPIanIDvNuK1jcRojnKj8q7x9SG2GwAAmoQAAL3KqhRLRsl6eU1P1Q9BA"},
+    {"name": "نشریه شماره دوم دلتا", "file_id": "BQACAgQAAxkBAAPKanIDxOPchCxmSn7Yh1P-Px6a6UkAAoMRAAJqAAHwUyFDtwsrsKUsPQQ"},
+    {"name": "نشریه دلتا پریم", "file_id": "BQACAgQAAxkBAAPSanID70cIYZ48z6C7mHy_X6Etc-8AApYRAAIhBsBQPhQi3wABhNJUPQQ"},
+    {"name": "نشریه شماره سوم دلتا", "file_id": "BQACAgQAAxkBAAPManIDzO2yNLqCJLKja5mz2ghfRQQAAmoQAAOy2VNjzJOpbqllUz0E"},
+    {"name": "نشریه شماره چهارم دلتا", "file_id": "BQACAgQAAxkBAAPOanID1I7ENHQJezOJTXmVbuiEUh8AAmAZAALPQTBSZji860MXRXI9BA"},
+    {"name": "نشریه شماره پنجم دلتا", "file_id": "BQACAgQAAxkBAAPQanID3xflfMGnO9vr-l04S8DXEkkAApodAAIHJ3hT8MWNP6Bg3ps9BA"},
 ]
 
 
@@ -394,14 +399,25 @@ def handle_callback(call):
     bot.answer_callback_query(call.id)
     idx = int(call.data.split("_")[1])
     pod = PODCASTS_DATA[idx]
-    if pod["file_id"].startswith("FILE_ID_"):
-      bot.send_message(
-          call.message.chat.id,
-          f"🎧 **{pod['name']}**\n(فایل صوتی هنوز بارگذاری نشده است)",
-      )
+
+    # بررسی اینکه آیا این گزینه شامل چند فایل است یا خیر
+    if pod.get("is_multi"):
+      for f_id in pod["file_ids"]:
+        if f_id.startswith("FILE_ID_"):
+          bot.send_message(
+              call.message.chat.id,
+              f"🎧 **{pod['name']}**\n(فایل صوتی هنوز بارگذاری نشده است)",
+          )
+        else:
+          bot.send_audio(call.message.chat.id, f_id)
     else:
-      # ارسال فایل صوتی پادکست بدون پارامتر caption تا کپشن اصلی کانال حفظ شود
-      bot.send_audio(call.message.chat.id, pod["file_id"])
+      if pod["file_id"].startswith("FILE_ID_"):
+        bot.send_message(
+            call.message.chat.id,
+            f"🎧 **{pod['name']}**\n(فایل صوتی هنوز بارگذاری نشده است)",
+        )
+      else:
+        bot.send_audio(call.message.chat.id, pod["file_id"])
 
   elif call.data.startswith("magazine_"):
     bot.answer_callback_query(call.id)
@@ -413,7 +429,6 @@ def handle_callback(call):
           f"📄 **{mag['name']}**\n(فایل نشریه هنوز بارگذاری نشده است)",
       )
     else:
-      # ارسال سند نشریه بدون پارامتر caption تا کپشن و هایپرلینک اصلی کانال حفظ شود
       bot.send_document(call.message.chat.id, mag["file_id"])
 
   elif call.data == "back_to_main":
@@ -425,7 +440,6 @@ def handle_callback(call):
         reply_markup=get_main_reply_keyboard(),
     )
 
-  # 🟢 بخش چارت‌های درسی (بدون کپشنِ کانال، و دارای کپشن سفارشی ربات)
   elif call.data in CHARTS_DATA:
     bot.answer_callback_query(call.id)
     item = CHARTS_DATA[call.data]
@@ -439,7 +453,6 @@ def handle_callback(call):
           call.message.chat.id, item["file_id"], caption=f"📄 {item['title']}"
       )
 
-  # 🟢 بخش ویدیوهای آموزشی (ارسال فایل ویدیو همراه با کپشن و هایپرلینک اصلی کانال)
   elif call.data in VIDEOS_DATA:
     bot.answer_callback_query(call.id)
     course = VIDEOS_DATA[call.data]
@@ -455,10 +468,8 @@ def handle_callback(call):
             f"🔸 {vid['name']} (فایل ویدیو هنوز بارگذاری نشده است)",
         )
       else:
-        # ارسال ویدیو بدون caption تا کپشن اصلی کانال با هایپرلینک‌ها حفظ شود
         bot.send_video(call.message.chat.id, vid["file_id"])
 
-  # 🟢 بخش جزوات و منابع (ارسال سند همراه با کپشن و هایپرلینک اصلی کانال)
   elif call.data in BOOKS_DATA:
     bot.answer_callback_query(call.id)
     course = BOOKS_DATA[call.data]
@@ -473,7 +484,6 @@ def handle_callback(call):
             f"🔸 {file_info['name']} (فایل هنوز بارگذاری نشده است)",
         )
       else:
-        # ارسال سند بدون caption تا کپشن اصلی کانال حفظ شود
         bot.send_document(call.message.chat.id, file_info["file_id"])
 
 
