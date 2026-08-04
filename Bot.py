@@ -235,194 +235,288 @@ MAGAZINES_DATA = [
 
 
 def get_join_channel_menu():
-  markup = InlineKeyboardMarkup()
-  channel_url = f"https://t.me/{CHANNEL_USERNAME.replace('@', '')}"
-  markup.add(InlineKeyboardButton("📢 ورود به کانال رسمی انجمن", url=channel_url))
-  markup.add(
-      InlineKeyboardButton(
-          "🔄 بررسی دوباره عضویتم", callback_data="check_sub_again"
-      )
-  )
-  return markup
+    markup = InlineKeyboardMarkup()
+    channel_url = f"https://t.me/{CHANNEL_USERNAME.replace('@', '')}"
+    markup.add(InlineKeyboardButton("📢 ورود به کانال رسمی انجمن", url=channel_url))
+    markup.add(
+        InlineKeyboardButton(
+            "🔄 بررسی دوباره عضویتم", callback_data="check_sub_again"
+        )
+    )
+    return markup
 
 
 def get_main_reply_keyboard():
-  # چیدمان دکمه‌ها از راست به چپ بر اساس درخواست شما:
-  # ردیف ۱: لینک‌های مفید - نشریات و پادکست
-  # ردیف ۲: ویدیوهای آموزشی - چارت‌های درسی
-  # ردیف ۳: جزوات - منابع و رفرنس
-  # ردیف ۴: پشتیبانی و ارسال فایل - راه‌های ارتباطی
-  keyboard = ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
-  btn1 = KeyboardButton("🔗 لینک‌های مفید")
-  btn2 = KeyboardButton("🎙️ نشریات و پادکست")
-  btn3 = KeyboardButton("🎬 ویدیوهای آموزشی")
-  btn4 = KeyboardButton("📚 چارت‌های درسی")
-  btn5 = KeyboardButton("📄 جزوات")
-  btn6 = KeyboardButton("📖 منابع و رفرنس")
-  btn7 = KeyboardButton("📞 پشتیبانی و ارسال فایل")
-  btn8 = KeyboardButton("☎️ راه‌های ارتباطی")
+    keyboard = ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
+    btn1 = KeyboardButton("🔗 لینک‌های مفید")
+    btn2 = KeyboardButton("🎙️ نشریات و پادکست")
+    btn3 = KeyboardButton("🎬 ویدیوهای آموزشی")
+    btn4 = KeyboardButton("📚 چارت‌های درسی")
+    btn5 = KeyboardButton("📄 جزوات")
+    btn6 = KeyboardButton("📖 منابع و رفرنس")
+    btn7 = KeyboardButton("📞 پشتیبانی و ارسال فایل")
+    btn8 = KeyboardButton("☎️ راه‌های ارتباطی")
 
-  keyboard.add(btn1, btn2)
-  keyboard.add(btn3, btn4)
-  keyboard.add(btn5, btn6)
-  keyboard.add(btn7, btn8)
-  return keyboard
+    keyboard.add(btn1, btn2)
+    keyboard.add(btn3, btn4)
+    keyboard.add(btn5, btn6)
+    keyboard.add(btn7, btn8)
+    return keyboard
 
 
 def get_chart_menu():
-  markup = InlineKeyboardMarkup()
-  markup.row_width = 1
-  for key, val in CHARTS_DATA.items():
-    markup.add(InlineKeyboardButton(f"🎓 {val['title']}", callback_data=key))
-  markup.add(
-      InlineKeyboardButton("🔙 بازگشت به منوی اصلی", callback_data="back_to_main")
-  )
-  return markup
+    markup = InlineKeyboardMarkup()
+    markup.row_width = 1
+    for key, val in CHARTS_DATA.items():
+        markup.add(InlineKeyboardButton(f"🎓 {val['title']}", callback_data=key))
+    markup.add(
+        InlineKeyboardButton("🔙 بازگشت به منوی اصلی", callback_data="back_to_main")
+    )
+    return markup
 
 
 def get_videos_menu():
-  markup = InlineKeyboardMarkup()
-  markup.row_width = 2
-  for key, val in VIDEOS_DATA.items():
-    markup.add(InlineKeyboardButton(f"📐 {val['title']}", callback_data=key))
-  markup.add(
-      InlineKeyboardButton("🔙 بازگشت به منوی اصلی", callback_data="back_to_main")
-  )
-  return markup
+    markup = InlineKeyboardMarkup()
+    markup.row_width = 2
+    for key, val in VIDEOS_DATA.items():
+        markup.add(InlineKeyboardButton(f"📐 {val['title']}", callback_data=key))
+    markup.add(
+        InlineKeyboardButton("🔙 بازگشت به منوی اصلی", callback_data="back_to_main")
+    )
+    return markup
 
 
 def get_handouts_menu():
-  markup = InlineKeyboardMarkup()
-  markup.row_width = 2
-  for key, val in BOOKS_DATA.items():
-    markup.add(InlineKeyboardButton(f"🔹 {val['title']}", callback_data=key))
-  markup.add(
-      InlineKeyboardButton("🔙 بازگشت به منوی اصلی", callback_data="back_to_main")
-  )
-  return markup
+    markup = InlineKeyboardMarkup()
+    markup.row_width = 2
+    for key, val in BOOKS_DATA.items():
+        markup.add(InlineKeyboardButton(f"🔹 {val['title']}", callback_data=key))
+    markup.add(
+        InlineKeyboardButton("🔙 بازگشت به منوی اصلی", callback_data="back_to_main")
+    )
+    return markup
 
 
 # منوی انتخاب نوع منابع و رفرنس
 def get_references_main_menu():
-  markup = InlineKeyboardMarkup()
-  markup.row_width = 1
-  markup.add(
-      InlineKeyboardButton(
-          "📐 دروس تخصصی ریاضی", callback_data="ref_specialized"
-      ),
-      InlineKeyboardButton("📚 دروس عمومی", callback_data="ref_general"),
-      InlineKeyboardButton(
-          "🔙 بازگشت به منوی اصلی", callback_data="back_to_main"
-      ),
-  )
-  return markup
+    markup = InlineKeyboardMarkup()
+    markup.row_width = 1
+    markup.add(
+        InlineKeyboardButton(
+            "📐 دروس تخصصی ریاضی", callback_data="ref_specialized"
+        ),
+        InlineKeyboardButton("📚 دروس عمومی", callback_data="ref_general"),
+        InlineKeyboardButton(
+            "🔙 بازگشت به منوی اصلی", callback_data="back_to_main"
+        ),
+    )
+    return markup
 
 
 def get_references_specialized_menu():
-  markup = InlineKeyboardMarkup()
-  markup.row_width = 2
-  for key, val in REFERENCES_SPECIALIZED.items():
-    markup.add(InlineKeyboardButton(f"🔹 {val['title']}", callback_data=key))
-  markup.add(InlineKeyboardButton("🔙 بازگشت", callback_data="menu_references"))
-  return markup
+    markup = InlineKeyboardMarkup()
+    markup.row_width = 2
+    for key, val in REFERENCES_SPECIALIZED.items():
+        markup.add(InlineKeyboardButton(f"🔹 {val['title']}", callback_data=key))
+    markup.add(InlineKeyboardButton("🔙 بازگشت", callback_data="menu_references"))
+    return markup
 
 
 def get_references_general_menu():
-  markup = InlineKeyboardMarkup()
-  markup.row_width = 2
-  for key, val in REFERENCES_GENERAL.items():
-    markup.add(InlineKeyboardButton(f"🔹 {val['title']}", callback_data=key))
-  markup.add(InlineKeyboardButton("🔙 بازگشت", callback_data="menu_references"))
-  return markup
+    markup = InlineKeyboardMarkup()
+    markup.row_width = 2
+    for key, val in REFERENCES_GENERAL.items():
+        markup.add(InlineKeyboardButton(f"🔹 {val['title']}", callback_data=key))
+    markup.add(InlineKeyboardButton("🔙 بازگشت", callback_data="menu_references"))
+    return markup
 
 
 def get_podcasts_magazines_menu():
-  markup = InlineKeyboardMarkup()
-  markup.row_width = 1
-  markup.add(
-      InlineKeyboardButton("🎧 پادکست‌ها", callback_data="sub_podcasts"),
-      InlineKeyboardButton("📚 نشریات", callback_data="sub_magazines"),
-      InlineKeyboardButton(
-          "🔙 بازگشت به منوی اصلی", callback_data="back_to_main"
-      ),
-  )
-  return markup
+    markup = InlineKeyboardMarkup()
+    markup.row_width = 1
+    markup.add(
+        InlineKeyboardButton("🎧 پادکست‌ها", callback_data="sub_podcasts"),
+        InlineKeyboardButton("📚 نشریات", callback_data="sub_magazines"),
+        InlineKeyboardButton(
+            "🔙 بازگشت به منوی اصلی", callback_data="back_to_main"
+        ),
+    )
+    return markup
 
 
 def get_podcasts_list_menu():
-  markup = InlineKeyboardMarkup()
-  markup.row_width = 1
-  for idx, pod in enumerate(PODCASTS_DATA):
-    markup.add(
-        InlineKeyboardButton(
-            f"🎙️ {pod['name']}", callback_data=f"podcast_{idx}"
+    markup = InlineKeyboardMarkup()
+    markup.row_width = 1
+    for idx, pod in enumerate(PODCASTS_DATA):
+        markup.add(
+            InlineKeyboardButton(
+                f"🎙️ {pod['name']}", callback_data=f"podcast_{idx}"
+            )
         )
-    )
-  markup.add(InlineKeyboardButton("🔙 بازگشت", callback_data="menu_podcasts"))
-  return markup
+    markup.add(InlineKeyboardButton("🔙 بازگشت", callback_data="menu_podcasts"))
+    return markup
 
 
 def get_magazines_list_menu():
-  markup = InlineKeyboardMarkup()
-  markup.row_width = 1
-  for idx, mag in enumerate(MAGAZINES_DATA):
+    markup = InlineKeyboardMarkup()
+    markup.row_width = 1
+    for idx, mag in enumerate(MAGAZINES_DATA):
+        markup.add(
+            InlineKeyboardButton(
+                f"📄 {mag['name']}", callback_data=f"magazine_{idx}"
+            )
+        )
+    markup.add(InlineKeyboardButton("🔙 بازگشت", callback_data="menu_podcasts"))
+    return markup
+
+
+# منوی اصلی لینک‌های مفید (سه گزینه جدید)
+def get_useful_links_main_menu():
+    markup = InlineKeyboardMarkup()
+    markup.row_width = 1
     markup.add(
         InlineKeyboardButton(
-            f"📄 {mag['name']}", callback_data=f"magazine_{idx}"
-        )
+            "🏛️ سایت‌های دانشگاه تربیت دبیر شهید رجائی",
+            callback_data="links_sru_sites",
+        ),
+        InlineKeyboardButton(
+            "📢 کانال‌های دانشگاه", callback_data="links_uni_channels"
+        ),
+        InlineKeyboardButton(
+            "👥 کانال‌های دانشجویی", callback_data="links_student_channels"
+        ),
+        InlineKeyboardButton(
+            "🔙 بازگشت به منوی اصلی", callback_data="back_to_main"
+        ),
     )
-  markup.add(InlineKeyboardButton("🔙 بازگشت", callback_data="menu_podcasts"))
-  return markup
+    return markup
 
 
-def get_useful_links_menu():
-  markup = InlineKeyboardMarkup()
-  markup.row_width = 1
-  markup.add(
-      InlineKeyboardButton(
-          "سایت دانشگاه تربیت دبیر شهید رجائی",
-          url="https://www.sru.ac.ir",
-      ),
-      InlineKeyboardButton(
-          "سایت گلستان رجائی",
-          url="https://portal.sru.ac.ir/forms/authenticateuser/main.htm",
-      ),
-      InlineKeyboardButton(
-          "سامانه ال‌ام‌اس رجائی", url="https://lms.sru.ac.ir"
-      ),
-      InlineKeyboardButton(
-          "سامانه نگارستان رجائی", url="https://negarestan.sru.ac.ir"
-      ),
-      InlineKeyboardButton("سماد رجائی", url="https://food.sru.ac.ir/index.rose"),
-      InlineKeyboardButton(
-          "سامانه کتابخانه رجائی", url="https://lib.sru.ac.ir/dl/usersearch/"
-      ),
-      InlineKeyboardButton(
-          "سایت کارورزی دانشگاه رجائی", url="https://karvarzi.sru.ac.ir"
-      ),
-      InlineKeyboardButton(
-          "سامانه رویدادهای پژوهشی دانشگاه رجائی",
-          url="https://events.sru.ac.ir/users/login.php",
-      ),
-      InlineKeyboardButton(
-          "🔙 بازگشت به منوی اصلی", callback_data="back_to_main"
-      ),
-  )
-  return markup
+# زیرمنوی ۱: سایت‌های دانشگاه (۸ سایت قبلی + سامانه تکدا)
+def get_useful_links_sru_sites_menu():
+    markup = InlineKeyboardMarkup()
+    markup.row_width = 1
+    markup.add(
+        InlineKeyboardButton(
+            "سایت دانشگاه تربیت دبیر شهید رجائی",
+            url="https://www.sru.ac.ir",
+        ),
+        InlineKeyboardButton(
+            "سایت گلستان رجائی",
+            url="https://portal.sru.ac.ir/forms/authenticateuser/main.htm",
+        ),
+        InlineKeyboardButton(
+            "سامانه ال‌ام‌اس رجائی", url="https://lms.sru.ac.ir"
+        ),
+        InlineKeyboardButton(
+            "سامانه نگارستان رجائی", url="https://negarestan.sru.ac.ir"
+        ),
+        InlineKeyboardButton("سماد رجائی", url="https://food.sru.ac.ir/index.rose"),
+        InlineKeyboardButton(
+            "سامانه کتابخانه رجائی", url="https://lib.sru.ac.ir/dl/usersearch/"
+        ),
+        InlineKeyboardButton(
+            "سایت کارورزی دانشگاه رجائی", url="https://karvarzi.sru.ac.ir"
+        ),
+        InlineKeyboardButton(
+            "سامانه رویدادهای پژوهشی دانشگاه رجائی",
+            url="https://events.sru.ac.ir/users/login.php",
+        ),
+        InlineKeyboardButton(
+            "سامانه تکدا", url="https://tarsim.sru.ac.ir"
+        ),  # لینک سامانه تکدا (قابل ویرایش)
+        InlineKeyboardButton(
+            "🔙 بازگشت", callback_data="menu_useful_links"
+        ),
+    )
+    return markup
+
+
+# زیرمنوی ۲: کانال‌های دانشگاه
+def get_useful_links_uni_channels_menu():
+    markup = InlineKeyboardMarkup()
+    markup.row_width = 1
+    markup.add(
+        InlineKeyboardButton(
+            "کانال رسمی دانشگاه", url="https://t.me/SRU_Official"
+        ),
+        InlineKeyboardButton(
+            "کانال معاونت فرهنگی", url="https://t.me/SRU_Cultural"
+        ),
+        InlineKeyboardButton(
+            "کانال معاونت پژوهش و فناوری", url="https://t.me/SRU_Research"
+        ),
+        InlineKeyboardButton(
+            "کانال مرکز آموزش‌های مجازی", url="https://t.me/SRU_Virtual"
+        ),
+        InlineKeyboardButton(
+            "کانال امور دانشجویی", url="https://t.me/SRU_StudentAffairs"
+        ),
+        InlineKeyboardButton(
+            "کانال دانشکده علوم پایه", url="https://t.me/SRU_ScienceFaculty"
+        ),
+        InlineKeyboardButton(
+            "کانال نهاد رهبری", url="https://t.me/SRU_LeaderOffice"
+        ),
+        InlineKeyboardButton(
+            "🔙 بازگشت", callback_data="menu_useful_links"
+        ),
+    )
+    return markup
+
+
+# زیرمنوی ۳: کانال‌های دانشجویی
+def get_useful_links_student_channels_menu():
+    markup = InlineKeyboardMarkup()
+    markup.row_width = 1
+    markup.add(
+        InlineKeyboardButton(
+            "کانال انجمن علمی ریاضی", url="https://t.me/math_rajae"
+        ),
+        InlineKeyboardButton(
+            "کانال رسانه دانشجویی", url="https://t.me/SRU_Media"
+        ),
+        InlineKeyboardButton(
+            "کانال انجمن‌های علمی دانشگاه", url="https://t.me/SRU_ScientificAssoc"
+        ),
+        InlineKeyboardButton(
+            "کانال شورای صنفی دانشگاه", url="https://t.me/SRU_Senfi"
+        ),
+        InlineKeyboardButton(
+            "کانال کانون‌های فرهنگی هنری دانشگاه",
+            url="https://t.me/SRU_CulturalArt",
+        ),
+        InlineKeyboardButton(
+            "کانال بسیج دانشگاه", url="https://t.me/SRU_Basij"
+        ),
+        InlineKeyboardButton(
+            "کانال جامعه اسلامی دانشگاه", url="https://t.me/SRU_Jamee"
+        ),
+        InlineKeyboardButton(
+            "کانال انجمن اسلامی مستقل", url="https://t.me/SRU_Mostaghel"
+        ),
+        InlineKeyboardButton(
+            "هیئت محبان اهل بیت", url="https://t.me/SRU_Moheban"
+        ),
+        InlineKeyboardButton(
+            "🔙 بازگشت", callback_data="menu_useful_links"
+        ),
+    )
+    return markup
 
 
 # ==========================================
 # 🔒 سیستم بررسی عضویت
 # ==========================================
 def check_subscription(user_id):
-  try:
-    member = bot.get_chat_member(CHANNEL_USERNAME, user_id)
-    if member.status in ["member", "administrator", "creator"]:
-      return True
-    return False
-  except Exception as e:
-    print(f"Error checking subscription: {e}")
-    return True
+    try:
+        member = bot.get_chat_member(CHANNEL_USERNAME, user_id)
+        if member.status in ["member", "administrator", "creator"]:
+            return True
+        return False
+    except Exception as e:
+        print(f"Error checking subscription: {e}")
+        return True
 
 
 # ==========================================
@@ -430,28 +524,28 @@ def check_subscription(user_id):
 # ==========================================
 @bot.message_handler(commands=["start"])
 def send_welcome(message):
-  user_id = message.from_user.id
-  user_name = message.from_user.first_name
+    user_id = message.from_user.id
+    user_name = message.from_user.first_name
 
-  if not check_subscription(user_id):
-    warning_text = (
-        f"سلام {user_name} جان! 👋🧮\n\n"
-        "❌ برای اینکه بتونی از امکانات خفن ربات استفاده کنی، لطفاً اول تو کانال"
-        " زیر عضو شو و بعد روی دکمه‌ی بررسی دوباره بزن:"
+    if not check_subscription(user_id):
+        warning_text = (
+            f"سلام {user_name} جان! 👋🧮\n\n"
+            "❌ برای اینکه بتونی از امکانات خفن ربات استفاده کنی، لطفاً اول تو کانال"
+            " زیر عضو شو و بعد روی دکمه‌ی بررسی دوباره بزن:"
+        )
+        bot.send_message(
+            message.chat.id, warning_text, reply_markup=get_join_channel_menu()
+        )
+        return
+
+    welcome_text = (
+        f"✨ سلام {user_name} عزیز؛ به ربات انجمن علمی ریاضی خوش اومدی! 🚀🎓\n\n"
+        "از منوی جذابی که پایین صفحه برات گذاشتم، می‌تونی خیلی راحت به تمام"
+        " امکانات دسترسی داشته باشی. خسته نباشی قهرمان! 💪✨"
     )
     bot.send_message(
-        message.chat.id, warning_text, reply_markup=get_join_channel_menu()
+        message.chat.id, welcome_text, reply_markup=get_main_reply_keyboard()
     )
-    return
-
-  welcome_text = (
-      f"✨ سلام {user_name} عزیز؛ به ربات انجمن علمی ریاضی خوش اومدی! 🚀🎓\n\n"
-      "از منوی جذابی که پایین صفحه برات گذاشتم، می‌تونی خیلی راحت به تمام"
-      " امکانات دسترسی داشته باشی. خسته نباشی قهرمان! 💪✨"
-  )
-  bot.send_message(
-      message.chat.id, welcome_text, reply_markup=get_main_reply_keyboard()
-  )
 
 
 # ==========================================
@@ -459,222 +553,262 @@ def send_welcome(message):
 # ==========================================
 @bot.callback_query_handler(func=lambda call: True)
 def handle_callback(call):
-  user_id = call.from_user.id
+    user_id = call.from_user.id
 
-  if call.data != "check_sub_again" and not check_subscription(user_id):
-    bot.answer_callback_query(
-        call.id, "❌ اول باید تو کانال عضو بشی رفیق!", show_alert=True
-    )
-    return
+    if call.data != "check_sub_again" and not check_subscription(user_id):
+        bot.answer_callback_query(
+            call.id, "❌ اول باید تو کانال عضو بشی رفیق!", show_alert=True
+        )
+        return
 
-  if call.data == "check_sub_again":
-    if check_subscription(user_id):
-      bot.answer_callback_query(call.id, "✅ عضویتت تأیید شد!")
-      bot.edit_message_text(
-          chat_id=call.message.chat.id,
-          message_id=call.message.message_id,
-          text=(
-              "🎉 دمت گرم که عضو شدی! حالا از منوی پایین صفحه می‌تونی راحت کارتو"
-              " پیش ببری 👇"
-          ),
-      )
-      bot.send_message(
-          call.message.chat.id,
-          "منوی اصلی ربات:",
-          reply_markup=get_main_reply_keyboard(),
-      )
-    else:
-      bot.answer_callback_query(
-          call.id, "❌ هنوزه تو کانال عضو نشدی که!", show_alert=True
-      )
-    return
-
-  elif call.data == "menu_podcasts":
-    bot.answer_callback_query(call.id)
-    bot.edit_message_text(
-        chat_id=call.message.chat.id,
-        message_id=call.message.message_id,
-        text="🎙 **نشریات و پادکست‌های انجمن علمی ریاضی**\n\nبخش مورد نظر رو انتخاب کن:",
-        parse_mode="Markdown",
-        reply_markup=get_podcasts_magazines_menu(),
-    )
-
-  elif call.data == "menu_references":
-    bot.answer_callback_query(call.id)
-    bot.edit_message_text(
-        chat_id=call.message.chat.id,
-        message_id=call.message.message_id,
-        text="📖 **منابع و رفرنس‌های درسی**\n\nدسته بندی مورد نظر رو انتخاب کن:",
-        parse_mode="Markdown",
-        reply_markup=get_references_main_menu(),
-    )
-
-  elif call.data == "ref_specialized":
-    bot.answer_callback_query(call.id)
-    bot.edit_message_text(
-        chat_id=call.message.chat.id,
-        message_id=call.message.message_id,
-        text="📐 **دروس تخصصی ریاضی**\n\nدرس مورد نظر رو انتخاب کن:",
-        parse_mode="Markdown",
-        reply_markup=get_references_specialized_menu(),
-    )
-
-  elif call.data == "ref_general":
-    bot.answer_callback_query(call.id)
-    bot.edit_message_text(
-        chat_id=call.message.chat.id,
-        message_id=call.message.message_id,
-        text="📚 **دروس عمومی**\n\nگزینه مورد نظر رو انتخاب کن:",
-        parse_mode="Markdown",
-        reply_markup=get_references_general_menu(),
-    )
-
-  elif call.data == "sub_podcasts":
-    bot.answer_callback_query(call.id)
-    bot.edit_message_text(
-        chat_id=call.message.chat.id,
-        message_id=call.message.message_id,
-        text="🎧 **پادکست‌های تخصصی ریاضی**\n\nیکی از پادکست‌ها رو انتخاب کن:",
-        parse_mode="Markdown",
-        reply_markup=get_podcasts_list_menu(),
-    )
-
-  elif call.data == "sub_magazines":
-    bot.answer_callback_query(call.id)
-    bot.edit_message_text(
-        chat_id=call.message.chat.id,
-        message_id=call.message.message_id,
-        text="📚 **نشریات علمی دلتا**\n\nشماره مورد نظر رو انتخاب کن:",
-        parse_mode="Markdown",
-        reply_markup=get_magazines_list_menu(),
-    )
-
-  elif call.data.startswith("podcast_"):
-    bot.answer_callback_query(call.id)
-    idx = int(call.data.split("_")[1])
-    pod = PODCASTS_DATA[idx]
-
-    if pod.get("is_multi"):
-      for f_id in pod["file_ids"]:
-        if f_id.startswith("FILE_ID_"):
-          bot.send_message(
-              call.message.chat.id,
-              f"🎧 **{pod['name']}**\n(فایل صوتی هنوز بارگذاری نشده است)",
-          )
+    if call.data == "check_sub_again":
+        if check_subscription(user_id):
+            bot.answer_callback_query(call.id, "✅ عضویتت تأیید شد!")
+            bot.edit_message_text(
+                chat_id=call.message.chat.id,
+                message_id=call.message.message_id,
+                text=(
+                    "🎉 دمت گرم که عضو شدی! حالا از منوی پایین صفحه می‌تونی راحت کارتو"
+                    " پیش ببری 👇"
+                ),
+            )
+            bot.send_message(
+                call.message.chat.id,
+                "منوی اصلی ربات:",
+                reply_markup=get_main_reply_keyboard(),
+            )
         else:
-          bot.send_audio(
-              call.message.chat.id, f_id, caption=f"🎧 {pod['name']}"
-          )
-    else:
-      if pod["file_id"].startswith("FILE_ID_"):
+            bot.answer_callback_query(
+                call.id, "❌ هنوزه تو کانال عضو نشدی که!", show_alert=True
+            )
+        return
+
+    elif call.data == "menu_useful_links":
+        bot.answer_callback_query(call.id)
+        bot.edit_message_text(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            text="🔗 **لینک‌های مفید دانشگاه و انجمن**\n\nبخش مورد نظر رو انتخاب کن:",
+            parse_mode="Markdown",
+            reply_markup=get_useful_links_main_menu(),
+        )
+
+    elif call.data == "links_sru_sites":
+        bot.answer_callback_query(call.id)
+        bot.edit_message_text(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            text="🏛️ **سایت‌های دانشگاه تربیت دبیر شهید رجائی**\n\nسامانه مورد نظر رو انتخاب کن:",
+            parse_mode="Markdown",
+            reply_markup=get_useful_links_sru_sites_menu(),
+        )
+
+    elif call.data == "links_uni_channels":
+        bot.answer_callback_query(call.id)
+        bot.edit_message_text(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            text="📢 **کانال‌های رسمی دانشگاه**\n\nکانال مورد نظر رو انتخاب کن:",
+            parse_mode="Markdown",
+            reply_markup=get_useful_links_uni_channels_menu(),
+        )
+
+    elif call.data == "links_student_channels":
+        bot.answer_callback_query(call.id)
+        bot.edit_message_text(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            text="👥 **کانال‌های دانشجویی**\n\nکانال مورد نظر رو انتخاب کن:",
+            parse_mode="Markdown",
+            reply_markup=get_useful_links_student_channels_menu(),
+        )
+
+    elif call.data == "menu_podcasts":
+        bot.answer_callback_query(call.id)
+        bot.edit_message_text(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            text="🎙 **نشریات و پادکست‌های انجمن علمی ریاضی**\n\nبخش مورد نظر رو انتخاب کن:",
+            parse_mode="Markdown",
+            reply_markup=get_podcasts_magazines_menu(),
+        )
+
+    elif call.data == "menu_references":
+        bot.answer_callback_query(call.id)
+        bot.edit_message_text(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            text="📖 **منابع و رفرنس‌های درسی**\n\nدسته بندی مورد نظر رو انتخاب کن:",
+            parse_mode="Markdown",
+            reply_markup=get_references_main_menu(),
+        )
+
+    elif call.data == "ref_specialized":
+        bot.answer_callback_query(call.id)
+        bot.edit_message_text(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            text="📐 **دروس تخصصی ریاضی**\n\nدرس مورد نظر رو انتخاب کن:",
+            parse_mode="Markdown",
+            reply_markup=get_references_specialized_menu(),
+        )
+
+    elif call.data == "ref_general":
+        bot.answer_callback_query(call.id)
+        bot.edit_message_text(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            text="📚 **دروس عمومی**\n\nگزینه مورد نظر رو انتخاب کن:",
+            parse_mode="Markdown",
+            reply_markup=get_references_general_menu(),
+        )
+
+    elif call.data == "sub_podcasts":
+        bot.answer_callback_query(call.id)
+        bot.edit_message_text(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            text="🎧 **پادکست‌های تخصصی ریاضی**\n\nیکی از پادکست‌ها رو انتخاب کن:",
+            parse_mode="Markdown",
+            reply_markup=get_podcasts_list_menu(),
+        )
+
+    elif call.data == "sub_magazines":
+        bot.answer_callback_query(call.id)
+        bot.edit_message_text(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            text="📚 **نشریات علمی دلتا**\n\nشماره مورد نظر رو انتخاب کن:",
+            parse_mode="Markdown",
+            reply_markup=get_magazines_list_menu(),
+        )
+
+    elif call.data.startswith("podcast_"):
+        bot.answer_callback_query(call.id)
+        idx = int(call.data.split("_")[1])
+        pod = PODCASTS_DATA[idx]
+
+        if pod.get("is_multi"):
+            for f_id in pod["file_ids"]:
+                if f_id.startswith("FILE_ID_"):
+                    bot.send_message(
+                        call.message.chat.id,
+                        f"🎧 **{pod['name']}**\n(فایل صوتی هنوز بارگذاری نشده است)",
+                    )
+                else:
+                    bot.send_audio(
+                        call.message.chat.id, f_id, caption=f"🎧 {pod['name']}"
+                    )
+        else:
+            if pod["file_id"].startswith("FILE_ID_"):
+                bot.send_message(
+                    call.message.chat.id,
+                    f"🎧 **{pod['name']}**\n(فایل صوتی هنوز بارگذاری نشده است)",
+                )
+            else:
+                bot.send_audio(
+                    call.message.chat.id,
+                    pod["file_id"],
+                    caption=f"🎧 {pod['name']}",
+                )
+
+    elif call.data.startswith("magazine_"):
+        bot.answer_callback_query(call.id)
+        idx = int(call.data.split("_")[1])
+        mag = MAGAZINES_DATA[idx]
+        if mag["file_id"].startswith("FILE_ID_"):
+            bot.send_message(
+                call.message.chat.id,
+                f"📄 **{mag['name']}**\n(فایل نشریه هنوز بارگذاری نشده است)",
+            )
+        else:
+            bot.send_document(
+                call.message.chat.id, mag["file_id"], caption=f"📄 {mag['name']}"
+            )
+
+    elif call.data == "back_to_main":
+        bot.answer_callback_query(call.id)
+        bot.delete_message(call.message.chat.id, call.message.message_id)
         bot.send_message(
             call.message.chat.id,
-            f"🎧 **{pod['name']}**\n(فایل صوتی هنوز بارگذاری نشده است)",
-        )
-      else:
-        bot.send_audio(
-            call.message.chat.id,
-            pod["file_id"],
-            caption=f"🎧 {pod['name']}",
+            "🏠 برگشتیم به منوی اصلی:",
+            reply_markup=get_main_reply_keyboard(),
         )
 
-  elif call.data.startswith("magazine_"):
-    bot.answer_callback_query(call.id)
-    idx = int(call.data.split("_")[1])
-    mag = MAGAZINES_DATA[idx]
-    if mag["file_id"].startswith("FILE_ID_"):
-      bot.send_message(
-          call.message.chat.id,
-          f"📄 **{mag['name']}**\n(فایل نشریه هنوز بارگذاری نشده است)",
-      )
-    else:
-      bot.send_document(
-          call.message.chat.id, mag["file_id"], caption=f"📄 {mag['name']}"
-      )
+    elif call.data in CHARTS_DATA:
+        bot.answer_callback_query(call.id)
+        item = CHARTS_DATA[call.data]
+        if item["file_id"].startswith("FILE_ID_"):
+            bot.send_message(
+                call.message.chat.id,
+                f"🔸 {item['title']}\n(فایل این بخش هنوز بارگذاری نشده است)",
+            )
+        else:
+            bot.send_document(
+                call.message.chat.id, item["file_id"], caption=f"📄 {item['title']}"
+            )
 
-  elif call.data == "back_to_main":
-    bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
-    bot.send_message(
-        call.message.chat.id,
-        "🏠 برگشتیم به منوی اصلی:",
-        reply_markup=get_main_reply_keyboard(),
-    )
-
-  elif call.data in CHARTS_DATA:
-    bot.answer_callback_query(call.id)
-    item = CHARTS_DATA[call.data]
-    if item["file_id"].startswith("FILE_ID_"):
-      bot.send_message(
-          call.message.chat.id,
-          f"🔸 {item['title']}\n(فایل این بخش هنوز بارگذاری نشده است)",
-      )
-    else:
-      bot.send_document(
-          call.message.chat.id, item["file_id"], caption=f"📄 {item['title']}"
-      )
-
-  elif call.data in VIDEOS_DATA:
-    bot.answer_callback_query(call.id)
-    course = VIDEOS_DATA[call.data]
-    bot.send_message(
-        call.message.chat.id,
-        f"🎥 فایل‌های ویدیویی درس **{course['title']}**:",
-        parse_mode="Markdown",
-    )
-    for vid in course["items"]:
-      if vid["file_id"].startswith("FILE_ID_"):
+    elif call.data in VIDEOS_DATA:
+        bot.answer_callback_query(call.id)
+        course = VIDEOS_DATA[call.data]
         bot.send_message(
             call.message.chat.id,
-            f"🔸 {vid['name']} (فایل ویدیو هنوز بارگذاری نشده است)",
+            f"🎥 فایل‌های ویدیویی درس **{course['title']}**:",
+            parse_mode="Markdown",
         )
-      else:
-        bot.send_video(
-            call.message.chat.id, vid["file_id"], caption=f"🎥 {vid['name']}"
-        )
+        for vid in course["items"]:
+            if vid["file_id"].startswith("FILE_ID_"):
+                bot.send_message(
+                    call.message.chat.id,
+                    f"🔸 {vid['name']} (فایل ویدیو هنوز بارگذاری نشده است)",
+                )
+            else:
+                bot.send_video(
+                    call.message.chat.id, vid["file_id"], caption=f"🎥 {vid['name']}"
+                )
 
-  elif call.data in BOOKS_DATA:
-    bot.answer_callback_query(call.id)
-    course = BOOKS_DATA[call.data]
-    bot.send_message(
-        call.message.chat.id,
-        f"📁 جزوات مربوط به درس **{course['title']}**:",
-        parse_mode="Markdown",
-    )
-    for file_info in course["files"]:
-      if file_info["file_id"].startswith("FILE_ID_"):
+    elif call.data in BOOKS_DATA:
+        bot.answer_callback_query(call.id)
+        course = BOOKS_DATA[call.data]
         bot.send_message(
             call.message.chat.id,
-            f"🔸 {file_info['name']} (فایل هنوز بارگذاری نشده است)",
+            f"📁 جزوات مربوط به درس **{course['title']}**:",
+            parse_mode="Markdown",
         )
-      else:
-        bot.send_document(
-            call.message.chat.id,
-            file_info["file_id"],
-            caption=f"📁 {file_info['name']}",
-        )
+        for file_info in course["files"]:
+            if file_info["file_id"].startswith("FILE_ID_"):
+                bot.send_message(
+                    call.message.chat.id,
+                    f"🔸 {file_info['name']} (فایل هنوز بارگذاری نشده است)",
+                )
+            else:
+                bot.send_document(
+                    call.message.chat.id,
+                    file_info["file_id"],
+                    caption=f"📁 {file_info['name']}",
+                )
 
-  elif call.data in REFERENCES_SPECIALIZED or call.data in REFERENCES_GENERAL:
-    bot.answer_callback_query(call.id)
-    ref_dict = {**REFERENCES_SPECIALIZED, **REFERENCES_GENERAL}
-    course = ref_dict[call.data]
-    bot.send_message(
-        call.message.chat.id,
-        f"📖 رفرنس و منبع مربوط به **{course['title']}**:",
-        parse_mode="Markdown",
-    )
-    for file_info in course["files"]:
-      if file_info["file_id"].startswith("FILE_ID_"):
+    elif call.data in REFERENCES_SPECIALIZED or call.data in REFERENCES_GENERAL:
+        bot.answer_callback_query(call.id)
+        ref_dict = {**REFERENCES_SPECIALIZED, **REFERENCES_GENERAL}
+        course = ref_dict[call.data]
         bot.send_message(
             call.message.chat.id,
-            f"🔸 {file_info['name']} (فایل هنوز بارگذاری نشده است)",
+            f"📖 رفرنس و منبع مربوط به **{course['title']}**:",
+            parse_mode="Markdown",
         )
-      else:
-        bot.send_document(
-            call.message.chat.id,
-            file_info["file_id"],
-            caption=f"📖 {file_info['name']}",
-        )
+        for file_info in course["files"]:
+            if file_info["file_id"].startswith("FILE_ID_"):
+                bot.send_message(
+                    call.message.chat.id,
+                    f"🔸 {file_info['name']} (فایل هنوز بارگذاری نشده است)",
+                )
+            else:
+                bot.send_document(
+                    call.message.chat.id,
+                    file_info["file_id"],
+                    caption=f"📖 {file_info['name']}",
+                )
 
 
 # ==========================================
@@ -694,82 +828,81 @@ def handle_callback(call):
     ]
 )
 def handle_reply_keyboard_buttons(message):
-  user_id = message.from_user.id
-  if not check_subscription(user_id):
-    bot.send_message(
-        message.chat.id,
-        "❌ رفیق اول باید تو کانال عضو بشی!",
-        reply_markup=get_join_channel_menu(),
-    )
-    return
+    user_id = message.from_user.id
+    if not check_subscription(user_id):
+        bot.send_message(
+            message.chat.id,
+            "❌ رفیق اول باید تو کانال عضو بشی!",
+            reply_markup=get_join_channel_menu(),
+        )
+        return
 
-  text = message.text
+    text = message.text
 
-  if text == "📚 چارت‌های درسی":
-    bot.send_message(
-        message.chat.id,
-        "📚 **بخش چارت‌های درسی و برنامه‌ها**\n\nگزینه مورد نظر خودت رو انتخاب کن:",
-        parse_mode="Markdown",
-        reply_markup=get_chart_menu(),
-    )
+    if text == "📚 چارت‌های درسی":
+        bot.send_message(
+            message.chat.id,
+            "📚 **بخش چارت‌های درسی و برنامه‌ها**\n\nگزینه مورد نظر خودت رو انتخاب کن:",
+            parse_mode="Markdown",
+            reply_markup=get_chart_menu(),
+        )
 
-  elif text == "🎬 ویدیوهای آموزشی":
-    bot.send_message(
-        message.chat.id,
-        "🎬 **بخش ویدیوهای آموزشی**\n\nدرس مد نظرت رو انتخاب کن:",
-        parse_mode="Markdown",
-        reply_markup=get_videos_menu(),
-    )
+    elif text == "🎬 ویدیوهای آموزشی":
+        bot.send_message(
+            message.chat.id,
+            "🎬 **بخش ویدیوهای آموزشی**\n\nدرس مد نظرت رو انتخاب کن:",
+            parse_mode="Markdown",
+            reply_markup=get_videos_menu(),
+        )
 
-  elif text == "📄 جزوات":
-    bot.send_message(
-        message.chat.id,
-        "📄 **بانک جزوات ریاضی**\n\nکدوم درس رو نیاز داری؟",
-        parse_mode="Markdown",
-        reply_markup=get_handouts_menu(),
-    )
+    elif text == "📄 جزوات":
+        bot.send_message(
+            message.chat.id,
+            "📄 **بانک جزوات ریاضی**\n\nکدوم درس رو نیاز داری؟",
+            parse_mode="Markdown",
+            reply_markup=get_handouts_menu(),
+        )
 
-  elif text == "📖 منابع و رفرنس":
-    bot.send_message(
-        message.chat.id,
-        "📖 **بخش منابع و رفرنس‌ها**\n\nدسته بندی مورد نظر رو انتخاب کن:",
-        parse_mode="Markdown",
-        reply_markup=get_references_main_menu(),
-    )
+    elif text == "📖 منابع و رفرنس":
+        bot.send_message(
+            message.chat.id,
+            "📖 **بخش منابع و رفرنس‌ها**\n\nدسته بندی مورد نظر رو انتخاب کن:",
+            parse_mode="Markdown",
+            reply_markup=get_references_main_menu(),
+        )
 
-  elif text == "🎙️ نشریات و پادکست":
-    bot.send_message(
-        message.chat.id,
-        "🎙 **نشریات و پادکست‌های انجمن علمی ریاضی**\n\nبخش مورد نظر رو انتخاب کن:",
-        parse_mode="Markdown",
-        reply_markup=get_podcasts_magazines_menu(),
-    )
+    elif text == "🎙️ نشریات و پادکست":
+        bot.send_message(
+            message.chat.id,
+            "🎙 **نشریات و پادکست‌های انجمن علمی ریاضی**\n\nبخش مورد نظر رو انتخاب کن:",
+            parse_mode="Markdown",
+            reply_markup=get_podcasts_magazines_menu(),
+        )
 
-  elif text == "🔗 لینک‌های مفید":
-    bot.send_message(
-        message.chat.id,
-        "🔗 **لینک‌های مهم و کاربردی دانشگاه:**\n\nسامانه مورد نظر رو انتخاب"
-        " کن:",
-        parse_mode="Markdown",
-        reply_markup=get_useful_links_menu(),
-    )
+    elif text == "🔗 لینک‌های مفید":
+        bot.send_message(
+            message.chat.id,
+            "🔗 **لینک‌های مهم و کاربردی دانشگاه:**\n\nبخش مورد نظر رو انتخاب کن:",
+            parse_mode="Markdown",
+            reply_markup=get_useful_links_main_menu(),
+        )
 
-  elif text == "📞 پشتیبانی و ارسال فایل":
-    sup_text = (
-        "📞 **ارتباط با پشتیبانی و ارسال فایل**\n\nهر گونه پیشنهاد، انتقاد یا"
-        " فایلی داری بفرست تا به دست ادمین برسه: 👇"
-    )
-    sent_msg = bot.send_message(message.chat.id, sup_text, parse_mode="Markdown")
-    bot.register_next_step_handler(sent_msg, receive_user_file_or_message)
+    elif text == "📞 پشتیبانی و ارسال فایل":
+        sup_text = (
+            "📞 **ارتباط با پشتیبانی و ارسال فایل**\n\nهر گونه پیشنهاد، انتقاد یا"
+            " فایلی داری بفرست تا به دست ادمین برسه: 👇"
+        )
+        sent_msg = bot.send_message(message.chat.id, sup_text, parse_mode="Markdown")
+        bot.register_next_step_handler(sent_msg, receive_user_file_or_message)
 
-  elif text == "☎️ راه‌های ارتباطی":
-    comm_text = (
-        "☎️ **راه‌های ارتباطی با انجمن علمی ریاضی:**\n\n"
-        f"📢 کانال تلگرام: {CHANNEL_USERNAME}\n"
-        "💬 ارتباط با ادمین: @Admin_Username\n"
-        "🌐 ایمیل انجمن: math.association@sru.ac.ir"
-    )
-    bot.send_message(message.chat.id, comm_text, parse_mode="Markdown")
+    elif text == "☎️ راه‌های ارتباطی":
+        comm_text = (
+            "☎️ **راه‌های ارتباطی با انجمن علمی ریاضی:**\n\n"
+            f"📢 کانال تلگرام: {CHANNEL_USERNAME}\n"
+            "💬 ارتباط با ادمین: @Admin_Username\n"
+            "🌐 ایمیل انجمن: math.association@sru.ac.ir"
+        )
+        bot.send_message(message.chat.id, comm_text, parse_mode="Markdown")
 
 
 # ==========================================
@@ -779,55 +912,55 @@ def handle_reply_keyboard_buttons(message):
     content_types=["photo", "document", "video", "audio", "voice"]
 )
 def get_file_id_for_admin(message):
-  if message.from_user.id == ADMIN_ID:
-    if message.photo:
-      file_id = message.photo[-1].file_id
-      file_type = "عکس (Photo)"
-    elif message.document:
-      file_id = message.document.file_id
-      file_type = "سند/فایل (Document)"
-    elif message.video:
-      file_id = message.video.file_id
-      file_type = "ویدیو (Video)"
-    elif message.audio:
-      file_id = message.audio.file_id
-      file_type = "فایل صوتی / پادکست (Audio)"
-    elif message.voice:
-      file_id = message.voice.file_id
-      file_type = "وویس (Voice)"
-    else:
-      return
+    if message.from_user.id == ADMIN_ID:
+        if message.photo:
+            file_id = message.photo[-1].file_id
+            file_type = "عکس (Photo)"
+        elif message.document:
+            file_id = message.document.file_id
+            file_type = "سند/فایل (Document)"
+        elif message.video:
+            file_id = message.video.file_id
+            file_type = "ویدیو (Video)"
+        elif message.audio:
+            file_id = message.audio.file_id
+            file_type = "فایل صوتی / پادکست (Audio)"
+        elif message.voice:
+            file_id = message.voice.file_id
+            file_type = "وویس (Voice)"
+        else:
+            return
 
-    response_text = (
-        f"✅ فایل‌آیدیِ این {file_type}:\n\n`{file_id}`\n\n(برای کپی کردن کافیست"
-        " روی متن بالا ضربه بزنید)"
-    )
-    bot.reply_to(message, response_text, parse_mode="Markdown")
-  else:
-    receive_user_file_or_message(message)
+        response_text = (
+            f"✅ فایل‌آیدیِ این {file_type}:\n\n`{file_id}`\n\n(برای کپی کردن کافیست"
+            " روی متن بالا ضربه بزنید)"
+        )
+        bot.reply_to(message, response_text, parse_mode="Markdown")
+    else:
+        receive_user_file_or_message(message)
 
 
 def receive_user_file_or_message(message):
-  if message.text == "/start":
-    send_welcome(message)
-    return
+    if message.text == "/start":
+        send_welcome(message)
+        return
 
-  user_id = message.from_user.id
-  user_name = message.from_user.first_name
-  header_text = f"📩 پیام یا فایل جدید از طرف: [{user_name}](tg://user?id={user_id})\nشناسه کاربر: `{user_id}`"
+    user_id = message.from_user.id
+    user_name = message.from_user.first_name
+    header_text = f"📩 پیام یا فایل جدید از طرف: [{user_name}](tg://user?id={user_id})\nشناسه کاربر: `{user_id}`"
 
-  try:
-    bot.send_message(ADMIN_ID, header_text, parse_mode="Markdown")
-    bot.forward_message(ADMIN_ID, message.chat.id, message.message_id)
-    bot.reply_to(
-        message, "✅ پیام یا فایل شما با موفقیت به دست ادمین رسید. مرسی! 🌹"
-    )
-  except Exception as e:
-    bot.reply_to(message, "❌ خطا در ارسال پیام به ادمین.")
-    print(f"Error: {e}")
+    try:
+        bot.send_message(ADMIN_ID, header_text, parse_mode="Markdown")
+        bot.forward_message(ADMIN_ID, message.chat.id, message.message_id)
+        bot.reply_to(
+            message, "✅ پیام یا فایل شما با موفقیت به دست ادمین رسید. مرسی! 🌹"
+        )
+    except Exception as e:
+        bot.reply_to(message, "❌ خطا در ارسال پیام به ادمین.")
+        print(f"Error: {e}")
 
 
 # اجرای اصلی ربات
 if __name__ == "__main__":
-  print("Bot is running and waiting for messages...")
-  bot.infinity_polling()
+    print("Bot is running and waiting for messages...")
+    bot.infinity_polling()
