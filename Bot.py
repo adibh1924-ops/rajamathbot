@@ -115,7 +115,7 @@ BOOKS_DATA = {
     },
 }
 
-# منابع و رفرنس‌ها - دروس تخصصی ریاضی (با رعایت ترتیب مبانی آمار و مبانی احتمال پشت سر هم و تغییر نام آنالیز ریاضی ۱ به آنالیز ریاضی)
+# منابع و رفرنس‌ها - دروس تخصصی ریاضی
 REFERENCES_SPECIALIZED = {
     "ref_statistics_basis": {
         "title": "مبانی آمار",
@@ -340,7 +340,7 @@ REFERENCES_EDUCATIONAL = {
     },
 }
 
-# کتب درسی ریاضی متوسطه (متوسطه اول و دوم با زیرمجموعه‌ها - هرکدام دو فایل)
+# کتب درسی ریاضی متوسطه
 HIGH_SCHOOL_MATH = {
     "middle_school": {
         "title": "متوسطه اول",
@@ -356,82 +356,115 @@ HIGH_SCHOOL_MATH = {
                 "title": "هشتم",
                 "files": [
                     {"name": "📚 کتاب ریاضی هشتم", "file_id": "BQACAgQAAxkBAAIC8Wpy9kpbJp5R-x5Y7QOq7i_u1BemAAI6FQACXUUhU1RRrvath3-IPQQ"},
-                    {"name": "📚 راهنمای معلم ریاضی هشتم  ", "file_id": "BQACAgQAAxkBAAIC82py9lNJR79JKfZ_AhNl7WlAD7C4AAJSFQACXUUhU3V7xmHsLMpMPQQ"},
+                    {"name": "📚 راهنمای معلم ریاضی هشتم", "file_id": "BQACAgQAAxkBAAIC82py9lNJR79JKfZ_AhNl7WlAD7C4AAJSFQACXUUhU3V7xmHsLMpMPQQ"},
                 ],
             },
             "grade_9": {
                 "title": "نهم",
                 "files": [
-                    {"name": "📚 کتاب ریاضی نهم ", "file_id": "BQACAgQAAxkBAAIC9Wpy9lmcBCALYYshRxCmk5JvI6lDAAI8FQACXUUhU_eQGvFQNY4bPQQ"},
-                    {"name": "📚 راهنمای معلم ریاضی نهم  ", "file_id": "BQACAgQAAxkBAAIC92py9l-W2b7dUUvioB2LqboBpDsDAAJHFQACXUUhUxLBPgRv1eLBPQQ"},
+                    {"name": "📚 کتاب ریاضی نهم", "file_id": "BQACAgQAAxkBAAIC9Wpy9lmcBCALYYshRxCmk5JvI6lDAAI8FQACXUUhU_eQGvFQNY4bPQQ"},
+                    {"name": "📚 راهنمای معلم ریاضی نهم", "file_id": "BQACAgQAAxkBAAIC92py9l-W2b7dUUvioB2LqboBpDsDAAJHFQACXUUhUxLBPgRv1eLBPQQ"},
                 ],
             },
         },
     },
-    "high_school": {
+    "high_school_fields": {
         "title": "متوسطه دوم",
-        "sub_items": {
-            "10_math_exp": {
-                "title": "دهم ریاضی و تجربی",
-                "files": [
-                    {"name": "📚 کتاب ریاضی ۱ دهم ریاضی و تجربی - فایل ۱", "file_id": "FILE_ID_MATH_10_ME_1"},
-                    {"name": "📚 کتاب ریاضی ۱ دهم ریاضی و تجربی - فایل ۲", "file_id": "FILE_ID_MATH_10_ME_2"},
-                ],
+        "streams": {
+            "experimental": {
+                "title": "رشته علوم تجربی",
+                "sub_items": {
+                    "10_exp": {
+                        "title": "ریاضی دهم تجربی",
+                        "files": [
+                            {"name": "📚 کتاب ریاضی دهم تجربی - فایل ۱", "file_id": "FILE_ID_MATH_10_E_1"},
+                            {"name": "📚 کتاب ریاضی دهم تجربی - فایل ۲", "file_id": "FILE_ID_MATH_10_E_2"},
+                        ],
+                    },
+                    "11_exp": {
+                        "title": "ریاضی یازدهم تجربی",
+                        "files": [
+                            {"name": "📚 کتاب ریاضی یازدهم تجربی - فایل ۱", "file_id": "FILE_ID_MATH_11_E_1"},
+                            {"name": "📚 کتاب ریاضی یازدهم تجربی - فایل ۲", "file_id": "FILE_ID_MATH_11_E_2"},
+                        ],
+                    },
+                    "12_exp": {
+                        "title": "ریاضی دوازدهم تجربی",
+                        "files": [
+                            {"name": "📚 کتاب ریاضی دوازدهم تجربی - فایل ۱", "file_id": "FILE_ID_MATH_12_E_1"},
+                            {"name": "📚 کتاب ریاضی دوازدهم تجربی - فایل ۲", "file_id": "FILE_ID_MATH_12_E_2"},
+                        ],
+                    },
+                },
             },
-            "10_humanities": {
-                "title": "دهم انسانی",
-                "files": [
-                    {"name": "📚 کتاب ریاضی و آمار ۱ دهم انسانی - فایل ۱", "file_id": "FILE_ID_MATH_10_HUM_1"},
-                    {"name": "📚 کتاب ریاضی و آمار ۱ دهم انسانی - فایل ۲", "file_id": "FILE_ID_MATH_10_HUM_2"},
-                ],
+            "mathematics": {
+                "title": "رشته ریاضی و فیزیک",
+                "sub_items": {
+                    "10_math": {
+                        "title": "ریاضی دهم",
+                        "files": [{"name": "📚 کتاب ریاضی دهم ریاضی", "file_id": "FILE_ID_MATH_10_M"}],
+                    },
+                    "10_geometry": {
+                        "title": "هندسه دهم",
+                        "files": [{"name": "📚 کتاب هندسه دهم", "file_id": "FILE_ID_GEO_10"}],
+                    },
+                    "11_calculus": {
+                        "title": "حسابان یازدهم",
+                        "files": [{"name": "📚 کتاب حسابان یازدهم", "file_id": "FILE_ID_CALC_11"}],
+                    },
+                    "11_geometry": {
+                        "title": "هندسه یازدهم",
+                        "files": [{"name": "📚 کتاب هندسه یازدهم", "file_id": "FILE_ID_GEO_11"}],
+                    },
+                    "11_stats": {
+                        "title": "آمار و احتمال یازدهم",
+                        "files": [{"name": "📚 کتاب آمار و احتمال یازدهم", "file_id": "FILE_ID_STATS_11"}],
+                    },
+                    "12_calculus": {
+                        "title": "حسابان دوازدهم",
+                        "files": [{"name": "📚 کتاب حسابان دوازدهم", "file_id": "FILE_ID_CALC_12"}],
+                    },
+                    "12_geometry": {
+                        "title": "هندسه دوازدهم",
+                        "files": [{"name": "📚 کتاب هندسه دوازدهم", "file_id": "FILE_ID_GEO_12"}],
+                    },
+                    "12_discrete": {
+                        "title": "ریاضیات گسسته دوازدهم",
+                        "files": [{"name": "📚 کتاب ریاضیات گسسته دوازدهم", "file_id": "FILE_ID_DISC_12"}],
+                    },
+                },
             },
-            "11_math": {
-                "title": "یازدهم ریاضی",
-                "files": [
-                    {"name": "📚 کتاب‌های ریاضی یازدهم ریاضی - فایل ۱", "file_id": "FILE_ID_MATH_11_M_1"},
-                    {"name": "📚 کتاب‌های ریاضی یازدهم ریاضی - فایل ۲", "file_id": "FILE_ID_MATH_11_M_2"},
-                ],
-            },
-            "11_exp": {
-                "title": "یازدهم تجربی",
-                "files": [
-                    {"name": "📚 کتاب ریاضی یازدهم تجربی - فایل ۱", "file_id": "FILE_ID_MATH_11_E_1"},
-                    {"name": "📚 کتاب ریاضی یازدهم تجربی - فایل ۲", "file_id": "FILE_ID_MATH_11_E_2"},
-                ],
-            },
-            "11_humanities": {
-                "title": "یازدهم انسانی",
-                "files": [
-                    {"name": "📚 کتاب ریاضی و آمار ۲ یازدهم انسانی - فایل ۱", "file_id": "FILE_ID_MATH_11_HUM_1"},
-                    {"name": "📚 کتاب ریاضی و آمار ۲ یازدهم انسانی - فایل ۲", "file_id": "FILE_ID_MATH_11_HUM_2"},
-                ],
-            },
-            "12_math": {
-                "title": "دوازدهم ریاضی",
-                "files": [
-                    {"name": "📚 کتاب‌های ریاضی دوازدهم ریاضی - فایل ۱", "file_id": "FILE_ID_MATH_12_M_1"},
-                    {"name": "📚 کتاب‌های ریاضی دوازدهم ریاضی - فایل ۲", "file_id": "FILE_ID_MATH_12_M_2"},
-                ],
-            },
-            "12_exp": {
-                "title": "دوازدهم تجربی",
-                "files": [
-                    {"name": "📚 کتاب ریاضی دوازدهم تجربی - فایل ۱", "file_id": "FILE_ID_MATH_12_E_1"},
-                    {"name": "📚 کتاب ریاضی دوازدهم تجربی - فایل ۲", "file_id": "FILE_ID_MATH_12_E_2"},
-                ],
-            },
-            "12_humanities": {
-                "title": "دوازدهم انسانی",
-                "files": [
-                    {"name": "📚 کتاب ریاضی و آمار ۳ دوازدهم انسانی - فایل ۱", "file_id": "FILE_ID_MATH_12_HUM_1"},
-                    {"name": "📚 کتاب ریاضی و آمار ۳ دوازدهم انسانی - فایل ۲", "file_id": "FILE_ID_MATH_12_HUM_2"},
-                ],
+            "humanities": {
+                "title": "رشته علوم انسانی",
+                "sub_items": {
+                    "10_humanities": {
+                        "title": "ریاضی و آمار دهم",
+                        "files": [
+                            {"name": "📚 کتاب ریاضی و آمار ۱ دهم انسانی - فایل ۱", "file_id": "FILE_ID_MATH_10_HUM_1"},
+                            {"name": "📚 کتاب ریاضی و آمار ۱ دهم انسانی - فایل ۲", "file_id": "FILE_ID_MATH_10_HUM_2"},
+                        ],
+                    },
+                    "11_humanities": {
+                        "title": "ریاضی و آمار یازدهم",
+                        "files": [
+                            {"name": "📚 کتاب ریاضی و آمار ۲ یازدهم انسانی - فایل ۱", "file_id": "FILE_ID_MATH_11_HUM_1"},
+                            {"name": "📚 کتاب ریاضی و آمار ۲ یازدهم انسانی - فایل ۲", "file_id": "FILE_ID_MATH_11_HUM_2"},
+                        ],
+                    },
+                    "12_humanities": {
+                        "title": "ریاضی و آمار دوازدهم",
+                        "files": [
+                            {"name": "📚 کتاب ریاضی و آمار ۳ دوازدهم انسانی - فایل ۱", "file_id": "FILE_ID_MATH_12_HUM_1"},
+                            {"name": "📚 کتاب ریاضی و آمار ۳ دوازدهم انسانی - فایل ۲", "file_id": "FILE_ID_MATH_12_HUM_2"},
+                        ],
+                    },
+                },
             },
         },
     },
 }
 
-# بخش ویدیوهای آموزشی جدید با زیربخش‌های دقیق و تعداد ویدیوهای درخواستی
+# بخش ویدیوهای آموزشی جدید بدون ریاضیات مهندسی و با بهینه‌سازی در ریاضی عمومی 1
 VIDEOS_DATA = {
     "vid_math1": {
         "title": "ریاضی عمومی ۱",
@@ -469,6 +502,14 @@ VIDEOS_DATA = {
                     {"caption": "🎥 ویدیوی شماره ۲ کاربرد انتگرال ریاضی عمومی ۱", "file_id": "BAACAgQAAxkBAAICnGpy7PFUoG1Wj5EVeDX6RDKKHXGHAALVHQACByd4U4bAlLGd0FcNPQQ"},
                     {"caption": "🎥 ویدیوی شماره ۳ کاربرد انتگرال ریاضی عمومی ۱", "file_id": "BAACAgQAAxkBAAICnmpy7PUVxbJfIo_RnZHoUg-iyuxMAALWHQACByd4U14DxELgXOiBPQQ"},
                     {"caption": "🎥 ویدیوی شماره ۴ کاربرد انتگرال ریاضی عمومی ۱", "file_id": "BAACAgQAAxkBAAICoGpy7Poq4Cqf_g1bY6UZKqg8fMz0AALXHQACByd4U3iH_n7kcJ2VPQQ"},
+                ],
+            },
+            "v_m1_optimization": {
+                "title": "بهینه سازی",
+                "count": 2,
+                "videos": [
+                    {"caption": "🎥 ویدیوی شماره ۱ بهینه سازی ریاضی عمومی ۱", "file_id": "FILE_ID_VID_M1_OPT_1"},
+                    {"caption": "🎥 ویدیوی شماره ۲ بهینه سازی ریاضی عمومی ۱", "file_id": "FILE_ID_VID_M1_OPT_2"},
                 ],
             },
         },
@@ -544,18 +585,6 @@ VIDEOS_DATA = {
                     {"caption": "🎥 مشتق و انتگرال لاپلاس (بخش دوم)", "file_id": "BAACAgQAAxkBAAICy2py7_FqBQOt4GK-QzNeP56q5odNAALTHQACByd4U0ol4Bw3JfqgPQQ"},
                 ],
             },
-        },
-    },
-    "vid_engineering_math": {
-        "title": "ریاضیات مهندسی",
-        "sub": {
-            "v_eng_general": {
-                "title": "آموزش‌های ریاضیات مهندسی",
-                "count": 1,
-                "videos": [
-                    {"caption": "🎥بهینه‌سازی (بخش اول)", "file_id": "BAACAgQAAxkBAAICzWpy7_bcdNIZy9RU00E8jbgE-rerAALYHQACByd4U2_ip1eFrg06PQQ"}
-                ],
-            }
         },
     },
 }
@@ -667,7 +696,6 @@ def get_join_channel_menu():
 
 def get_main_reply_keyboard():
     keyboard = ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
-    # استفاده از ایموجی‌های رنگی و جذاب برای 8 کلید اصلی طبق درخواست رنگ‌بندی زیبا
     btn1 = KeyboardButton("🔗 لینک‌های مفید 🔵")
     btn2 = KeyboardButton("🎙️ نشریات و پادکست 🟣")
     btn3 = KeyboardButton("🎬 ویدیوهای آموزشی 🔴")
@@ -706,7 +734,6 @@ def get_handouts_menu():
     return markup
 
 
-# منوی اصلی منابع و رفرنس شامل ۴ گزینه
 def get_references_main_menu():
     markup = InlineKeyboardMarkup()
     markup.row_width = 1
@@ -728,7 +755,6 @@ def get_references_main_menu():
     return markup
 
 
-# دروس تخصصی ریاضی
 def get_references_specialized_menu():
     markup = InlineKeyboardMarkup()
     markup.row_width = 2
@@ -738,7 +764,6 @@ def get_references_specialized_menu():
     return markup
 
 
-# دروس عمومی
 def get_references_general_menu():
     markup = InlineKeyboardMarkup()
     markup.row_width = 2
@@ -748,7 +773,6 @@ def get_references_general_menu():
     return markup
 
 
-# دروس تربیتی
 def get_references_educational_menu():
     markup = InlineKeyboardMarkup()
     markup.row_width = 2
@@ -758,17 +782,17 @@ def get_references_educational_menu():
     return markup
 
 
-# منوی کتب درسی ریاضی متوسطه (متوسطه اول و متوسطه دوم)
 def get_high_school_math_menu():
     markup = InlineKeyboardMarkup()
     markup.row_width = 1
-    for key, val in HIGH_SCHOOL_MATH.items():
-        markup.add(InlineKeyboardButton(f"📚 {val['title']}", callback_data=f"hs_{key}"))
-    markup.add(InlineKeyboardButton("🔙 بازگشت", callback_data="menu_references"))
+    markup.add(
+        InlineKeyboardButton(f"📚 {HIGH_SCHOOL_MATH['middle_school']['title']}", callback_data="hs_middle_school"),
+        InlineKeyboardButton(f"📚 {HIGH_SCHOOL_MATH['high_school_fields']['title']}", callback_data="hs_high_school"),
+        InlineKeyboardButton("🔙 بازگشت", callback_data="menu_references"),
+    )
     return markup
 
 
-# زیرمجموعه متوسطه اول (هفتم، هشتم، نهم)
 def get_middle_school_menu():
     markup = InlineKeyboardMarkup()
     markup.row_width = 1
@@ -778,17 +802,25 @@ def get_middle_school_menu():
     return markup
 
 
-# زیرمجموعه متوسطه دوم
-def get_high_school_sub_menu():
+def get_high_school_streams_menu():
     markup = InlineKeyboardMarkup()
     markup.row_width = 1
-    for key, val in HIGH_SCHOOL_MATH["high_school"]["sub_items"].items():
-        markup.add(InlineKeyboardButton(f"🔹 {val['title']}", callback_data=f"hs_sub_{key}"))
+    for stream_key, stream_val in HIGH_SCHOOL_MATH["high_school_fields"]["streams"].items():
+        markup.add(InlineKeyboardButton(f"🔹 {stream_val['title']}", callback_data=f"hs_stream_{stream_key}"))
     markup.add(InlineKeyboardButton("🔙 بازگشت", callback_data="ref_high_school_math"))
     return markup
 
 
-# منوی ویدیوهای آموزشی
+def get_high_school_sub_menu(stream_key):
+    markup = InlineKeyboardMarkup()
+    markup.row_width = 1
+    stream_data = HIGH_SCHOOL_MATH["high_school_fields"]["streams"][stream_key]
+    for key, val in stream_data["sub_items"].items():
+        markup.add(InlineKeyboardButton(f"🔹 {val['title']}", callback_data=f"hs_sub_{key}"))
+    markup.add(InlineKeyboardButton("🔙 بازگشت", callback_data="hs_high_school"))
+    return markup
+
+
 def get_videos_main_menu():
     markup = InlineKeyboardMarkup()
     markup.row_width = 1
@@ -800,7 +832,6 @@ def get_videos_main_menu():
     return markup
 
 
-# زیرمجموعه‌های ویدیوها برای هر درس
 def get_videos_sub_menu(main_key):
     markup = InlineKeyboardMarkup()
     markup.row_width = 1
@@ -1056,6 +1087,12 @@ def handle_callback(call):
         bot.answer_callback_query(
             call.id, "❌ اول باید تو کانال عضو بشی رفیق!", show_alert=True
         )
+        warning_text = (
+            "❌ برای دسترسی به خدمات ربات، لطفاً ابتدا در کانال انجمن عضو شوید و سپس دکمه بررسی دوباره را بزنید:"
+        )
+        bot.send_message(
+            call.message.chat.id, warning_text, reply_markup=get_join_channel_menu()
+        )
         return
 
     if call.data == "check_sub_again":
@@ -1195,9 +1232,21 @@ def handle_callback(call):
         bot.edit_message_text(
             chat_id=call.message.chat.id,
             message_id=call.message.message_id,
-            text="📚 **متوسطه دوم**\n\nرشته و پایه تحصیلی رو انتخاب کن:",
+            text="📚 **متوسطه دوم**\n\nرشته تحصیلی رو انتخاب کن:",
             parse_mode="Markdown",
-            reply_markup=get_high_school_sub_menu(),
+            reply_markup=get_high_school_streams_menu(),
+        )
+
+    elif call.data.startswith("hs_stream_"):
+        bot.answer_callback_query(call.id)
+        stream_key = call.data.replace("hs_stream_", "")
+        stream_title = HIGH_SCHOOL_MATH["high_school_fields"]["streams"][stream_key]["title"]
+        bot.edit_message_text(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            text=f"📚 **{stream_title}**\n\nپایه و درس مورد نظر رو انتخاب کن:",
+            parse_mode="Markdown",
+            reply_markup=get_high_school_sub_menu(stream_key),
         )
 
     elif call.data.startswith("hs_sub_"):
@@ -1206,8 +1255,11 @@ def handle_callback(call):
         found_item = None
         if key in HIGH_SCHOOL_MATH["middle_school"]["sub_items"]:
             found_item = HIGH_SCHOOL_MATH["middle_school"]["sub_items"][key]
-        elif key in HIGH_SCHOOL_MATH["high_school"]["sub_items"]:
-            found_item = HIGH_SCHOOL_MATH["high_school"]["sub_items"][key]
+        else:
+            for stream_key, stream_data in HIGH_SCHOOL_MATH["high_school_fields"]["streams"].items():
+                if key in stream_data["sub_items"]:
+                    found_item = stream_data["sub_items"][key]
+                    break
 
         if found_item:
             bot.send_message(
@@ -1366,7 +1418,6 @@ def handle_callback(call):
     elif call.data in BOOKS_DATA:
         bot.answer_callback_query(call.id)
         course = BOOKS_DATA[call.data]
-        # بررسی پیام‌های پیش‌فرض برای گزینه‌هایی که پیامی به زودی دارند
         if course["title"] in ["معادلات دیفرانسیل", "محاسبات عددی", "بهینه‌سازی", "زبان تخصصی"]:
             bot.send_message(call.message.chat.id, "این امکان به زودی فراهم می‌شود.")
             return
@@ -1392,7 +1443,6 @@ def handle_callback(call):
     elif call.data in REFERENCES_SPECIALIZED:
         bot.answer_callback_query(call.id)
         course = REFERENCES_SPECIALIZED[call.data]
-        # بررسی قوانین تعداد فایل‌ها برای دروس تخصصی
         title = course['title']
         if title in ["معادلات دیفرانسیل", "محاسبات عددی", "بهینه‌سازی", "زبان تخصصی"]:
             bot.send_message(call.message.chat.id, "این امکان به زودی فراهم می‌شود.")
@@ -1488,9 +1538,12 @@ def handle_callback(call):
 def handle_reply_keyboard_buttons(message):
     user_id = message.from_user.id
     if not check_subscription(user_id):
+        warning_text = (
+            "❌ برای دسترسی به خدمات ربات، لطفاً ابتدا در کانال انجمن عضو شوید و سپس دکمه بررسی دوباره را بزنید:"
+        )
         bot.send_message(
             message.chat.id,
-            "❌ رفیق اول باید تو کانال عضو بشی!",
+            warning_text,
             reply_markup=get_join_channel_menu(),
         )
         return
@@ -1541,7 +1594,7 @@ def handle_reply_keyboard_buttons(message):
         bot.send_message(
             message.chat.id,
             "🔗 **لینک‌های مهم و کاربردی دانشگاه:**\n\nبخش مورد نظر رو انتخاب کن:",
-            parse_mode="Markdown",
+            parse_Mode="Markdown",
             reply_markup=get_useful_links_main_menu(),
         )
 
@@ -1567,13 +1620,37 @@ def handle_reply_keyboard_buttons(message):
 
 
 # ==========================================
-# 📥 دریافت فایل و پیام کاربر (و استخراج file_id برای ادمین)
+# 📥 مدیریت دریافت فایل/پیام کاربر و قابلیت پاسخ ادمین
 # ==========================================
 @bot.message_handler(
-    content_types=["photo", "document", "video", "audio", "voice"]
+    content_types=["photo", "document", "video", "audio", "voice", "text"]
 )
-def get_file_id_for_admin(message):
+def handle_all_messages(message):
     if message.from_user.id == ADMIN_ID:
+        # بررسی اینکه آیا ادمین در حال پاسخ به یک کاربر است (ریپلای روی پیام ارسالی از طرف کاربر)
+        if message.reply_to_message:
+            reply_text = message.reply_to_message.text or message.reply_to_message.caption or ""
+            # تلاش برای استخراج شناسه کاربر از متن هدر ارسال شده توسط ربات
+            target_user_id = None
+            if "شناسه کاربر:" in reply_text:
+                try:
+                    lines = reply_text.split("\n")
+                    for line in lines:
+                        if "شناسه کاربر:" in line:
+                            target_user_id = int(line.replace("شناسه کاربر:", "").replace("`", "").strip())
+                except Exception as e:
+                    print(f"Error extracting user ID: {e}")
+
+            if target_user_id:
+                try:
+                    bot.copy_message(chat_id=target_user_id, from_chat_id=message.chat.id, message_id=message.message_id)
+                    bot.reply_to(message, "✅ پاسخ شما با موفقیت به کاربر ارسال شد.")
+                    return
+                except Exception as e:
+                    bot.reply_to(message, f"❌ خطا در ارسال پاسخ به کاربر: {e}")
+                    return
+
+        # اگر ادمین خودش فایل بفرستد و ریپلای نکرده باشد، فایل‌آیدی را استخراج می‌کنیم
         if message.photo:
             file_id = message.photo[-1].file_id
             file_type = "عکس (Photo)"
