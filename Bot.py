@@ -340,7 +340,7 @@ REFERENCES_EDUCATIONAL = {
     },
 }
 
-# کتب درسی ریاضی متوسطه
+# کتب درسی ریاضی متوسطه (ویرایش‌شده برای داشتن دو فایل در رشته ریاضی و فیزیک)
 HIGH_SCHOOL_MATH = {
     "middle_school": {
         "title": "متوسطه اول",
@@ -402,35 +402,59 @@ HIGH_SCHOOL_MATH = {
                 "sub_items": {
                     "10_math": {
                         "title": "ریاضی دهم",
-                        "files": [{"name": " ریاضی دهم ریاضی", "file_id": "BQACAgQAAxkBAAIDDWpy9rEsL2BZPrAHD8Pba94abzepAAI9FQACXUUhUwqZgTZsiMcQPQQ"}],
+                        "files": [
+                            {"name": "📚 کتاب ریاضی دهم ریاضی", "file_id": "BQACAgQAAxkBAAIDDWpy9rEsL2BZPrAHD8Pba94abzepAAI9FQACXUUhUwqZgTZsiMcQPQQ"},
+                            {"name": "📚 راهنمای معلم ریاضی دهم ریاضی", "file_id": "FILE_ID_MATH_10_TCH"}
+                        ],
                     },
                     "10_geometry": {
                         "title": "هندسه دهم",
-                        "files": [{"name": "📚 کتاب هندسه دهم", "file_id": "FILE_ID_GEO_10"}],
+                        "files": [
+                            {"name": "📚 کتاب هندسه دهم", "file_id": "FILE_ID_GEO_10"},
+                            {"name": "📚 راهنمای معلم هندسه دهم", "file_id": "FILE_ID_GEO_10_TCH"}
+                        ],
                     },
                     "11_calculus": {
                         "title": "حسابان یازدهم",
-                        "files": [{"name": "📚 کتاب حسابان یازدهم", "file_id": "FILE_ID_CALC_11"}],
+                        "files": [
+                            {"name": "📚 کتاب حسابان یازدهم", "file_id": "FILE_ID_CALC_11"},
+                            {"name": "📚 راهنمای معلم حسابان یازدهم", "file_id": "FILE_ID_CALC_11_TCH"}
+                        ],
                     },
                     "11_geometry": {
                         "title": "هندسه یازدهم",
-                        "files": [{"name": "📚 کتاب هندسه یازدهم", "file_id": "FILE_ID_GEO_11"}],
+                        "files": [
+                            {"name": "📚 کتاب هندسه یازدهم", "file_id": "FILE_ID_GEO_11"},
+                            {"name": "📚 راهنمای معلم هندسه یازدهم", "file_id": "FILE_ID_GEO_11_TCH"}
+                        ],
                     },
                     "11_stats": {
                         "title": "آمار و احتمال یازدهم",
-                        "files": [{"name": "📚 کتاب آمار و احتمال یازدهم", "file_id": "FILE_ID_STATS_11"}],
+                        "files": [
+                            {"name": "📚 کتاب آمار و احتمال یازدهم", "file_id": "FILE_ID_STATS_11"},
+                            {"name": "📚 راهنمای معلم آمار و احتمال یازدهم", "file_id": "FILE_ID_STATS_11_TCH"}
+                        ],
                     },
                     "12_calculus": {
                         "title": "حسابان دوازدهم",
-                        "files": [{"name": "📚 کتاب حسابان دوازدهم", "file_id": "FILE_ID_CALC_12"}],
+                        "files": [
+                            {"name": "📚 کتاب حسابان دوازدهم", "file_id": "FILE_ID_CALC_12"},
+                            {"name": "📚 راهنمای معلم حسابان دوازدهم", "file_id": "FILE_ID_CALC_12_TCH"}
+                        ],
                     },
                     "12_geometry": {
                         "title": "هندسه دوازدهم",
-                        "files": [{"name": "📚 کتاب هندسه دوازدهم", "file_id": "FILE_ID_GEO_12"}],
+                        "files": [
+                            {"name": "📚 کتاب هندسه دوازدهم", "file_id": "FILE_ID_GEO_12"},
+                            {"name": "📚 راهنمای معلم هندسه دوازدهم", "file_id": "FILE_ID_GEO_12_TCH"}
+                        ],
                     },
                     "12_discrete": {
                         "title": "ریاضیات گسسته دوازدهم",
-                        "files": [{"name": "📚 کتاب ریاضیات گسسته دوازدهم", "file_id": "FILE_ID_DISC_12"}],
+                        "files": [
+                            {"name": "📚 کتاب ریاضیات گسسته دوازدهم", "file_id": "FILE_ID_DISC_12"},
+                            {"name": "📚 راهنمای معلم ریاضیات گسسته دوازدهم", "file_id": "FILE_ID_DISC_12_TCH"}
+                        ],
                     },
                 },
             },
@@ -1594,7 +1618,7 @@ def handle_reply_keyboard_buttons(message):
         bot.send_message(
             message.chat.id,
             "🔗 **لینک‌های مهم و کاربردی دانشگاه:**\n\nبخش مورد نظر رو انتخاب کن:",
-            parse_Mode="Markdown",
+            parse_mode="Markdown",
             reply_markup=get_useful_links_main_menu(),
         )
 
