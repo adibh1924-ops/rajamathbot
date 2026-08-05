@@ -348,22 +348,22 @@ HIGH_SCHOOL_MATH = {
             "grade_7": {
                 "title": "هفتم",
                 "files": [
-                    {"name": "📚 کتاب ریاضی هفتم - بخش اول", "file_id": "FILE_ID_MATH_7_1"},
-                    {"name": "📚 کتاب ریاضی هفتم - بخش دوم", "file_id": "FILE_ID_MATH_7_2"},
+                    {"name": "📚 کتاب ریاضی هفتم", "file_id": "BQACAgQAAxkBAAIC6mpy9iWHmTmHsu8FLhypYYgS6T9NAAI5FQACXUUhU-9UPkUygBn4PQQ"},
+                    {"name": "📚 راهنمای معلم ریاضی هفتم", "file_id": "BQACAgQAAxkBAAIC7Gpy9jAxhQpcPPWlAhmK_oDNiaShAAJRFQACXUUhU1CyE53WE5GdPQQ"},
                 ],
             },
             "grade_8": {
                 "title": "هشتم",
                 "files": [
-                    {"name": "📚 کتاب ریاضی هشتم - بخش اول", "file_id": "FILE_ID_MATH_8_1"},
-                    {"name": "📚 کتاب ریاضی هشتم - بخش دوم", "file_id": "FILE_ID_MATH_8_2"},
+                    {"name": "📚 کتاب ریاضی هشتم", "file_id": "BQACAgQAAxkBAAIC8Wpy9kpbJp5R-x5Y7QOq7i_u1BemAAI6FQACXUUhU1RRrvath3-IPQQ"},
+                    {"name": "📚 راهنمای معلم ریاضی هشتم  ", "file_id": "BQACAgQAAxkBAAIC82py9lNJR79JKfZ_AhNl7WlAD7C4AAJSFQACXUUhU3V7xmHsLMpMPQQ"},
                 ],
             },
             "grade_9": {
                 "title": "نهم",
                 "files": [
-                    {"name": "📚 کتاب ریاضی نهم - بخش اول", "file_id": "FILE_ID_MATH_9_1"},
-                    {"name": "📚 کتاب ریاضی نهم - بخش دوم", "file_id": "FILE_ID_MATH_9_2"},
+                    {"name": "📚 کتاب ریاضی نهم ", "file_id": "BQACAgQAAxkBAAIC9Wpy9lmcBCALYYshRxCmk5JvI6lDAAI8FQACXUUhU_eQGvFQNY4bPQQ"},
+                    {"name": "📚 راهنمای معلم ریاضی نهم  ", "file_id": "BQACAgQAAxkBAAIC92py9l-W2b7dUUvioB2LqboBpDsDAAJHFQACXUUhUxLBPgRv1eLBPQQ"},
                 ],
             },
         },
