@@ -377,22 +377,22 @@ HIGH_SCHOOL_MATH = {
                     "10_exp": {
                         "title": "ریاضی دهم تجربی",
                         "files": [
-                            {"name": "📚 کتاب ریاضی دهم تجربی - فایل ۱", "file_id": "FILE_ID_MATH_10_E_1"},
-                            {"name": "📚 کتاب ریاضی دهم تجربی - فایل ۲", "file_id": "FILE_ID_MATH_10_E_2"},
+                            {"name": "📚 کتاب ریاضی دهم تجربی ", "file_id": "BQACAgQAAxkBAAIDDWpy9rEsL2BZPrAHD8Pba94abzepAAI9FQACXUUhUwqZgTZsiMcQPQQ"},
+                            {"name": "📚 راهنمای معلم ریاضی دهم تجربی  ", "file_id": "BQACAgQAAxkBAAIDD2py9rgOi7TGpN5Fltx4wU38LDJ0AAJIFQACXUUhUwGY2z25SkbOPQQ"},
                         ],
                     },
                     "11_exp": {
                         "title": "ریاضی یازدهم تجربی",
                         "files": [
-                            {"name": "📚 کتاب ریاضی یازدهم تجربی - فایل ۱", "file_id": "FILE_ID_MATH_11_E_1"},
-                            {"name": "📚 کتاب ریاضی یازدهم تجربی - فایل ۲", "file_id": "FILE_ID_MATH_11_E_2"},
+                            {"name": "📚 کتاب ریاضی یازدهم تجربی ", "file_id": "BQACAgQAAxkBAAIDJWpy-g6iLYComA_nhS5XDv2wTmGGAAJjHgACF3KZU20ZTDAHJoefPQQ"},
+                            {"name": "📚 راهنمای معلم ریاضی یازدهم تجربی ", "file_id": "BQACAgQAAxkBAAIDJ2py-hXLhB_MJUQC1ZUj-wVqYpz8AAJeHgACF3KZU9ayn6apL-2WPQQ"},
                         ],
                     },
                     "12_exp": {
                         "title": "ریاضی دوازدهم تجربی",
                         "files": [
-                            {"name": "📚 کتاب ریاضی دوازدهم تجربی - فایل ۱", "file_id": "FILE_ID_MATH_12_E_1"},
-                            {"name": "📚 کتاب ریاضی دوازدهم تجربی - فایل ۲", "file_id": "FILE_ID_MATH_12_E_2"},
+                            {"name": "📚 کتاب ریاضی دوازدهم تجربی ", "file_id": "BQACAgQAAxkBAAIDKWpy-h0Bih1bY3-G6jpkluPeXZ3zAAJfHgACF3KZU7x_OsnuqrgQPQQ"},
+                            {"name": "📚 راهنمای معلم ریاضی دوازدهم تجربی  ", "file_id": "BQACAgQAAxkBAAIDK2py-iJIzvnv0_s-ZgMLT5QjmanlAAJaHgACF3KZU7PVKWzxCzdVPQQ"},
                         ],
                     },
                 },
@@ -402,7 +402,7 @@ HIGH_SCHOOL_MATH = {
                 "sub_items": {
                     "10_math": {
                         "title": "ریاضی دهم",
-                        "files": [{"name": "📚 کتاب ریاضی دهم ریاضی", "file_id": "FILE_ID_MATH_10_M"}],
+                        "files": [{"name": " ریاضی دهم ریاضی", "file_id": "BQACAgQAAxkBAAIDDWpy9rEsL2BZPrAHD8Pba94abzepAAI9FQACXUUhUwqZgTZsiMcQPQQ"}],
                     },
                     "10_geometry": {
                         "title": "هندسه دهم",
@@ -440,22 +440,22 @@ HIGH_SCHOOL_MATH = {
                     "10_humanities": {
                         "title": "ریاضی و آمار دهم",
                         "files": [
-                            {"name": "📚 کتاب ریاضی و آمار ۱ دهم انسانی - فایل ۱", "file_id": "FILE_ID_MATH_10_HUM_1"},
-                            {"name": "📚 کتاب ریاضی و آمار ۱ دهم انسانی - فایل ۲", "file_id": "FILE_ID_MATH_10_HUM_2"},
+                            {"name": "📚 کتاب ریاضی و آمار دهم انسانی ", "file_id": "BQACAgQAAxkBAAIDGWpy-eByuI69I-BoRyUcX3YSNTbuAAJgHgACF3KZU190B8idcFZEPQQ"},
+                            {"name": "📚 راهنمای معلم ریاضی و آمار دهم انسانی ", "file_id": "BQACAgQAAxkBAAIDG2py-eZauhimNP_BtYyU-IV5XwqrAAJbHgACF3KZUzMO8N7Sg5dJPQQ"},
                         ],
                     },
                     "11_humanities": {
                         "title": "ریاضی و آمار یازدهم",
                         "files": [
-                            {"name": "📚 کتاب ریاضی و آمار ۲ یازدهم انسانی - فایل ۱", "file_id": "FILE_ID_MATH_11_HUM_1"},
-                            {"name": "📚 کتاب ریاضی و آمار ۲ یازدهم انسانی - فایل ۲", "file_id": "FILE_ID_MATH_11_HUM_2"},
+                            {"name": "📚 کتاب ریاضی و آمار یازدهم انسانی ", "file_id": "BQACAgQAAxkBAAIDHWpy-fCV2ZT_9B6ZYSUKb4jgsUOCAAJiHgACF3KZU8Xp-pbWYj51PQQ"},
+                            {"name": "📚 راهنمای معلم ریاضی و آمار یازدهم انسانی ", "file_id": "BQACAgQAAxkBAAIDH2py-fRl6hWoJPmiKvtlhh578ckwAAJdHgACF3KZU6HblJlNEV8vPQQ"},
                         ],
                     },
                     "12_humanities": {
                         "title": "ریاضی و آمار دوازدهم",
                         "files": [
-                            {"name": "📚 کتاب ریاضی و آمار ۳ دوازدهم انسانی - فایل ۱", "file_id": "FILE_ID_MATH_12_HUM_1"},
-                            {"name": "📚 کتاب ریاضی و آمار ۳ دوازدهم انسانی - فایل ۲", "file_id": "FILE_ID_MATH_12_HUM_2"},
+                            {"name": "📚 کتاب ریاضی و آمار دوازدهم انسانی  ", "file_id": "BQACAgQAAxkBAAIDIWpy-fwz8ZLjrKu2n5AEVkDBX9B_AAJhHgACF3KZUyecycfI6MCHPQQ"},
+                            {"name": "📚 راهنمای معلم ریاضی و آمار دوازدهم انسانی ", "file_id": "BQACAgQAAxkBAAIDI2py-gUCWTLVBZUPaArqtkOYYVwAA1weAAIXcplTTLBu6eOrjd49BA"},
                         ],
                     },
                 },
@@ -508,8 +508,8 @@ VIDEOS_DATA = {
                 "title": "بهینه سازی",
                 "count": 2,
                 "videos": [
-                    {"caption": "🎥 ویدیوی شماره ۱ بهینه سازی ریاضی عمومی ۱", "file_id": "FILE_ID_VID_M1_OPT_1"},
-                    {"caption": "🎥 ویدیوی شماره ۲ بهینه سازی ریاضی عمومی ۱", "file_id": "FILE_ID_VID_M1_OPT_2"},
+                    {"caption": "🎥 ویدیوی شماره ۱ بهینه سازی ریاضی عمومی ۱", "file_id": "BAACAgQAAxkBAAICzWpy7_bcdNIZy9RU00E8jbgE-rerAALYHQACByd4U2_ip1eFrg06PQQ"},
+                    {"caption": "🎥 ویدیوی شماره ۲ بهینه سازی ریاضی عمومی ۱", "file_id": "BAACAgQAAxkBAAICz2py7_zyNetryVfnyx9Id23ju6aSAALZHQACByd4U6djVE1xnRBVPQQ"},
                 ],
             },
         },
