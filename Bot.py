@@ -23,15 +23,15 @@ bot = telebot.TeleBot(TOKEN)
 CHARTS_DATA = {
     "chart_1402": {
         "title": "چارت درسی ورودی ۱۴۰۲ آموزش ریاضی",
-        "file_id": "BQACAgQAAxkBAAIBd2pyGRlOvSXFK05P9oSy0y-bDuSqAAJlHAACIvyRU-zB1RvtSi1APQQ",
+        "file_id": "AgACAgQAAxkBAAOGanH6bG4kG20QflJyM9TrerI4iW0AAqUNaxsi_JFTvNIgzU3eSLwBAAMCAAN3AAM9BA",
     },
     "chart_1403": {
         "title": "چارت درسی ورودی ۱۴۰۳ آموزش ریاضی",
-        "file_id": "BQACAgQAAxkBAAIBf2pyGZoPejTCupCIwBYro2u2adbJAAJmHAACIvyRUzmxKA40ApeMPQQ",
+        "file_id": "AgACAgQAAxkBAAM4anHhlDbTt7tudmTIHWuecys2urkAAm4NaxvbzdhSP08pJBBJKmsBAAMCAAN5AAM9BA",
     },
     "chart_1404": {
         "title": "چارت درسی ورودی ۱۴۰۴ آموزش ریاضی",
-        "file_id": "BQACAgQAAxkBAAIBgWpyGavIchw4P9ylXpSOKMmz6t3aAAJnHAACIvyRUw4CKNWJkWB8PQQ",
+        "file_id": "AgACAgQAAxkBAAOEanH513C1MmWK2ibWsZHwrhX8YasAAqQNaxsi_JFTA6t73gu1p-sBAAMCAAN3AAM9BA",
     },
     "chart_bachelor": {
         "title": "فایل برنامه درسی رشته کارشناسی آموزش ریاضی",
@@ -48,8 +48,8 @@ BOOKS_DATA = {
     "book_math1": {
         "title": "ریاضی عمومی ۱",
         "files": [
-            {"name": "📝 جزوه ریاضی عمومی ۱ - فایل اول", "file_id": "FILE_ID_PDF_2_1"},
-            {"name": "📝 جزوه ریاضی عمومی ۱ - فایل دوم", "file_id": "FILE_ID_PDF_2_2"},
+            {"name": "📝 جزوه ریاضی عمومی ۱ - بخش اول", "file_id": "FILE_ID_PDF_2_1"},
+            {"name": "📝 جزوه ریاضی عمومی ۱ - بخش دوم", "file_id": "FILE_ID_PDF_2_2"},
         ],
     },
     "book_math2": {
@@ -59,8 +59,8 @@ BOOKS_DATA = {
     "book_eq": {
         "title": "معادلات دیفرانسیل",
         "files": [
-            {"name": "📝 جزوه معادلات دیفرانسیل - فایل اول", "file_id": "FILE_ID_PDF_4_1"},
-            {"name": "📝 جزوه معادلات دیفرانسیل - فایل دوم", "file_id": "FILE_ID_PDF_4_2"},
+            {"name": "📝 جزوه معادلات دیفرانسیل - قسمت اول", "file_id": "FILE_ID_PDF_4_1"},
+            {"name": "📝 جزوه معادلات دیفرانسیل - قسمت دوم", "file_id": "FILE_ID_PDF_4_2"},
         ],
     },
     "book_number": {
@@ -95,7 +95,7 @@ BOOKS_DATA = {
     },
 }
 
-# منابع و رفرنس‌ها (۱۱ گزینه دروس تخصصی ریاضی)
+# منابع و رفرنس‌ها - دروس تخصصی ریاضی (شامل ۱۸ گزینه: ۱۱ گزینه قبلی + ۷ گزینه جدید و تغییر نام آمار)
 REFERENCES_SPECIALIZED = {
     "ref_math1": {
         "title": "ریاضی عمومی ۱",
@@ -129,9 +129,9 @@ REFERENCES_SPECIALIZED = {
         "title": "مبانی هندسه",
         "files": [{"name": "📖 کتاب مرجع مبانی هندسه", "file_id": "FILE_ID_REF_GEO"}],
     },
-    "ref_stats": {
-        "title": "آمار و احتمال",
-        "files": [{"name": "📖 کتاب مرجع آمار و احتمال", "file_id": "FILE_ID_REF_STATS"}],
+    "ref_probability_basis": {
+        "title": "مبانی احتمال",
+        "files": [{"name": "📖 کتاب مرجع مبانی احتمال", "file_id": "FILE_ID_REF_PROB"}],
     },
     "ref_algebraic_structures": {
         "title": "ساختارهای جبری",
@@ -140,6 +140,313 @@ REFERENCES_SPECIALIZED = {
     "ref_analysis1": {
         "title": "آنالیز ریاضی ۱",
         "files": [{"name": "📖 کتاب مرجع آنالیز ریاضی ۱", "file_id": "FILE_ID_REF_ANALY"}],
+    },
+    "ref_physics1": {
+        "title": "فیزیک پایه ۱",
+        "files": [{"name": "📖 کتاب مرجع فیزیک پایه ۱", "file_id": "FILE_ID_REF_PHY1"}],
+    },
+    "ref_physics2": {
+        "title": "فیزیک پایه ۲",
+        "files": [{"name": "📖 کتاب مرجع فیزیک پایه ۲", "file_id": "FILE_ID_REF_PHY2"}],
+    },
+    "ref_statistics_basis": {
+        "title": "مبانی آمار",
+        "files": [{"name": "📖 کتاب مرجع مبانی آمار", "file_id": "FILE_ID_REF_STAT_BASIS"}],
+    },
+    "ref_numerical": {
+        "title": "محاسبات عددی",
+        "files": [{"name": "📖 کتاب مرجع محاسبات عددی", "file_id": "FILE_ID_REF_NUMERICAL"}],
+    },
+    "ref_linear_opt": {
+        "title": "بهینه‌سازی خطی",
+        "files": [{"name": "📖 کتاب مرجع بهینه‌سازی خطی", "file_id": "FILE_ID_REF_OPT"}],
+    },
+    "ref_specialized_lang": {
+        "title": "زبان تخصصی",
+        "files": [{"name": "📖 کتاب مرجع زبان تخصصی", "file_id": "FILE_ID_REF_LANG"}],
+    },
+    "ref_math_art": {
+        "title": "ریاضی و هنر",
+        "files": [{"name": "📖 کتاب مرجع ریاضی و هنر", "file_id": "FILE_ID_REF_ART"}],
+    },
+}
+
+# منابع و رفرنس‌ها - دروس عمومی (۱۰ گزینه جدید)
+REFERENCES_GENERAL = {
+    "gen_english": {
+        "title": "زبان انگلیسی",
+        "files": [{"name": "📖 منبع زبان انگلیسی", "file_id": "FILE_ID_GEN_ENG"}],
+    },
+    "gen_persian": {
+        "title": "زبان فارسی",
+        "files": [{"name": "📖 منبع زبان فارسی", "file_id": "FILE_ID_GEN_PER"}],
+    },
+    "gen_health": {
+        "title": "سلامت و بهداشت",
+        "files": [{"name": "📖 منبع سلامت و بهداشت", "file_id": "FILE_ID_GEN_HEALTH"}],
+    },
+    "gen_analytical_history": {
+        "title": "تاریخ تحلیلی",
+        "files": [{"name": "📖 منبع تاریخ تحلیلی", "file_id": "FILE_ID_GEN_AN_HIST"}],
+    },
+    "gen_history_civilization": {
+        "title": "تاریخ و تمدن",
+        "files": [{"name": "📖 منبع تاریخ و تمدن", "file_id": "FILE_ID_GEN_HIST_CIV"}],
+    },
+    "gen_family_knowledge": {
+        "title": "دانش خانواده",
+        "files": [{"name": "📖 منبع دانش خانواده", "file_id": "FILE_ID_GEN_FAM"}],
+    },
+    "gen_islamic_thought": {
+        "title": "اندیشه اسلامی",
+        "files": [{"name": "📖 منبع اندیشه اسلامی", "file_id": "FILE_ID_GEN_ISL_THG"}],
+    },
+    "gen_life_tradition": {
+        "title": "آیین زندگی",
+        "files": [{"name": "📖 منبع آیین زندگی", "file_id": "FILE_ID_GEN_LIFE"}],
+    },
+    "gen_islamic_revolution": {
+        "title": "انقلاب اسلامی",
+        "files": [{"name": "📖 منبع انقلاب اسلامی", "file_id": "FILE_ID_GEN_REV"}],
+    },
+    "gen_quran_interpretation": {
+        "title": "تفسیر قرآن",
+        "files": [{"name": "📖 منبع تفسیر قرآن", "file_id": "FILE_ID_GEN_QURAN"}],
+    },
+}
+
+# منابع و رفرنس‌ها - دروس تربیتی (۱۱ گزینه جدید)
+REFERENCES_EDUCATIONAL = {
+    "edu_docs_laws": {
+        "title": "اسناد و قوانین آ.پ",
+        "files": [{"name": "📖 منبع اسناد و قوانین آ.پ", "file_id": "FILE_ID_EDU_DOCS"}],
+    },
+    "edu_teacher_ethics": {
+        "title": "اخلاق معلمی",
+        "files": [{"name": "📖 منبع اخلاق معلمی", "file_id": "FILE_ID_EDU_ETHICS"}],
+    },
+    "edu_religious_training": {
+        "title": "تربیت دینی",
+        "files": [{"name": "📖 منبع تربیت دینی", "file_id": "FILE_ID_EDU_REL"}],
+    },
+    "edu_educational_biography": {
+        "title": "سیره تربیتی",
+        "files": [{"name": "📖 منبع سیره تربیتی", "file_id": "FILE_ID_EDU_BIO"}],
+    },
+    "edu_educational_philosophy": {
+        "title": "فلسفه تربیتی",
+        "files": [{"name": "📖 منبع فلسفه تربیتی", "file_id": "FILE_ID_EDU_PHIL"}],
+    },
+    "edu_islamic_schools_exp": {
+        "title": "آشنایی با تجارب مدارس اسلامی",
+        "files": [{"name": "📖 منبع تجارب مدارس اسلامی", "file_id": "FILE_ID_EDU_SCH"}],
+    },
+    "edu_islamic_training_challenges": {
+        "title": "چالش‌های تربیت اسلامی",
+        "files": [{"name": "📖 منبع چالش‌های تربیت اسلامی", "file_id": "FILE_ID_EDU_CHALL"}],
+    },
+    "edu_sacred_defense": {
+        "title": "دفاع مقدس",
+        "files": [{"name": "📖 منبع دفاع مقدس", "file_id": "FILE_ID_EDU_DEFENSE"}],
+    },
+    "edu_educational_psychology": {
+        "title": "روانشناسی تربیتی",
+        "files": [{"name": "📖 منبع روانشناسی تربیتی", "file_id": "FILE_ID_EDU_PSY"}],
+    },
+    "edu_counseling_principles": {
+        "title": "اصول مشاوره",
+        "files": [{"name": "📖 منبع اصول مشاوره", "file_id": "FILE_ID_EDU_COUNSEL"}],
+    },
+    "edu_sociology": {
+        "title": "جامعه شناسی",
+        "files": [{"name": "📖 منبع جامعه شناسی", "file_id": "FILE_ID_EDU_SOC"}],
+    },
+}
+
+# کتب درسی ریاضی متوسطه (متوسطه اول و دوم با زیرمجموعه‌ها)
+HIGH_SCHOOL_MATH = {
+    "middle_school": {
+        "title": "متوسطه اول",
+        "sub_items": {
+            "grade_7": {
+                "title": "هفتم",
+                "files": [{"name": "📚 کتاب ریاضی هفتم", "file_id": "FILE_ID_MATH_7"}],
+            },
+            "grade_8": {
+                "title": "هشتم",
+                "files": [{"name": "📚 کتاب ریاضی هشتم", "file_id": "FILE_ID_MATH_8"}],
+            },
+            "grade_9": {
+                "title": "نهم",
+                "files": [{"name": "📚 کتاب ریاضی نهم", "file_id": "FILE_ID_MATH_9"}],
+            },
+        },
+    },
+    "high_school": {
+        "title": "متوسطه دوم",
+        "sub_items": {
+            "10_math_exp": {
+                "title": "دهم ریاضی و تجربی",
+                "files": [{"name": "📚 کتاب ریاضی ۱ دهم ریاضی و تجربی", "file_id": "FILE_ID_MATH_10_ME"}],
+            },
+            "10_humanities": {
+                "title": "دهم انسانی",
+                "files": [{"name": "📚 کتاب ریاضی و آمار ۱ دهم انسانی", "file_id": "FILE_ID_MATH_10_HUM"}],
+            },
+            "11_math": {
+                "title": "یازدهم ریاضی",
+                "files": [{"name": "📚 کتاب‌های ریاضی یازدهم ریاضی", "file_id": "FILE_ID_MATH_11_M"}],
+            },
+            "11_exp": {
+                "title": "یازدهم تجربی",
+                "files": [{"name": "📚 کتاب ریاضی یازدهم تجربی", "file_id": "FILE_ID_MATH_11_E"}],
+            },
+            "11_humanities": {
+                "title": "یازدهم انسانی",
+                "files": [{"name": "📚 کتاب ریاضی و آمار ۲ یازدهم انسانی", "file_id": "FILE_ID_MATH_11_HUM"}],
+            },
+            "12_math": {
+                "title": "دوازدهم ریاضی",
+                "files": [{"name": "📚 کتاب‌های ریاضی دوازدهم ریاضی", "file_id": "FILE_ID_MATH_12_M"}],
+            },
+            "12_exp": {
+                "title": "دوازدهم تجربی",
+                "files": [{"name": "📚 کتاب ریاضی دوازدهم تجربی", "file_id": "FILE_ID_MATH_12_E"}],
+            },
+            "12_humanities": {
+                "title": "دوازدهم انسانی",
+                "files": [{"name": "📚 کتاب ریاضی و آمار ۳ دوازدهم انسانی", "file_id": "FILE_ID_MATH_12_HUM"}],
+            },
+        },
+    },
+}
+
+# بخش ویدیوهای آموزشی جدید با زیربخش‌های دقیق و تعداد ویدیوهای درخواستی (با حفظ کامل کپشن‌ها)
+VIDEOS_DATA = {
+    "vid_math1": {
+        "title": "ریاضی عمومی ۱",
+        "sub": {
+            "v_m1_complex": {
+                "title": "اعداد مختلط",
+                "count": 6,
+                "videos": [
+                    {"caption": "🎥 ویدیوی شماره ۱ اعداد مختلط ریاضی عمومی ۱", "file_id": "FILE_ID_VID_M1_C1"},
+                    {"caption": "🎥 ویدیوی شماره ۲ اعداد مختلط ریاضی عمومی ۱", "file_id": "FILE_ID_VID_M1_C2"},
+                    {"caption": "🎥 ویدیوی شماره ۳ اعداد مختلط ریاضی عمومی ۱", "file_id": "FILE_ID_VID_M1_C3"},
+                    {"caption": "🎥 ویدیوی شماره ۴ اعداد مختلط ریاضی عمومی ۱", "file_id": "FILE_ID_VID_M1_C4"},
+                    {"caption": "🎥 ویدیوی شماره ۵ اعداد مختلط ریاضی عمومی ۱", "file_id": "FILE_ID_VID_M1_C5"},
+                    {"caption": "🎥 ویدیوی شماره ۶ اعداد مختلط ریاضی عمومی ۱", "file_id": "FILE_ID_VID_M1_C6"},
+                ],
+            },
+            "v_m1_integral": {
+                "title": "انتگرال",
+                "count": 7,
+                "videos": [
+                    {"caption": "🎥 ویدیوی شماره ۱ انتگرال ریاضی عمومی ۱", "file_id": "FILE_ID_VID_M1_I1"},
+                    {"caption": "🎥 ویدیوی شماره ۲ انتگرال ریاضی عمومی ۱", "file_id": "FILE_ID_VID_M1_I2"},
+                    {"caption": "🎥 ویدیوی شماره ۳ انتگرال ریاضی عمومی ۱", "file_id": "FILE_ID_VID_M1_I3"},
+                    {"caption": "🎥 ویدیوی شماره ۴ انتگرال ریاضی عمومی ۱", "file_id": "FILE_ID_VID_M1_I4"},
+                    {"caption": "🎥 ویدیوی شماره ۵ انتگرال ریاضی عمومی ۱", "file_id": "FILE_ID_VID_M1_I5"},
+                    {"caption": "🎥 ویدیوی شماره ۶ انتگرال ریاضی عمومی ۱", "file_id": "FILE_ID_VID_M1_I6"},
+                    {"caption": "🎥 ویدیوی شماره ۷ انتگرال ریاضی عمومی ۱", "file_id": "FILE_ID_VID_M1_I7"},
+                ],
+            },
+            "v_m1_app_integral": {
+                "title": "کاربرد انتگرال",
+                "count": 4,
+                "videos": [
+                    {"caption": "🎥 ویدیوی شماره ۱ کاربرد انتگرال ریاضی عمومی ۱", "file_id": "FILE_ID_VID_M1_AI1"},
+                    {"caption": "🎥 ویدیوی شماره ۲ کاربرد انتگرال ریاضی عمومی ۱", "file_id": "FILE_ID_VID_M1_AI2"},
+                    {"caption": "🎥 ویدیوی شماره ۳ کاربرد انتگرال ریاضی عمومی ۱", "file_id": "FILE_ID_VID_M1_AI3"},
+                    {"caption": "🎥 ویدیوی شماره ۴ کاربرد انتگرال ریاضی عمومی ۱", "file_id": "FILE_ID_VID_M1_AI4"},
+                ],
+            },
+        },
+    },
+    "vid_math2": {
+        "title": "ریاضی عمومی ۲",
+        "sub": {
+            "v_m2_lagrange": {
+                "title": "ضرایب لاگرانژ",
+                "count": 2,
+                "videos": [
+                    {"caption": "🎥 ویدیوی شماره ۱ ضرایب لاگرانژ ریاضی عمومی ۲", "file_id": "FILE_ID_VID_M2_L1"},
+                    {"caption": "🎥 ویدیوی شماره ۲ ضرایب لاگرانژ ریاضی عمومی ۲", "file_id": "FILE_ID_VID_M2_L2"},
+                ],
+            },
+            "v_m2_double_int": {
+                "title": "انتگرال دوگانه",
+                "count": 3,
+                "videos": [
+                    {"caption": "🎥 ویدیوی شماره ۱ انتگرال دوگانه ریاضی عمومی ۲", "file_id": "FILE_ID_VID_M2_DI1"},
+                    {"caption": "🎥 ویدیوی شماره ۲ انتگرال دوگانه ریاضی عمومی ۲", "file_id": "FILE_ID_VID_M2_DI2"},
+                    {"caption": "🎥 ویدیوی شماره ۳ انتگرال دوگانه ریاضی عمومی ۲", "file_id": "FILE_ID_VID_M2_DI3"},
+                ],
+            },
+            "v_m2_triple_int": {
+                "title": "انتگرال سه‌گانه",
+                "count": 4,
+                "videos": [
+                    {"caption": "🎥 ویدیوی شماره ۱ انتگرال سه‌گانه ریاضی عمومی ۲", "file_id": "FILE_ID_VID_M2_TI1"},
+                    {"caption": "🎥 ویدیوی شماره ۲ انتگرال سه‌گانه ریاضی عمومی ۲", "file_id": "FILE_ID_VID_M2_TI2"},
+                    {"caption": "🎥 ویدیوی شماره ۳ انتگرال سه‌گانه ریاضی عمومی ۲", "file_id": "FILE_ID_VID_M2_TI3"},
+                    {"caption": "🎥 ویدیوی شماره ۴ انتگرال سه‌گانه ریاضی عمومی ۲", "file_id": "FILE_ID_VID_M2_TI4"},
+                ],
+            },
+            "v_m2_summary": {
+                "title": "جمع‌بندی",
+                "count": 2,
+                "videos": [
+                    {"caption": "🎥 ویدیوی شماره ۱ جمع‌بندی ریاضی عمومی ۲", "file_id": "FILE_ID_VID_M2_S1"},
+                    {"caption": "🎥 ویدیوی شماره ۲ جمع‌بندی ریاضی عمومی ۲", "file_id": "FILE_ID_VID_M2_S2"},
+                ],
+            },
+        },
+    },
+    "vid_eq": {
+        "title": "معادلات دیفرانسیل",
+        "sub": {
+            "v_eq_derivative": {
+                "title": "مشتق‌گیری",
+                "count": 2,
+                "videos": [
+                    {"caption": "🎥 ویدیوی شماره ۱ مشتق‌گیری معادلات دیفرانسیل", "file_id": "FILE_ID_VID_EQ_D1"},
+                    {"caption": "🎥 ویدیوی شماره ۲ مشتق‌گیری معادلات دیفرانسیل", "file_id": "FILE_ID_VID_EQ_D2"},
+                ],
+            },
+            "v_eq_first_order": {
+                "title": "معادلات دیفرانسیل مرتبه اول",
+                "count": 5,
+                "videos": [
+                    {"caption": "🎥 ویدیوی شماره ۱ معادلات دیفرانسیل مرتبه اول", "file_id": "FILE_ID_VID_EQ_FO1"},
+                    {"caption": "🎥 ویدیوی شماره ۲ معادلات دیفرانسیل مرتبه اول", "file_id": "FILE_ID_VID_EQ_FO2"},
+                    {"caption": "🎥 ویدیوی شماره ۳ معادلات دیفرانسیل مرتبه اول", "file_id": "FILE_ID_VID_EQ_FO3"},
+                    {"caption": "🎥 ویدیوی شماره ۴ معادلات دیفرانسیل مرتبه اول", "file_id": "FILE_ID_VID_EQ_FO4"},
+                    {"caption": "🎥 ویدیوی شماره ۵ معادلات دیفرانسیل مرتبه اول", "file_id": "FILE_ID_VID_EQ_FO5"},
+                ],
+            },
+            "v_eq_methods": {
+                "title": "روش های حل معادلات دیفرانسیل",
+                "count": 3,
+                "videos": [
+                    {"caption": "🎥 ویدیوی شماره ۱ روش های حل معادلات دیفرانسیل", "file_id": "FILE_ID_VID_EQ_M1"},
+                    {"caption": "🎥 ویدیوی شماره ۲ روش های حل معادلات دیفرانسیل", "file_id": "FILE_ID_VID_EQ_M2"},
+                    {"caption": "🎥 ویدیوی شماره ۳ روش های حل معادلات دیفرانسیل", "file_id": "FILE_ID_VID_EQ_M3"},
+                ],
+            },
+        },
+    },
+    "vid_engineering_math": {
+        "title": "ریاضیات مهندسی",
+        "sub": {
+            "v_eng_general": {
+                "title": "آموزش‌های ریاضیات مهندسی",
+                "count": 1,
+                "videos": [
+                    {"caption": "🎥 ویدیوهای آموزشی ریاضیات مهندسی", "file_id": "FILE_ID_VID_ENG_GEN"}
+                ],
+            }
+        },
     },
 }
 
@@ -288,7 +595,7 @@ def get_handouts_menu():
     return markup
 
 
-# منوی منابع و رفرنس شامل ۳ گزینه درخواستی
+# منوی اصلی منابع و رفرنس شامل ۴ گزینه (تخصصی، عمومی، تربیتی، کتب درسی ریاضی متوسطه)
 def get_references_main_menu():
     markup = InlineKeyboardMarkup()
     markup.row_width = 1
@@ -301,19 +608,95 @@ def get_references_main_menu():
             "🎓 دروس تربیتی", callback_data="ref_educational"
         ),
         InlineKeyboardButton(
+            "📚 کتب درسی ریاضی متوسطه", callback_data="ref_high_school_math"
+        ),
+        InlineKeyboardButton(
             "🔙 بازگشت به منوی اصلی", callback_data="back_to_main"
         ),
     )
     return markup
 
 
-# ۱۱ گزینه دروس تخصصی ریاضی به ترتیب خواسته شده
+# دروس تخصصی ریاضی (۱۸ گزینه)
 def get_references_specialized_menu():
     markup = InlineKeyboardMarkup()
     markup.row_width = 2
     for key, val in REFERENCES_SPECIALIZED.items():
         markup.add(InlineKeyboardButton(f"🔹 {val['title']}", callback_data=key))
     markup.add(InlineKeyboardButton("🔙 بازگشت", callback_data="menu_references"))
+    return markup
+
+
+# دروس عمومی (۱۰ گزینه)
+def get_references_general_menu():
+    markup = InlineKeyboardMarkup()
+    markup.row_width = 2
+    for key, val in REFERENCES_GENERAL.items():
+        markup.add(InlineKeyboardButton(f"🔹 {val['title']}", callback_data=key))
+    markup.add(InlineKeyboardButton("🔙 بازگشت", callback_data="menu_references"))
+    return markup
+
+
+# دروس تربیتی (۱۱ گزینه)
+def get_references_educational_menu():
+    markup = InlineKeyboardMarkup()
+    markup.row_width = 2
+    for key, val in REFERENCES_EDUCATIONAL.items():
+        markup.add(InlineKeyboardButton(f"🔹 {val['title']}", callback_data=key))
+    markup.add(InlineKeyboardButton("🔙 بازگشت", callback_data="menu_references"))
+    return markup
+
+
+# منوی کتب درسی ریاضی متوسطه (متوسطه اول و متوسطه دوم)
+def get_high_school_math_menu():
+    markup = InlineKeyboardMarkup()
+    markup.row_width = 1
+    for key, val in HIGH_SCHOOL_MATH.items():
+        markup.add(InlineKeyboardButton(f"📚 {val['title']}", callback_data=f"hs_{key}"))
+    markup.add(InlineKeyboardButton("🔙 بازگشت", callback_data="menu_references"))
+    return markup
+
+
+# زیرمجموعه متوسطه اول (هفتم، هشتم، نهم)
+def get_middle_school_menu():
+    markup = InlineKeyboardMarkup()
+    markup.row_width = 1
+    for key, val in HIGH_SCHOOL_MATH["middle_school"]["sub_items"].items():
+        markup.add(InlineKeyboardButton(f"🔹 {val['title']}", callback_data=f"hs_sub_{key}"))
+    markup.add(InlineKeyboardButton("🔙 بازگشت", callback_data="ref_high_school_math"))
+    return markup
+
+
+# زیرمجموعه متوسطه دوم (۸ گزینه)
+def get_high_school_sub_menu():
+    markup = InlineKeyboardMarkup()
+    markup.row_width = 1
+    for key, val in HIGH_SCHOOL_MATH["high_school"]["sub_items"].items():
+        markup.add(InlineKeyboardButton(f"🔹 {val['title']}", callback_data=f"hs_sub_{key}"))
+    markup.add(InlineKeyboardButton("🔙 بازگشت", callback_data="ref_high_school_math"))
+    return markup
+
+
+# منوی ویدیوهای آموزشی (۴ گزینه اصلی)
+def get_videos_main_menu():
+    markup = InlineKeyboardMarkup()
+    markup.row_width = 1
+    for key, val in VIDEOS_DATA.items():
+        markup.add(InlineKeyboardButton(f"🎬 {val['title']}", callback_data=f"vid_main_{key}"))
+    markup.add(
+        InlineKeyboardButton("🔙 بازگشت به منوی اصلی", callback_data="back_to_main")
+    )
+    return markup
+
+
+# زیرمجموعه‌های ویدیوها برای هر درس
+def get_videos_sub_menu(main_key):
+    markup = InlineKeyboardMarkup()
+    markup.row_width = 1
+    course = VIDEOS_DATA[main_key]
+    for sub_key, sub_val in course["sub"].items():
+        markup.add(InlineKeyboardButton(f"🔹 {sub_val['title']}", callback_data=f"vid_sub_{sub_key}"))
+    markup.add(InlineKeyboardButton("🔙 بازگشت", callback_data="menu_videos"))
     return markup
 
 
@@ -490,17 +873,17 @@ def get_communication_menu():
         ),
         InlineKeyboardButton(
             "📸 پیج اینستاگرام انجمن علمی ریاضی",
-            url="https://www.instagram.com/math.sru?igsh=MXZycndhemhkMXgzYg==",
+            url="https://instagram.com/your_instagram_id",
         ),
         InlineKeyboardButton(
-            "🟢 کانال بله انجمن علمی ریاضی", url="https://ble.ir/join/J3i3XsLakw"
+            "🟢 کانال بله انجمن علمی ریاضی", url="https://ble.ir/your_bale_id"
         ),
         InlineKeyboardButton(
-            " ایتا انجمن علمی ریاضی", url="https://eitaa.com/math_rajae"
+            " ایتا انجمن علمی ریاضی", url="https://eitaa.com/your_eitaa_id"
         ),
         InlineKeyboardButton(
             " روبیکا انجمن علمی ریاضی",
-            url="https://rubika.ir/Math_rajae",
+            url="https://rubika.ir/your_rubika_id",
         ),
         InlineKeyboardButton(
             "🔙 بازگشت به منوی اصلی", callback_data="back_to_main"
@@ -659,15 +1042,134 @@ def handle_callback(call):
 
     elif call.data == "ref_general":
         bot.answer_callback_query(call.id)
-        bot.send_message(
-            call.message.chat.id, "به زودی این امکان فراهم می شود."
+        bot.edit_message_text(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            text="📚 **دروس عمومی**\n\nدرس مورد نظر رو انتخاب کن:",
+            parse_mode="Markdown",
+            reply_markup=get_references_general_menu(),
         )
 
     elif call.data == "ref_educational":
         bot.answer_callback_query(call.id)
-        bot.send_message(
-            call.message.chat.id, "به زودی این امکان فراهم می شود."
+        bot.edit_message_text(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            text="🎓 **دروس تربیتی**\n\nحوزه مورد نظر رو انتخاب کن:",
+            parse_mode="Markdown",
+            reply_markup=get_references_educational_menu(),
         )
+
+    elif call.data == "ref_high_school_math":
+        bot.answer_callback_query(call.id)
+        bot.edit_message_text(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            text="📚 **کتب درسی ریاضی متوسطه**\n\nمقطع مورد نظر رو انتخاب کن:",
+            parse_mode="Markdown",
+            reply_markup=get_high_school_math_menu(),
+        )
+
+    elif call.data == "hs_middle_school":
+        bot.answer_callback_query(call.id)
+        bot.edit_message_text(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            text="📚 **متوسطه اول**\n\nپایه تحصیلی رو انتخاب کن:",
+            parse_mode="Markdown",
+            reply_markup=get_middle_school_menu(),
+        )
+
+    elif call.data == "hs_high_school":
+        bot.answer_callback_query(call.id)
+        bot.edit_message_text(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            text="📚 **متوسطه دوم**\n\nرشته و پایه تحصیلی رو انتخاب کن:",
+            parse_mode="Markdown",
+            reply_markup=get_high_school_sub_menu(),
+        )
+
+    elif call.data.startswith("hs_sub_"):
+        bot.answer_callback_query(call.id)
+        key = call.data.replace("hs_sub_", "")
+        # جستجو در متوسطه اول یا دوم
+        found_item = None
+        if key in HIGH_SCHOOL_MATH["middle_school"]["sub_items"]:
+            found_item = HIGH_SCHOOL_MATH["middle_school"]["sub_items"][key]
+        elif key in HIGH_SCHOOL_MATH["high_school"]["sub_items"]:
+            found_item = HIGH_SCHOOL_MATH["high_school"]["sub_items"][key]
+
+        if found_item:
+            bot.send_message(
+                call.message.chat.id,
+                f"📚 کتاب مربوط به **{found_item['title']}**:",
+                parse_mode="Markdown",
+            )
+            for f_info in found_item["files"]:
+                if f_info["file_id"].startswith("FILE_ID_"):
+                    bot.send_message(
+                        call.message.chat.id,
+                        f"🔸 {f_info['name']} (فایل هنوز بارگذاری نشده است)",
+                    )
+                else:
+                    bot.send_document(
+                        call.message.chat.id,
+                        f_info["file_id"],
+                        caption=f"📚 {f_info['name']}",
+                    )
+
+    elif call.data == "menu_videos":
+        bot.answer_callback_query(call.id)
+        bot.edit_message_text(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            text="🎬 **بخش ویدیوهای آموزشی**\n\nدرس مورد نظر رو انتخاب کن:",
+            parse_mode="Markdown",
+            reply_markup=get_videos_main_menu(),
+        )
+
+    elif call.data.startswith("vid_main_"):
+        bot.answer_callback_query(call.id)
+        main_key = call.data.replace("vid_main_", "")
+        course_title = VIDEOS_DATA[main_key]["title"]
+        bot.edit_message_text(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            text=f"🎬 **{course_title}**\n\nمبحث مورد نظر رو انتخاب کن:",
+            parse_mode="Markdown",
+            reply_markup=get_videos_sub_menu(main_key),
+        )
+
+    elif call.data.startswith("vid_sub_"):
+        bot.answer_callback_query(call.id)
+        sub_key = call.data.replace("vid_sub_", "")
+        
+        # پیدا کردن سرفصل مربوطه در میان تمام دوره‌ها
+        target_sub = None
+        for m_key, m_val in VIDEOS_DATA.items():
+            if sub_key in m_val["sub"]:
+                target_sub = m_val["sub"][sub_key]
+                break
+
+        if target_sub:
+            bot.send_message(
+                call.message.chat.id,
+                f"🎥 مبحث: **{target_sub['title']}**\n(تعداد ویدیوها: {target_sub['count']})",
+                parse_mode="Markdown",
+            )
+            for vid in target_sub["videos"]:
+                if vid["file_id"].startswith("FILE_ID_"):
+                    bot.send_message(
+                        call.message.chat.id,
+                        f"{vid['caption']}\n(ویدیوی این بخش هنوز بارگذاری نشده است)",
+                    )
+                else:
+                    bot.send_video(
+                        call.message.chat.id,
+                        vid["file_id"],
+                        caption=vid["caption"],
+                    )
 
     elif call.data == "sub_podcasts":
         bot.answer_callback_query(call.id)
@@ -796,6 +1298,48 @@ def handle_callback(call):
                     caption=f"📖 {file_info['name']}",
                 )
 
+    elif call.data in REFERENCES_GENERAL:
+        bot.answer_callback_query(call.id)
+        course = REFERENCES_GENERAL[call.data]
+        bot.send_message(
+            call.message.chat.id,
+            f"📖 منبع عمومی مربوط به **{course['title']}**:",
+            parse_mode="Markdown",
+        )
+        for file_info in course["files"]:
+            if file_info["file_id"].startswith("FILE_ID_"):
+                bot.send_message(
+                    call.message.chat.id,
+                    f"🔸 {file_info['name']} (فایل هنوز بارگذاری نشده است)",
+                )
+            else:
+                bot.send_document(
+                    call.message.chat.id,
+                    file_info["file_id"],
+                    caption=f"📖 {file_info['name']}",
+                )
+
+    elif call.data in REFERENCES_EDUCATIONAL:
+        bot.answer_callback_query(call.id)
+        course = REFERENCES_EDUCATIONAL[call.data]
+        bot.send_message(
+            call.message.chat.id,
+            f"📖 منبع تربیتی مربوط به **{course['title']}**:",
+            parse_mode="Markdown",
+        )
+        for file_info in course["files"]:
+            if file_info["file_id"].startswith("FILE_ID_"):
+                bot.send_message(
+                    call.message.chat.id,
+                    f"🔸 {file_info['name']} (فایل هنوز بارگذاری نشده است)",
+                )
+            else:
+                bot.send_document(
+                    call.message.chat.id,
+                    file_info["file_id"],
+                    caption=f"📖 {file_info['name']}",
+                )
+
 
 # ==========================================
 # 📱 مدیریت کلیک روی دکمه‌های کیبورد پایین صفحه (Reply Keyboard)
@@ -835,7 +1379,10 @@ def handle_reply_keyboard_buttons(message):
 
     elif text == "🎬 ویدیوهای آموزشی":
         bot.send_message(
-            message.chat.id, "این امکان به زودی فراهم می‌شود."
+            message.chat.id,
+            "🎬 **بخش ویدیوهای آموزشی**\n\nدرس مورد نظر رو انتخاب کن:",
+            parse_mode="Markdown",
+            reply_markup=get_videos_main_menu(),
         )
 
     elif text == "📄 جزوات":
