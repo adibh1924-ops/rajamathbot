@@ -4,6 +4,7 @@ from telebot.types import (
     InlineKeyboardMarkup,
     KeyboardButton,
     ReplyKeyboardMarkup,
+    WebAppInfo,
 )
 
 # ==========================================
@@ -43,13 +44,17 @@ CHARTS_DATA = {
 BOOKS_DATA = {
     "book_intro": {
         "title": "ریاضی مقدماتی",
-        "files": [{"name": "جزوه ریاضی مقدماتی", "file_id": "FILE_ID_INTRO"}],
+        "files": [
+            {"name": "جزوه ریاضی مقدماتی - فایل ۱", "file_id": "FILE_ID_INTRO_1"},
+            {"name": "جزوه ریاضی مقدماتی - فایل ۲", "file_id": "FILE_ID_INTRO_2"},
+        ],
     },
     "book_math1": {
         "title": "ریاضی عمومی ۱",
         "files": [
             {"name": "📝 جزوه ریاضی عمومی ۱ - بخش اول", "file_id": "FILE_ID_PDF_2_1"},
             {"name": "📝 جزوه ریاضی عمومی ۱ - بخش دوم", "file_id": "FILE_ID_PDF_2_2"},
+            {"name": "📝 جزوه ریاضی عمومی ۱ - بخش سوم", "file_id": "FILE_ID_PDF_2_3"},
         ],
     },
     "book_math2": {
@@ -58,9 +63,36 @@ BOOKS_DATA = {
     },
     "book_eq": {
         "title": "معادلات دیفرانسیل",
+        "files": [{"name": "📝 جزوه معادلات دیفرانسیل", "file_id": "FILE_ID_PDF_4_1"}],
+    },
+    "book_probability": {
+        "title": "مبانی احتمال",
+        "files": [{"name": "جزوه مبانی احتمال", "file_id": "FILE_ID_PDF_PROB"}],
+    },
+    "book_statistics": {
+        "title": "مبانی آمار",
         "files": [
-            {"name": "📝 جزوه معادلات دیفرانسیل - قسمت اول", "file_id": "FILE_ID_PDF_4_1"},
-            {"name": "📝 جزوه معادلات دیفرانسیل - قسمت دوم", "file_id": "FILE_ID_PDF_4_2"},
+            {"name": "جزوه مبانی آمار - فایل ۱", "file_id": "FILE_ID_STAT_1"},
+            {"name": "جزوه مبانی آمار - فایل ۲", "file_id": "FILE_ID_STAT_2"},
+        ],
+    },
+    "book_linear": {
+        "title": "جبر خطی",
+        "files": [{"name": "جزوه جبر خطی", "file_id": "FILE_ID_PDF_9"}],
+    },
+    "book_discrete": {
+        "title": "ریاضیات گسسته",
+        "files": [{"name": "جزوه ریاضیات گسسته", "file_id": "FILE_ID_PDF_8"}],
+    },
+    "book_geometry": {
+        "title": "مبانی هندسه",
+        "files": [{"name": "جزوه مبانی هندسه", "file_id": "FILE_ID_PDF_7"}],
+    },
+    "book_proof": {
+        "title": "مقدمه‌ای بر اثبات",
+        "files": [
+            {"name": "جزوه مقدمه‌ای بر اثبات - فایل ۱", "file_id": "FILE_ID_PDF_5_1"},
+            {"name": "جزوه مقدمه‌ای بر اثبات - فایل ۲", "file_id": "FILE_ID_PDF_5_2"},
         ],
     },
     "book_number": {
@@ -73,97 +105,136 @@ BOOKS_DATA = {
             {"name": "📄 نظریه اعداد - فایل ۵", "file_id": "FILE_ID_NUM_5"},
         ],
     },
-    "book_geometry": {
-        "title": "مبانی هندسه",
-        "files": [{"name": "جزوه مبانی هندسه", "file_id": "FILE_ID_PDF_7"}],
+    "book_numerical": {
+        "title": "محاسبات عددی",
+        "files": [{"name": "جزوه محاسبات عددی", "file_id": "FILE_ID_NUMERICAL"}],
     },
-    "book_proof": {
-        "title": "مقدمه‌ای بر اثبات",
-        "files": [{"name": "جزوه مقدمه‌ای بر اثبات", "file_id": "FILE_ID_PDF_5"}],
-    },
-    "book_discrete": {
-        "title": "ریاضیات گسسته",
-        "files": [{"name": "جزوه ریاضیات گسسته", "file_id": "FILE_ID_PDF_8"}],
-    },
-    "book_linear": {
-        "title": "جبر خطی",
-        "files": [{"name": "جزوه جبر خطی", "file_id": "FILE_ID_PDF_9"}],
-    },
-    "book_probability": {
-        "title": "مبانی احتمال",
-        "files": [{"name": "جزوه مبانی احتمال", "file_id": "FILE_ID_PDF_PROB"}],
+    "book_analysis1": {
+        "title": "آنالیز ریاضی",
+        "files": [{"name": "جزوه آنالیز ریاضی", "file_id": "FILE_ID_ANALYSIS_1"}],
     },
 }
 
-# منابع و رفرنس‌ها - دروس تخصصی ریاضی (شامل ۱۸ گزینه: ۱۱ گزینه قبلی + ۷ گزینه جدید و تغییر نام آمار)
+# منابع و رفرنس‌ها - دروس تخصصی ریاضی (با رعایت ترتیب مبانی آمار و مبانی احتمال پشت سر هم و تغییر نام آنالیز ریاضی ۱ به آنالیز ریاضی)
 REFERENCES_SPECIALIZED = {
+    "ref_statistics_basis": {
+        "title": "مبانی آمار",
+        "files": [
+            {"name": "📖 کتاب مرجع مبانی آمار - فایل ۱", "file_id": "FILE_ID_REF_STAT_1"},
+            {"name": "📖 کتاب مرجع مبانی آمار - فایل ۲", "file_id": "FILE_ID_REF_STAT_2"},
+        ],
+    },
+    "ref_probability_basis": {
+        "title": "مبانی احتمال",
+        "files": [
+            {"name": "📖 کتاب مرجع مبانی احتمال - فایل ۱", "file_id": "FILE_ID_REF_PROB_1"},
+            {"name": "📖 کتاب مرجع مبانی احتمال - فایل ۲", "file_id": "FILE_ID_REF_PROB_2"},
+        ],
+    },
+    "ref_analysis1": {
+        "title": "آنالیز ریاضی",
+        "files": [
+            {"name": "📖 کتاب مرجع آنالیز ریاضی - فایل ۱", "file_id": "FILE_ID_REF_ANALY_1"},
+            {"name": "📖 کتاب مرجع آنالیز ریاضی - فایل ۲", "file_id": "FILE_ID_REF_ANALY_2"},
+            {"name": "📖 کتاب مرجع آنالیز ریاضی - فایل ۳", "file_id": "FILE_ID_REF_ANALY_3"},
+            {"name": "📖 کتاب مرجع آنالیز ریاضی - فایل ۴", "file_id": "FILE_ID_REF_ANALY_4"},
+            {"name": "📖 کتاب مرجع آنالیز ریاضی - فایل ۵", "file_id": "FILE_ID_REF_ANALY_5"},
+            {"name": "📖 کتاب مرجع آنالیز ریاضی - فایل ۶", "file_id": "FILE_ID_REF_ANALY_6"},
+        ],
+    },
     "ref_math1": {
         "title": "ریاضی عمومی ۱",
-        "files": [{"name": "📖 کتاب مرجع ریاضی عمومی ۱", "file_id": "FILE_ID_REF_M1"}],
+        "files": [
+            {"name": "📖 کتاب مرجع ریاضی عمومی ۱ - فایل ۱", "file_id": "FILE_ID_REF_M1_1"},
+            {"name": "📖 کتاب مرجع ریاضی عمومی ۱ - فایل ۲", "file_id": "FILE_ID_REF_M1_2"},
+            {"name": "📖 کتاب مرجع ریاضی عمومی ۱ - فایل ۳", "file_id": "FILE_ID_REF_M1_3"},
+            {"name": "📖 کتاب مرجع ریاضی عمومی ۱ - فایل ۴", "file_id": "FILE_ID_REF_M1_4"},
+            {"name": "📖 کتاب مرجع ریاضی عمومی ۱ - فایل ۵", "file_id": "FILE_ID_REF_M1_5"},
+            {"name": "📖 کتاب مرجع ریاضی عمومی ۱ - فایل ۶", "file_id": "FILE_ID_REF_M1_6"},
+        ],
     },
     "ref_math2": {
         "title": "ریاضی عمومی ۲",
-        "files": [{"name": "📖 کتاب مرجع ریاضی عمومی ۲", "file_id": "FILE_ID_REF_M2"}],
+        "files": [
+            {"name": "📖 کتاب مرجع ریاضی عمومی ۲ - فایل ۱", "file_id": "FILE_ID_REF_M2_1"},
+            {"name": "📖 کتاب مرجع ریاضی عمومی ۲ - فایل ۲", "file_id": "FILE_ID_REF_M2_2"},
+        ],
     },
     "ref_eq": {
         "title": "معادلات دیفرانسیل",
         "files": [{"name": "📖 کتاب مرجع معادلات دیفرانسیل", "file_id": "FILE_ID_REF_EQ"}],
-    },
-    "ref_linear": {
-        "title": "جبرخطی",
-        "files": [{"name": "📖 کتاب مرجع جبرخطی", "file_id": "FILE_ID_REF_LIN"}],
-    },
-    "ref_discrete": {
-        "title": "ریاضیات گسسته",
-        "files": [{"name": "📖 کتاب مرجع ریاضیات گسسته", "file_id": "FILE_ID_REF_DISC"}],
-    },
-    "ref_proof": {
-        "title": "مقدمه‌ای بر اثبات",
-        "files": [{"name": "📖 کتاب مرجع مقدمه‌ای بر اثبات", "file_id": "FILE_ID_REF_PROOF"}],
-    },
-    "ref_number": {
-        "title": "نظریه اعداد",
-        "files": [{"name": "📖 کتاب مرجع نظریه اعداد", "file_id": "FILE_ID_REF_NUM"}],
-    },
-    "ref_geometry": {
-        "title": "مبانی هندسه",
-        "files": [{"name": "📖 کتاب مرجع مبانی هندسه", "file_id": "FILE_ID_REF_GEO"}],
-    },
-    "ref_probability_basis": {
-        "title": "مبانی احتمال",
-        "files": [{"name": "📖 کتاب مرجع مبانی احتمال", "file_id": "FILE_ID_REF_PROB"}],
-    },
-    "ref_algebraic_structures": {
-        "title": "ساختارهای جبری",
-        "files": [{"name": "📖 کتاب مرجع ساختارهای جبری", "file_id": "FILE_ID_REF_ALG"}],
-    },
-    "ref_analysis1": {
-        "title": "آنالیز ریاضی ۱",
-        "files": [{"name": "📖 کتاب مرجع آنالیز ریاضی ۱", "file_id": "FILE_ID_REF_ANALY"}],
-    },
-    "ref_physics1": {
-        "title": "فیزیک پایه ۱",
-        "files": [{"name": "📖 کتاب مرجع فیزیک پایه ۱", "file_id": "FILE_ID_REF_PHY1"}],
-    },
-    "ref_physics2": {
-        "title": "فیزیک پایه ۲",
-        "files": [{"name": "📖 کتاب مرجع فیزیک پایه ۲", "file_id": "FILE_ID_REF_PHY2"}],
-    },
-    "ref_statistics_basis": {
-        "title": "مبانی آمار",
-        "files": [{"name": "📖 کتاب مرجع مبانی آمار", "file_id": "FILE_ID_REF_STAT_BASIS"}],
     },
     "ref_numerical": {
         "title": "محاسبات عددی",
         "files": [{"name": "📖 کتاب مرجع محاسبات عددی", "file_id": "FILE_ID_REF_NUMERICAL"}],
     },
     "ref_linear_opt": {
-        "title": "بهینه‌سازی خطی",
-        "files": [{"name": "📖 کتاب مرجع بهینه‌سازی خطی", "file_id": "FILE_ID_REF_OPT"}],
+        "title": "بهینه‌سازی",
+        "files": [{"name": "📖 کتاب مرجع بهینه‌سازی", "file_id": "FILE_ID_REF_OPT"}],
     },
     "ref_specialized_lang": {
         "title": "زبان تخصصی",
         "files": [{"name": "📖 کتاب مرجع زبان تخصصی", "file_id": "FILE_ID_REF_LANG"}],
+    },
+    "ref_physics1": {
+        "title": "فیزیک پایه ۱",
+        "files": [
+            {"name": "📖 کتاب مرجع فیزیک پایه ۱ - فایل ۱", "file_id": "FILE_ID_REF_PHY1_1"},
+            {"name": "📖 کتاب مرجع فیزیک پایه ۱ - فایل ۲", "file_id": "FILE_ID_REF_PHY1_2"},
+        ],
+    },
+    "ref_physics2": {
+        "title": "فیزیک پایه ۲",
+        "files": [
+            {"name": "📖 کتاب مرجع فیزیک پایه ۲ - فایل ۱", "file_id": "FILE_ID_REF_PHY2_1"},
+            {"name": "📖 کتاب مرجع فیزیک پایه ۲ - فایل ۲", "file_id": "FILE_ID_REF_PHY2_2"},
+        ],
+    },
+    "ref_linear": {
+        "title": "جبرخطی",
+        "files": [
+            {"name": "📖 کتاب مرجع جبرخطی - فایل ۱", "file_id": "FILE_ID_REF_LIN_1"},
+            {"name": "📖 کتاب مرجع جبرخطی - فایل ۲", "file_id": "FILE_ID_REF_LIN_2"},
+        ],
+    },
+    "ref_algebraic_structures": {
+        "title": "ساختارهای جبری",
+        "files": [
+            {"name": "📖 کتاب مرجع ساختارهای جبری - فایل ۱", "file_id": "FILE_ID_REF_ALG_1"},
+            {"name": "📖 کتاب مرجع ساختارهای جبری - فایل ۲", "file_id": "FILE_ID_REF_ALG_2"},
+        ],
+    },
+    "ref_proof": {
+        "title": "مقدمه‌ای بر اثبات",
+        "files": [
+            {"name": "📖 کتاب مرجع مقدمه‌ای بر اثبات - فایل ۱", "file_id": "FILE_ID_REF_PROOF_1"},
+            {"name": "📖 کتاب مرجع مقدمه‌ای بر اثبات - فایل ۲", "file_id": "FILE_ID_REF_PROOF_2"},
+            {"name": "📖 کتاب مرجع مقدمه‌ای بر اثبات - فایل ۳", "file_id": "FILE_ID_REF_PROOF_3"},
+            {"name": "📖 کتاب مرجع مقدمه‌ای بر اثبات - فایل ۴", "file_id": "FILE_ID_REF_PROOF_4"},
+        ],
+    },
+    "ref_discrete": {
+        "title": "ریاضیات گسسته",
+        "files": [
+            {"name": "📖 کتاب مرجع ریاضیات گسسته - فایل ۱", "file_id": "FILE_ID_REF_DISC_1"},
+            {"name": "📖 کتاب مرجع ریاضیات گسسته - فایل ۲", "file_id": "FILE_ID_REF_DISC_2"},
+            {"name": "📖 کتاب مرجع ریاضیات گسسته - فایل ۳", "file_id": "FILE_ID_REF_DISC_3"},
+            {"name": "📖 کتاب مرجع ریاضیات گسسته - فایل ۴", "file_id": "FILE_ID_REF_DISC_4"},
+            {"name": "📖 کتاب مرجع ریاضیات گسسته - فایل ۵", "file_id": "FILE_ID_REF_DISC_5"},
+            {"name": "📖 کتاب مرجع ریاضیات گسسته - فایل ۶", "file_id": "FILE_ID_REF_DISC_6"},
+        ],
+    },
+    "ref_geometry": {
+        "title": "مبانی هندسه",
+        "files": [
+            {"name": "📖 کتاب مرجع مبانی هندسه - فایل ۱", "file_id": "FILE_ID_REF_GEO_1"},
+            {"name": "📖 کتاب مرجع مبانی هندسه - فایل ۲", "file_id": "FILE_ID_REF_GEO_2"},
+            {"name": "📖 کتاب مرجع مبانی هندسه - فایل ۳", "file_id": "FILE_ID_REF_GEO_3"},
+        ],
+    },
+    "ref_number": {
+        "title": "نظریه اعداد",
+        "files": [{"name": "📖 کتاب مرجع نظریه اعداد", "file_id": "FILE_ID_REF_NUM"}],
     },
     "ref_math_art": {
         "title": "ریاضی و هنر",
@@ -171,64 +242,58 @@ REFERENCES_SPECIALIZED = {
     },
 }
 
-# منابع و رفرنس‌ها - دروس عمومی (۱۰ گزینه جدید)
+# منابع و رفرنس‌ها - دروس عمومی
 REFERENCES_GENERAL = {
     "gen_english": {
         "title": "زبان انگلیسی",
-        "files": [{"name": "📖 منبع زبان انگلیسی", "file_id": "FILE_ID_GEN_ENG"}],
-    },
-    "gen_persian": {
-        "title": "زبان فارسی",
-        "files": [{"name": "📖 منبع زبان فارسی", "file_id": "FILE_ID_GEN_PER"}],
+        "files": [
+            {"name": "📖 منبع زبان انگلیسی - فایل ۱", "file_id": "FILE_ID_GEN_ENG_1"},
+            {"name": "📖 منبع زبان انگلیسی - فایل ۲", "file_id": "FILE_ID_GEN_ENG_2"},
+        ],
     },
     "gen_health": {
         "title": "سلامت و بهداشت",
-        "files": [{"name": "📖 منبع سلامت و بهداشت", "file_id": "FILE_ID_GEN_HEALTH"}],
-    },
-    "gen_analytical_history": {
-        "title": "تاریخ تحلیلی",
-        "files": [{"name": "📖 منبع تاریخ تحلیلی", "file_id": "FILE_ID_GEN_AN_HIST"}],
+        "files": [
+            {"name": "📖 منبع سلامت و بهداشت - فایل ۱", "file_id": "FILE_ID_GEN_HEALTH_1"},
+            {"name": "📖 منبع سلامت و بهداشت - فایل ۲", "file_id": "FILE_ID_GEN_HEALTH_2"},
+        ],
     },
     "gen_history_civilization": {
         "title": "تاریخ و تمدن",
-        "files": [{"name": "📖 منبع تاریخ و تمدن", "file_id": "FILE_ID_GEN_HIST_CIV"}],
-    },
-    "gen_family_knowledge": {
-        "title": "دانش خانواده",
-        "files": [{"name": "📖 منبع دانش خانواده", "file_id": "FILE_ID_GEN_FAM"}],
+        "files": [],
     },
     "gen_islamic_thought": {
         "title": "اندیشه اسلامی",
-        "files": [{"name": "📖 منبع اندیشه اسلامی", "file_id": "FILE_ID_GEN_ISL_THG"}],
+        "files": [],
     },
     "gen_life_tradition": {
         "title": "آیین زندگی",
-        "files": [{"name": "📖 منبع آیین زندگی", "file_id": "FILE_ID_GEN_LIFE"}],
+        "files": [],
     },
     "gen_islamic_revolution": {
         "title": "انقلاب اسلامی",
-        "files": [{"name": "📖 منبع انقلاب اسلامی", "file_id": "FILE_ID_GEN_REV"}],
+        "files": [],
+    },
+    "gen_family_knowledge": {
+        "title": "دانش خانواده",
+        "files": [],
+    },
+    "gen_analytical_history": {
+        "title": "تاریخ تحلیلی",
+        "files": [],
     },
     "gen_quran_interpretation": {
         "title": "تفسیر قرآن",
-        "files": [{"name": "📖 منبع تفسیر قرآن", "file_id": "FILE_ID_GEN_QURAN"}],
+        "files": [],
+    },
+    "gen_persian": {
+        "title": "زبان فارسی",
+        "files": [],
     },
 }
 
-# منابع و رفرنس‌ها - دروس تربیتی (۱۱ گزینه جدید)
+# منابع و رفرنس‌ها - دروس تربیتی
 REFERENCES_EDUCATIONAL = {
-    "edu_docs_laws": {
-        "title": "اسناد و قوانین آ.پ",
-        "files": [{"name": "📖 منبع اسناد و قوانین آ.پ", "file_id": "FILE_ID_EDU_DOCS"}],
-    },
-    "edu_teacher_ethics": {
-        "title": "اخلاق معلمی",
-        "files": [{"name": "📖 منبع اخلاق معلمی", "file_id": "FILE_ID_EDU_ETHICS"}],
-    },
-    "edu_religious_training": {
-        "title": "تربیت دینی",
-        "files": [{"name": "📖 منبع تربیت دینی", "file_id": "FILE_ID_EDU_REL"}],
-    },
     "edu_educational_biography": {
         "title": "سیره تربیتی",
         "files": [{"name": "📖 منبع سیره تربیتی", "file_id": "FILE_ID_EDU_BIO"}],
@@ -237,21 +302,25 @@ REFERENCES_EDUCATIONAL = {
         "title": "فلسفه تربیتی",
         "files": [{"name": "📖 منبع فلسفه تربیتی", "file_id": "FILE_ID_EDU_PHIL"}],
     },
-    "edu_islamic_schools_exp": {
-        "title": "آشنایی با تجارب مدارس اسلامی",
-        "files": [{"name": "📖 منبع تجارب مدارس اسلامی", "file_id": "FILE_ID_EDU_SCH"}],
+    "edu_docs_laws": {
+        "title": "اسناد و قوانین آ.پ",
+        "files": [{"name": "📖 منبع اسناد و قوانین آ.پ", "file_id": "FILE_ID_EDU_DOCS"}],
+    },
+    "edu_religious_training": {
+        "title": "تربیت دینی",
+        "files": [{"name": "📖 منبع تربیت دینی", "file_id": "FILE_ID_EDU_REL"}],
+    },
+    "edu_teacher_ethics": {
+        "title": "اخلاق معلمی",
+        "files": [{"name": "📖 منبع اخلاق معلمی", "file_id": "FILE_ID_EDU_ETHICS"}],
     },
     "edu_islamic_training_challenges": {
         "title": "چالش‌های تربیت اسلامی",
         "files": [{"name": "📖 منبع چالش‌های تربیت اسلامی", "file_id": "FILE_ID_EDU_CHALL"}],
     },
-    "edu_sacred_defense": {
-        "title": "دفاع مقدس",
-        "files": [{"name": "📖 منبع دفاع مقدس", "file_id": "FILE_ID_EDU_DEFENSE"}],
-    },
     "edu_educational_psychology": {
-        "title": "روانشناسی تربیتی",
-        "files": [{"name": "📖 منبع روانشناسی تربیتی", "file_id": "FILE_ID_EDU_PSY"}],
+        "title": "روانشناسی",
+        "files": [{"name": "📖 منبع روانشناسی", "file_id": "FILE_ID_EDU_PSY"}],
     },
     "edu_counseling_principles": {
         "title": "اصول مشاوره",
@@ -261,24 +330,41 @@ REFERENCES_EDUCATIONAL = {
         "title": "جامعه شناسی",
         "files": [{"name": "📖 منبع جامعه شناسی", "file_id": "FILE_ID_EDU_SOC"}],
     },
+    "edu_islamic_schools_exp": {
+        "title": "آشنایی با تجارب مدارس اسلامی",
+        "files": [],
+    },
+    "edu_sacred_defense": {
+        "title": "دفاع مقدس",
+        "files": [],
+    },
 }
 
-# کتب درسی ریاضی متوسطه (متوسطه اول و دوم با زیرمجموعه‌ها)
+# کتب درسی ریاضی متوسطه (متوسطه اول و دوم با زیرمجموعه‌ها - هرکدام دو فایل)
 HIGH_SCHOOL_MATH = {
     "middle_school": {
         "title": "متوسطه اول",
         "sub_items": {
             "grade_7": {
                 "title": "هفتم",
-                "files": [{"name": "📚 کتاب ریاضی هفتم", "file_id": "FILE_ID_MATH_7"}],
+                "files": [
+                    {"name": "📚 کتاب ریاضی هفتم - بخش اول", "file_id": "FILE_ID_MATH_7_1"},
+                    {"name": "📚 کتاب ریاضی هفتم - بخش دوم", "file_id": "FILE_ID_MATH_7_2"},
+                ],
             },
             "grade_8": {
                 "title": "هشتم",
-                "files": [{"name": "📚 کتاب ریاضی هشتم", "file_id": "FILE_ID_MATH_8"}],
+                "files": [
+                    {"name": "📚 کتاب ریاضی هشتم - بخش اول", "file_id": "FILE_ID_MATH_8_1"},
+                    {"name": "📚 کتاب ریاضی هشتم - بخش دوم", "file_id": "FILE_ID_MATH_8_2"},
+                ],
             },
             "grade_9": {
                 "title": "نهم",
-                "files": [{"name": "📚 کتاب ریاضی نهم", "file_id": "FILE_ID_MATH_9"}],
+                "files": [
+                    {"name": "📚 کتاب ریاضی نهم - بخش اول", "file_id": "FILE_ID_MATH_9_1"},
+                    {"name": "📚 کتاب ریاضی نهم - بخش دوم", "file_id": "FILE_ID_MATH_9_2"},
+                ],
             },
         },
     },
@@ -287,41 +373,65 @@ HIGH_SCHOOL_MATH = {
         "sub_items": {
             "10_math_exp": {
                 "title": "دهم ریاضی و تجربی",
-                "files": [{"name": "📚 کتاب ریاضی ۱ دهم ریاضی و تجربی", "file_id": "FILE_ID_MATH_10_ME"}],
+                "files": [
+                    {"name": "📚 کتاب ریاضی ۱ دهم ریاضی و تجربی - فایل ۱", "file_id": "FILE_ID_MATH_10_ME_1"},
+                    {"name": "📚 کتاب ریاضی ۱ دهم ریاضی و تجربی - فایل ۲", "file_id": "FILE_ID_MATH_10_ME_2"},
+                ],
             },
             "10_humanities": {
                 "title": "دهم انسانی",
-                "files": [{"name": "📚 کتاب ریاضی و آمار ۱ دهم انسانی", "file_id": "FILE_ID_MATH_10_HUM"}],
+                "files": [
+                    {"name": "📚 کتاب ریاضی و آمار ۱ دهم انسانی - فایل ۱", "file_id": "FILE_ID_MATH_10_HUM_1"},
+                    {"name": "📚 کتاب ریاضی و آمار ۱ دهم انسانی - فایل ۲", "file_id": "FILE_ID_MATH_10_HUM_2"},
+                ],
             },
             "11_math": {
                 "title": "یازدهم ریاضی",
-                "files": [{"name": "📚 کتاب‌های ریاضی یازدهم ریاضی", "file_id": "FILE_ID_MATH_11_M"}],
+                "files": [
+                    {"name": "📚 کتاب‌های ریاضی یازدهم ریاضی - فایل ۱", "file_id": "FILE_ID_MATH_11_M_1"},
+                    {"name": "📚 کتاب‌های ریاضی یازدهم ریاضی - فایل ۲", "file_id": "FILE_ID_MATH_11_M_2"},
+                ],
             },
             "11_exp": {
                 "title": "یازدهم تجربی",
-                "files": [{"name": "📚 کتاب ریاضی یازدهم تجربی", "file_id": "FILE_ID_MATH_11_E"}],
+                "files": [
+                    {"name": "📚 کتاب ریاضی یازدهم تجربی - فایل ۱", "file_id": "FILE_ID_MATH_11_E_1"},
+                    {"name": "📚 کتاب ریاضی یازدهم تجربی - فایل ۲", "file_id": "FILE_ID_MATH_11_E_2"},
+                ],
             },
             "11_humanities": {
                 "title": "یازدهم انسانی",
-                "files": [{"name": "📚 کتاب ریاضی و آمار ۲ یازدهم انسانی", "file_id": "FILE_ID_MATH_11_HUM"}],
+                "files": [
+                    {"name": "📚 کتاب ریاضی و آمار ۲ یازدهم انسانی - فایل ۱", "file_id": "FILE_ID_MATH_11_HUM_1"},
+                    {"name": "📚 کتاب ریاضی و آمار ۲ یازدهم انسانی - فایل ۲", "file_id": "FILE_ID_MATH_11_HUM_2"},
+                ],
             },
             "12_math": {
                 "title": "دوازدهم ریاضی",
-                "files": [{"name": "📚 کتاب‌های ریاضی دوازدهم ریاضی", "file_id": "FILE_ID_MATH_12_M"}],
+                "files": [
+                    {"name": "📚 کتاب‌های ریاضی دوازدهم ریاضی - فایل ۱", "file_id": "FILE_ID_MATH_12_M_1"},
+                    {"name": "📚 کتاب‌های ریاضی دوازدهم ریاضی - فایل ۲", "file_id": "FILE_ID_MATH_12_M_2"},
+                ],
             },
             "12_exp": {
                 "title": "دوازدهم تجربی",
-                "files": [{"name": "📚 کتاب ریاضی دوازدهم تجربی", "file_id": "FILE_ID_MATH_12_E"}],
+                "files": [
+                    {"name": "📚 کتاب ریاضی دوازدهم تجربی - فایل ۱", "file_id": "FILE_ID_MATH_12_E_1"},
+                    {"name": "📚 کتاب ریاضی دوازدهم تجربی - فایل ۲", "file_id": "FILE_ID_MATH_12_E_2"},
+                ],
             },
             "12_humanities": {
                 "title": "دوازدهم انسانی",
-                "files": [{"name": "📚 کتاب ریاضی و آمار ۳ دوازدهم انسانی", "file_id": "FILE_ID_MATH_12_HUM"}],
+                "files": [
+                    {"name": "📚 کتاب ریاضی و آمار ۳ دوازدهم انسانی - فایل ۱", "file_id": "FILE_ID_MATH_12_HUM_1"},
+                    {"name": "📚 کتاب ریاضی و آمار ۳ دوازدهم انسانی - فایل ۲", "file_id": "FILE_ID_MATH_12_HUM_2"},
+                ],
             },
         },
     },
 }
 
-# بخش ویدیوهای آموزشی جدید با زیربخش‌های دقیق و تعداد ویدیوهای درخواستی (با حفظ کامل کپشن‌ها)
+# بخش ویدیوهای آموزشی جدید با زیربخش‌های دقیق و تعداد ویدیوهای درخواستی
 VIDEOS_DATA = {
     "vid_math1": {
         "title": "ریاضی عمومی ۱",
@@ -557,14 +667,15 @@ def get_join_channel_menu():
 
 def get_main_reply_keyboard():
     keyboard = ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
-    btn1 = KeyboardButton("🔗 لینک‌های مفید")
-    btn2 = KeyboardButton("🎙️ نشریات و پادکست")
-    btn3 = KeyboardButton("🎬 ویدیوهای آموزشی")
-    btn4 = KeyboardButton("📚 چارت‌های درسی")
-    btn5 = KeyboardButton("📄 جزوات")
-    btn6 = KeyboardButton("📖 منابع و رفرنس")
-    btn7 = KeyboardButton("📞 پشتیبانی و ارسال فایل")
-    btn8 = KeyboardButton("☎️ راه‌های ارتباطی")
+    # استفاده از ایموجی‌های رنگی و جذاب برای 8 کلید اصلی طبق درخواست رنگ‌بندی زیبا
+    btn1 = KeyboardButton("🔗 لینک‌های مفید 🔵")
+    btn2 = KeyboardButton("🎙️ نشریات و پادکست 🟣")
+    btn3 = KeyboardButton("🎬 ویدیوهای آموزشی 🔴")
+    btn4 = KeyboardButton("📚 چارت‌های درسی 🟢")
+    btn5 = KeyboardButton("📄 جزوات 🟡")
+    btn6 = KeyboardButton("📖 منابع و رفرنس 🟠")
+    btn7 = KeyboardButton("📞 پشتیبانی 🟤")
+    btn8 = KeyboardButton("☎️ راه‌های ارتباطی ⚫")
 
     keyboard.add(btn1, btn2)
     keyboard.add(btn3, btn4)
@@ -595,7 +706,7 @@ def get_handouts_menu():
     return markup
 
 
-# منوی اصلی منابع و رفرنس شامل ۴ گزینه (تخصصی، عمومی، تربیتی، کتب درسی ریاضی متوسطه)
+# منوی اصلی منابع و رفرنس شامل ۴ گزینه
 def get_references_main_menu():
     markup = InlineKeyboardMarkup()
     markup.row_width = 1
@@ -617,7 +728,7 @@ def get_references_main_menu():
     return markup
 
 
-# دروس تخصصی ریاضی (۱۸ گزینه)
+# دروس تخصصی ریاضی
 def get_references_specialized_menu():
     markup = InlineKeyboardMarkup()
     markup.row_width = 2
@@ -627,7 +738,7 @@ def get_references_specialized_menu():
     return markup
 
 
-# دروس عمومی (۱۰ گزینه)
+# دروس عمومی
 def get_references_general_menu():
     markup = InlineKeyboardMarkup()
     markup.row_width = 2
@@ -637,7 +748,7 @@ def get_references_general_menu():
     return markup
 
 
-# دروس تربیتی (۱۱ گزینه)
+# دروس تربیتی
 def get_references_educational_menu():
     markup = InlineKeyboardMarkup()
     markup.row_width = 2
@@ -667,7 +778,7 @@ def get_middle_school_menu():
     return markup
 
 
-# زیرمجموعه متوسطه دوم (۸ گزینه)
+# زیرمجموعه متوسطه دوم
 def get_high_school_sub_menu():
     markup = InlineKeyboardMarkup()
     markup.row_width = 1
@@ -677,7 +788,7 @@ def get_high_school_sub_menu():
     return markup
 
 
-# منوی ویدیوهای آموزشی (۴ گزینه اصلی)
+# منوی ویدیوهای آموزشی
 def get_videos_main_menu():
     markup = InlineKeyboardMarkup()
     markup.row_width = 1
@@ -862,7 +973,6 @@ def get_useful_links_student_channels_menu():
     return markup
 
 
-# منوی راه‌های ارتباطی شامل ۵ گزینه درخواستی با دکمه‌های شیشه‌ای URL
 def get_communication_menu():
     markup = InlineKeyboardMarkup()
     markup.row_width = 1
@@ -1093,7 +1203,6 @@ def handle_callback(call):
     elif call.data.startswith("hs_sub_"):
         bot.answer_callback_query(call.id)
         key = call.data.replace("hs_sub_", "")
-        # جستجو در متوسطه اول یا دوم
         found_item = None
         if key in HIGH_SCHOOL_MATH["middle_school"]["sub_items"]:
             found_item = HIGH_SCHOOL_MATH["middle_school"]["sub_items"][key]
@@ -1144,8 +1253,6 @@ def handle_callback(call):
     elif call.data.startswith("vid_sub_"):
         bot.answer_callback_query(call.id)
         sub_key = call.data.replace("vid_sub_", "")
-        
-        # پیدا کردن سرفصل مربوطه در میان تمام دوره‌ها
         target_sub = None
         for m_key, m_val in VIDEOS_DATA.items():
             if sub_key in m_val["sub"]:
@@ -1259,6 +1366,11 @@ def handle_callback(call):
     elif call.data in BOOKS_DATA:
         bot.answer_callback_query(call.id)
         course = BOOKS_DATA[call.data]
+        # بررسی پیام‌های پیش‌فرض برای گزینه‌هایی که پیامی به زودی دارند
+        if course["title"] in ["معادلات دیفرانسیل", "محاسبات عددی", "بهینه‌سازی", "زبان تخصصی"]:
+            bot.send_message(call.message.chat.id, "این امکان به زودی فراهم می‌شود.")
+            return
+
         bot.send_message(
             call.message.chat.id,
             f"📁 جزوات مربوط به درس **{course['title']}**:",
@@ -1280,9 +1392,15 @@ def handle_callback(call):
     elif call.data in REFERENCES_SPECIALIZED:
         bot.answer_callback_query(call.id)
         course = REFERENCES_SPECIALIZED[call.data]
+        # بررسی قوانین تعداد فایل‌ها برای دروس تخصصی
+        title = course['title']
+        if title in ["معادلات دیفرانسیل", "محاسبات عددی", "بهینه‌سازی", "زبان تخصصی"]:
+            bot.send_message(call.message.chat.id, "این امکان به زودی فراهم می‌شود.")
+            return
+
         bot.send_message(
             call.message.chat.id,
-            f"📖 رفرنس و منبع مربوط به **{course['title']}**:",
+            f"📖 رفرنس و منبع مربوط به **{title}**:",
             parse_mode="Markdown",
         )
         for file_info in course["files"]:
@@ -1301,9 +1419,14 @@ def handle_callback(call):
     elif call.data in REFERENCES_GENERAL:
         bot.answer_callback_query(call.id)
         course = REFERENCES_GENERAL[call.data]
+        title = course['title']
+        if title in ["تاریخ و تمدن", "اندیشه اسلامی", "آیین زندگی", "انقلاب اسلامی", "دانش خانواده", "تاریخ تحلیلی", "تفسیر قرآن", "زبان فارسی"]:
+            bot.send_message(call.message.chat.id, "این امکان به زودی فراهم می‌شود.")
+            return
+
         bot.send_message(
             call.message.chat.id,
-            f"📖 منبع عمومی مربوط به **{course['title']}**:",
+            f"📖 منبع عمومی مربوط به **{title}**:",
             parse_mode="Markdown",
         )
         for file_info in course["files"]:
@@ -1322,9 +1445,14 @@ def handle_callback(call):
     elif call.data in REFERENCES_EDUCATIONAL:
         bot.answer_callback_query(call.id)
         course = REFERENCES_EDUCATIONAL[call.data]
+        title = course['title']
+        if title in ["آشنایی با تجارب مدارس اسلامی", "دفاع مقدس"]:
+            bot.send_message(call.message.chat.id, "این امکان به زودی فراهم می‌شود.")
+            return
+
         bot.send_message(
             call.message.chat.id,
-            f"📖 منبع تربیتی مربوط به **{course['title']}**:",
+            f"📖 منبع تربیتی مربوط به **{title}**:",
             parse_mode="Markdown",
         )
         for file_info in course["files"]:
@@ -1347,14 +1475,14 @@ def handle_callback(call):
 @bot.message_handler(
     func=lambda message: message.text
     in [
-        "🔗 لینک‌های مفید",
-        "🎙️ نشریات و پادکست",
-        "🎬 ویدیوهای آموزشی",
-        "📚 چارت‌های درسی",
-        "📄 جزوات",
-        "📖 منابع و رفرنس",
-        "📞 پشتیبانی و ارسال فایل",
-        "☎️ راه‌های ارتباطی",
+        "🔗 لینک‌های مفید 🔵",
+        "🎙️ نشریات و پادکست 🟣",
+        "🎬 ویدیوهای آموزشی 🔴",
+        "📚 چارت‌های درسی 🟢",
+        "📄 جزوات 🟡",
+        "📖 منابع و رفرنس 🟠",
+        "📞 پشتیبانی 🟤",
+        "☎️ راه‌های ارتباطی ⚫",
     ]
 )
 def handle_reply_keyboard_buttons(message):
@@ -1369,7 +1497,7 @@ def handle_reply_keyboard_buttons(message):
 
     text = message.text
 
-    if text == "📚 چارت‌های درسی":
+    if "چارت‌های درسی" in text:
         bot.send_message(
             message.chat.id,
             "📚 **بخش چارت‌های درسی و برنامه‌ها**\n\nگزینه مورد نظر خودت رو انتخاب کن:",
@@ -1377,7 +1505,7 @@ def handle_reply_keyboard_buttons(message):
             reply_markup=get_chart_menu(),
         )
 
-    elif text == "🎬 ویدیوهای آموزشی":
+    elif "ویدیوهای آموزشی" in text:
         bot.send_message(
             message.chat.id,
             "🎬 **بخش ویدیوهای آموزشی**\n\nدرس مورد نظر رو انتخاب کن:",
@@ -1385,7 +1513,7 @@ def handle_reply_keyboard_buttons(message):
             reply_markup=get_videos_main_menu(),
         )
 
-    elif text == "📄 جزوات":
+    elif "جزوات" in text:
         bot.send_message(
             message.chat.id,
             "📄 **بانک جزوات ریاضی**\n\nکدوم درس رو نیاز داری؟",
@@ -1393,7 +1521,7 @@ def handle_reply_keyboard_buttons(message):
             reply_markup=get_handouts_menu(),
         )
 
-    elif text == "📖 منابع و رفرنس":
+    elif "منابع و رفرنس" in text:
         bot.send_message(
             message.chat.id,
             "📖 **بخش منابع و رفرنس‌ها**\n\nدسته‌بندی مورد نظر رو انتخاب کن:",
@@ -1401,7 +1529,7 @@ def handle_reply_keyboard_buttons(message):
             reply_markup=get_references_main_menu(),
         )
 
-    elif text == "🎙️ نشریات و پادکست":
+    elif "نشریات و پادکست" in text:
         bot.send_message(
             message.chat.id,
             "🎙 **نشریات و پادکست‌های انجمن علمی ریاضی**\n\nبخش مورد نظر رو انتخاب کن:",
@@ -1409,7 +1537,7 @@ def handle_reply_keyboard_buttons(message):
             reply_markup=get_podcasts_magazines_menu(),
         )
 
-    elif text == "🔗 لینک‌های مفید":
+    elif "لینک‌های مفید" in text:
         bot.send_message(
             message.chat.id,
             "🔗 **لینک‌های مهم و کاربردی دانشگاه:**\n\nبخش مورد نظر رو انتخاب کن:",
@@ -1417,7 +1545,7 @@ def handle_reply_keyboard_buttons(message):
             reply_markup=get_useful_links_main_menu(),
         )
 
-    elif text == "📞 پشتیبانی و ارسال فایل":
+    elif "پشتیبانی" in text:
         sup_text = (
             "📞 **ارتباط با پشتیبانی و ارسال فایل**\n\nهر گونه پیشنهاد، انتقاد یا"
             " فایلی داری بفرست تا به دست ادمین برسه: 👇"
@@ -1425,7 +1553,7 @@ def handle_reply_keyboard_buttons(message):
         sent_msg = bot.send_message(message.chat.id, sup_text, parse_mode="Markdown")
         bot.register_next_step_handler(sent_msg, receive_user_file_or_message)
 
-    elif text == "☎️ راه‌های ارتباطی":
+    elif "راه‌های ارتباطی" in text:
         comm_text = (
             "☎️ **راه‌های ارتباطی با انجمن علمی ریاضی:**\n\n"
             "لطفاً یکی از راه‌های ارتباطی زیر را انتخاب کنید:"
