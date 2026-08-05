@@ -247,15 +247,15 @@ REFERENCES_GENERAL = {
     "gen_english": {
         "title": "زبان انگلیسی",
         "files": [
-            {"name": "📖 منبع زبان انگلیسی - فایل ۱", "file_id": "FILE_ID_GEN_ENG_1"},
-            {"name": "📖 منبع زبان انگلیسی - فایل ۲", "file_id": "FILE_ID_GEN_ENG_2"},
+            {"name": "📖 منبع زبان انگلیسی - فایل خام", "file_id": "BQACAgQAAxkBAAIDO2py_Hu9oCpeFWk6FrlJOv8pmALNAAKIGwAC3yZIUnzyjk7voUMQPQQ"},
+            {"name": "📖 منبع زبان انگلیسی - فایل حل شده", "file_id": "BQACAgQAAxkBAAIDPWpy_IN9M_eZtT9rKTm8pbNabp9PAAMbAAJNriFSLJmTKJr3zCU9BA"},
         ],
     },
     "gen_health": {
         "title": "سلامت و بهداشت",
         "files": [
-            {"name": "📖 منبع سلامت و بهداشت - فایل ۱", "file_id": "FILE_ID_GEN_HEALTH_1"},
-            {"name": "📖 منبع سلامت و بهداشت - فایل ۲", "file_id": "FILE_ID_GEN_HEALTH_2"},
+            {"name": "📖 منبع سلامت و بهداشت - فایل خلاصه", "file_id": "BQACAgQAAxkBAAIDP2py_IiRRYACe5moHIO7Os15zsCAAAK0GgACI5aoUvZcrgWGu3FpPQQ"},
+            {"name": "📖 منبع سلامت و بهداشت - فایل جزوه", "file_id": "BQACAgQAAxkBAAIDQWpy_ItETnBDxUpa3Td0K6_WKBkhAAKCHAACZFWwUtBC815X0cfiPQQ"},
         ],
     },
     "gen_history_civilization": {
@@ -296,7 +296,7 @@ REFERENCES_GENERAL = {
 REFERENCES_EDUCATIONAL = {
     "edu_educational_biography": {
         "title": "سیره تربیتی",
-        "files": [{"name": "📖 منبع سیره تربیتی", "file_id": "FILE_ID_EDU_BIO"}],
+        "files": [{"name": "📖 منبع سیره تربیتی", "file_id": "BQACAgQAAxkBAAIDL2py_F3nKiVNrnOj8fPjpvGotgMpAAKfCQACLZ_oUeHEnejO5dV2PQQ"}],
     },
     "edu_educational_philosophy": {
         "title": "فلسفه تربیتی",
@@ -304,27 +304,27 @@ REFERENCES_EDUCATIONAL = {
     },
     "edu_docs_laws": {
         "title": "اسناد و قوانین آ.پ",
-        "files": [{"name": "📖 منبع اسناد و قوانین آ.پ", "file_id": "FILE_ID_EDU_DOCS"}],
+        "files": [{"name": "📖 منبع اسناد و قوانین آ.پ", "file_id": "BQACAgQAAxkBAAIDMWpy_GMoMtQ_wN1Yq_7uHEMovXWYAAIVFwACAjkIUPs2BCIPneR7PQQ"}],
     },
     "edu_religious_training": {
         "title": "تربیت دینی",
-        "files": [{"name": "📖 منبع تربیت دینی", "file_id": "FILE_ID_EDU_REL"}],
+        "files": [{"name": "📖 منبع تربیت دینی", "file_id": "BQACAgQAAxkBAAIDOWpy_HYeCeZgSI9hFlSA_lyZ8eOyAAJ0IAACb_gIUnqapd3HnwcjPQQ"}],
     },
     "edu_teacher_ethics": {
         "title": "اخلاق معلمی",
-        "files": [{"name": "📖 منبع اخلاق معلمی", "file_id": "FILE_ID_EDU_ETHICS"}],
+        "files": [{"name": "📖 منبع اخلاق معلمی", "file_id": "BQACAgQAAxkBAAIDNWpy_Gxw7vnrQ2Jj4DMIoQ8JLL7JAAJDHAACI5awUvGXLmnys5PBPQQ"}],
     },
     "edu_islamic_training_challenges": {
         "title": "چالش‌های تربیت اسلامی",
-        "files": [{"name": "📖 منبع چالش‌های تربیت اسلامی", "file_id": "FILE_ID_EDU_CHALL"}],
+        "files": [{"name": "📖 منبع چالش‌های تربیت اسلامی", "file_id": "BQACAgQAAxkBAAIDN2py_HHJ9cEB51S3SUauHHr0AZa2AAJdJQAC5U-hUuCIuR2EeyklPQQ"}],
     },
     "edu_educational_psychology": {
         "title": "روانشناسی",
-        "files": [{"name": "📖 منبع روانشناسی", "file_id": "FILE_ID_EDU_PSY"}],
+        "files": [{"name": "📖 منبع روانشناسی تربیتی", "file_id": "BQACAgQAAxkBAAIDLWpy_FPUoIZlq36NOMJ4qkzuRlhmAAKxFQACSMSpUolOGKfvv-LlPQQ"}],
     },
     "edu_counseling_principles": {
         "title": "اصول مشاوره",
-        "files": [{"name": "📖 منبع اصول مشاوره", "file_id": "FILE_ID_EDU_COUNSEL"}],
+        "files": [{"name": "📖 منبع اصول مشاوره", "file_id": "BQACAgQAAxkBAAIDM2py_GjHtInvBUbv87afjrCVKfvvAAIFBwACXHXRUMMV5OMkhIgKPQQ"}],
     },
     "edu_sociology": {
         "title": "جامعه شناسی",
@@ -404,56 +404,56 @@ HIGH_SCHOOL_MATH = {
                         "title": "ریاضی دهم",
                         "files": [
                             {"name": "📚 کتاب ریاضی دهم ریاضی", "file_id": "BQACAgQAAxkBAAIDDWpy9rEsL2BZPrAHD8Pba94abzepAAI9FQACXUUhUwqZgTZsiMcQPQQ"},
-                            {"name": "📚 راهنمای معلم ریاضی دهم ریاضی", "file_id": "FILE_ID_MATH_10_TCH"}
+                            {"name": "📚 راهنمای معلم ریاضی دهم ریاضی", "file_id": "BQACAgQAAxkBAAIDD2py9rgOi7TGpN5Fltx4wU38LDJ0AAJIFQACXUUhUwGY2z25SkbOPQQ"}
                         ],
                     },
                     "10_geometry": {
                         "title": "هندسه دهم",
                         "files": [
-                            {"name": "📚 کتاب هندسه دهم", "file_id": "FILE_ID_GEO_10"},
-                            {"name": "📚 راهنمای معلم هندسه دهم", "file_id": "FILE_ID_GEO_10_TCH"}
+                            {"name": "📚 کتاب هندسه دهم", "file_id": "BQACAgQAAxkBAAIC-Wpy9mh8tVVUYz3Dh_GvgtOrNXAxAAJAFQACXUUhU-ZUC0sTs8AiPQQ"},
+                            {"name": "📚 راهنمای معلم هندسه دهم", "file_id": "BQACAgQAAxkBAAIC-2py9m9R9HrWGzhMlEN82cd_qxpWAAJLFQACXUUhUwbjdMVz7g6nPQQ"}
                         ],
                     },
                     "11_calculus": {
                         "title": "حسابان یازدهم",
                         "files": [
-                            {"name": "📚 کتاب حسابان یازدهم", "file_id": "FILE_ID_CALC_11"},
-                            {"name": "📚 راهنمای معلم حسابان یازدهم", "file_id": "FILE_ID_CALC_11_TCH"}
+                            {"name": "📚 کتاب حسابان یازدهم", "file_id": "BQACAgQAAxkBAAIDEWpy9r2OfKfjHg01ScNoAAE2k_UfqAACPhUAAl1FIVO03MhawtPtvT0E"},
+                            {"name": "📚 راهنمای معلم حسابان یازدهم", "file_id": "BQACAgQAAxkBAAIDE2py9sUZ3VF7q4fBIdHgR2v3ZFPkAAJJFQACXUUhU5XXnv2rkogTPQQ"}
                         ],
                     },
                     "11_geometry": {
                         "title": "هندسه یازدهم",
                         "files": [
-                            {"name": "📚 کتاب هندسه یازدهم", "file_id": "FILE_ID_GEO_11"},
-                            {"name": "📚 راهنمای معلم هندسه یازدهم", "file_id": "FILE_ID_GEO_11_TCH"}
+                            {"name": "📚 کتاب هندسه یازدهم", "file_id": "BQACAgQAAxkBAAIC_Wpy9naN2ncjph_IHzAHMrz-ioP5AAJBFQACXUUhU0Bkcw0EZb9iPQQ"},
+                            {"name": "📚 راهنمای معلم هندسه یازدهم", "file_id": "BQACAgQAAxkBAAIC_2py9n4jerkmXi5rnb08JHdghy8oAAJMFQACXUUhUyS3LxsoUadYPQQ"}
                         ],
                     },
                     "11_stats": {
                         "title": "آمار و احتمال یازدهم",
                         "files": [
-                            {"name": "📚 کتاب آمار و احتمال یازدهم", "file_id": "FILE_ID_STATS_11"},
-                            {"name": "📚 راهنمای معلم آمار و احتمال یازدهم", "file_id": "FILE_ID_STATS_11_TCH"}
+                            {"name": "📚 کتاب آمار و احتمال یازدهم", "file_id": "BQACAgQAAxkBAAIDBWpy9pf8zQht1SSG-BGUwRC6bVdKAAJDFQACXUUhU-JqzLydR_V3PQQ"},
+                            {"name": "📚 راهنمای معلم آمار و احتمال یازدهم", "file_id": "BQACAgQAAxkBAAIDB2py9p5iCTQF6oraO3m93CE8Mwz3AAJOFQACXUUhU2Wi3p1Yb8gLPQQ"}
                         ],
                     },
                     "12_calculus": {
                         "title": "حسابان دوازدهم",
                         "files": [
-                            {"name": "📚 کتاب حسابان دوازدهم", "file_id": "FILE_ID_CALC_12"},
-                            {"name": "📚 راهنمای معلم حسابان دوازدهم", "file_id": "FILE_ID_CALC_12_TCH"}
+                            {"name": "📚 کتاب حسابان دوازدهم", "file_id": "BQACAgQAAxkBAAIDFWpy9ssITvVGqMooDoPhbK-Lvvi9AAI_FQACXUUhUwZNRtZH1vf8PQQ"},
+                            {"name": "📚 راهنمای معلم حسابان دوازدهم", "file_id": "BQACAgQAAxkBAAIDF2py9tJFOfHIcZB5FRaJlu9L_TBBAAJKFQACXUUhUxbp7hAMOgIUPQQ"}
                         ],
                     },
                     "12_geometry": {
                         "title": "هندسه دوازدهم",
                         "files": [
-                            {"name": "📚 کتاب هندسه دوازدهم", "file_id": "FILE_ID_GEO_12"},
-                            {"name": "📚 راهنمای معلم هندسه دوازدهم", "file_id": "FILE_ID_GEO_12_TCH"}
+                            {"name": "📚 کتاب هندسه دوازدهم", "file_id": "BQACAgQAAxkBAAIDAWpy9oV5QeLTQJF5kzNb3CbDwXxWAAJCFQACXUUhU_wl5Xo5W4rwPQQ"},
+                            {"name": "📚 راهنمای معلم هندسه دوازدهم", "file_id": "BQACAgQAAxkBAAIDA2py9oscWOXqQSDP0GuYGdo2BsRpAAJNFQACXUUhU8j4nRY8zCquPQQ"}
                         ],
                     },
                     "12_discrete": {
                         "title": "ریاضیات گسسته دوازدهم",
                         "files": [
-                            {"name": "📚 کتاب ریاضیات گسسته دوازدهم", "file_id": "FILE_ID_DISC_12"},
-                            {"name": "📚 راهنمای معلم ریاضیات گسسته دوازدهم", "file_id": "FILE_ID_DISC_12_TCH"}
+                            {"name": "📚 کتاب ریاضیات گسسته دوازدهم", "file_id": "BQACAgQAAxkBAAIDCWpy9qSsyl2Wy6lxnk3foCLfZeUoAAJEFQACXUUhUxeJFVJOcnEgPQQ"},
+                            {"name": "📚 راهنمای معلم ریاضیات گسسته دوازدهم", "file_id": "BQACAgQAAxkBAAIDC2py9qhzGhg-vnXAy4qiJE5d5gtJAAJQFQACXUUhU7SSTSc0fv54PQQ"}
                         ],
                     },
                 },
