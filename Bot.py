@@ -45,29 +45,29 @@ BOOKS_DATA = {
     "book_intro": {
         "title": "ریاضی مقدماتی",
         "files": [
-            {"name": "جزوه ریاضی مقدماتی - فایل ۱", "file_id": "FILE_ID_INTRO_1"},
-            {"name": "جزوه ریاضی مقدماتی - فایل ۲", "file_id": "FILE_ID_INTRO_2"},
+            {"name": "جزوه ریاضی مقدماتی -فایل 1 ", "file_id": "BQACAgQAAxkBAAIBqWpyIN_vSe4B9EN0JPmBJNQ206soAAIpHgACByd4UzfZyqXy7gABbj0E"},
+            {"name": "جزوه ریاضی مقدماتی - فایل 2", "file_id": "BQACAgQAAxkBAAIBrWpyITquRZi7fCuVEr-gyri55Q0VAAL9HQACByd4U7LaJvJY6HDIPQQ"},
         ],
     },
     "book_math1": {
         "title": "ریاضی عمومی ۱",
         "files": [
-            {"name": "📝 جزوه ریاضی عمومی ۱ - بخش اول", "file_id": "FILE_ID_PDF_2_1"},
-            {"name": "📝 جزوه ریاضی عمومی ۱ - بخش دوم", "file_id": "FILE_ID_PDF_2_2"},
-            {"name": "📝 جزوه ریاضی عمومی ۱ - بخش سوم", "file_id": "FILE_ID_PDF_2_3"},
+            {"name": "📝  ریاضی عمومی ۱ - جزوه اول", "file_id": "BQACAgQAAxkBAAIBq2pyIOiPIzy-Z_99wScmKftEvPMBAAIWHgACByd4Uwt6o3ibHtClPQQ"},
+            {"name": "📝  ریاضی عمومی ۱ - جزوه دوم", "file_id": "BQACAgQAAxkBAAIBsWpyIUz51c3prfmHgq4GLjkjgRvRAAI1HgACByd4UxnvhreD2NcpPQQ"},
+            {"name": "📝  ریاضی عمومی ۱ - ادامه جزوه دوم", "file_id": "BQACAgQAAxkBAAIBs2pyIVGMDbk5hUm1kwdyvJSDsFgrAAI2HgACByd4Uzjx_wxA9FBOPQQ"},
         ],
     },
     "book_math2": {
         "title": "ریاضی عمومی ۲",
-        "files": [{"name": "📝 جزوه ریاضی عمومی ۲", "file_id": "FILE_ID_PDF_3"}],
+        "files": [{"name": "📝 جزوه ریاضی عمومی ۲", "file_id": "BQACAgQAAxkBAAIBtWpyIVroF9caJzufTnTfmGLR7P4NAAMeAAIHJ3hTZM6kagevN149BA"}],
     },
     "book_eq": {
         "title": "معادلات دیفرانسیل",
-        "files": [{"name": "📝 جزوه معادلات دیفرانسیل", "file_id": "FILE_ID_PDF_4_1"}],
+        "files": [{"name": "📝 جزوه معادلات دیفرانسیل", "file_id": "BQACAgQAAxkBAAIBt2pyIWMFQK8gs2Et7S7k3P-AXzWsAAIvHgACByd4U7BnrjKIVXWTPQQ"}],
     },
     "book_probability": {
         "title": "مبانی احتمال",
-        "files": [{"name": "جزوه مبانی احتمال", "file_id": "FILE_ID_PDF_PROB"}],
+        "files": [{"name": "جزوه مبانی احتمال", "file_id": "BQACAgQAAxkBAAIBz2pyIdzaLK6QouNIZ6Au_gxpZzEvAAIwHgACByd4U_QUjA9F8KGePQQ"}],
     },
     "book_statistics": {
         "title": "مبانی آمار",
@@ -78,31 +78,31 @@ BOOKS_DATA = {
     },
     "book_linear": {
         "title": "جبر خطی",
-        "files": [{"name": "جزوه جبر خطی", "file_id": "FILE_ID_PDF_9"}],
+        "files": [{"name": "جزوه جبر خطی", "file_id": "BQACAgQAAxkBAAIBzWpyIdOjejA6L3mVYhS6XvdKacJ8AAIIHgACByd4U91rb40dnivlPQQ"}],
     },
     "book_discrete": {
         "title": "ریاضیات گسسته",
-        "files": [{"name": "جزوه ریاضیات گسسته", "file_id": "FILE_ID_PDF_8"}],
+        "files": [{"name": "جزوه ریاضیات گسسته", "file_id": "BQACAgQAAxkBAAIBy2pyIcgWfbJelm-PRKU7pylrmw-ZAAICHgACByd4U6Q0xRZUDt_zPQQ"}],
     },
     "book_geometry": {
         "title": "مبانی هندسه",
-        "files": [{"name": "جزوه مبانی هندسه", "file_id": "FILE_ID_PDF_7"}],
+        "files": [{"name": "جزوه مبانی هندسه", "file_id": "BQACAgQAAxkBAAIBxWpyIa6PbwoMypHan2yY0r9FP1TrAAL2HQACByd4U8877A99o_jFPQQ"}],
     },
     "book_proof": {
         "title": "مقدمه‌ای بر اثبات",
         "files": [
-            {"name": "جزوه مقدمه‌ای بر اثبات - فایل ۱", "file_id": "FILE_ID_PDF_5_1"},
-            {"name": "جزوه مقدمه‌ای بر اثبات - فایل ۲", "file_id": "FILE_ID_PDF_5_2"},
+            {"name": "جزوه مقدمه‌ای بر اثبات - فایل ۱", "file_id": "BQACAgQAAxkBAAIBx2pyIbjNRX2jpA39CVAKzVl6CZzOAAIsHgACByd4U_acq0vbw666PQQ"},
+            {"name": "جزوه مقدمه‌ای بر اثبات - فایل ۲", "file_id": "BQACAgQAAxkBAAIByWpyIb0-7E_Ir726Y17BnU-V5kw5AAI7HgACByd4U-zISaD3nIUXPQQ"},
         ],
     },
     "book_number": {
         "title": "نظریه اعداد",
         "files": [
-            {"name": "📄 نظریه اعداد - فایل ۱", "file_id": "FILE_ID_NUM_1"},
-            {"name": "📄 نظریه اعداد - فایل ۲", "file_id": "FILE_ID_NUM_2"},
-            {"name": "📄 نظریه اعداد - فایل ۳", "file_id": "FILE_ID_NUM_3"},
-            {"name": "📄 نظریه اعداد - فایل ۴", "file_id": "FILE_ID_NUM_4"},
-            {"name": "📄 نظریه اعداد - فایل ۵", "file_id": "FILE_ID_NUM_5"},
+            {"name": "📄 جزوه اول نظریه اعداد - بخش ۱", "file_id": "BQACAgQAAxkBAAIBu2pyIXV2RtcCqCmkMwfYuvruAcUkAAIyHgACByd4U2XKykzn1hLuPQQ"},
+            {"name": "📄 جزوه اول نظریه اعداد - بخش ۲", "file_id": "BQACAgQAAxkBAAIBvWpyIXuDPQfKOv_NFjhETvU465yLAAIzHgACByd4U7D6xmcgo_USPQQ"},
+            {"name": "📄 جزوه اول نظریه اعداد - بخش ۳", "file_id": "BQACAgQAAxkBAAIBv2pyIYOJNk-cEX-Y6UXPykakfzyvAAIHHgACByd4U3LK5f1Y_BWzPQQ"},
+            {"name": "📄 جزوه دوم نظریه اعداد - بخش 1", "file_id": "BQACAgQAAxkBAAIBwWpyIY_KsSvPPVkW7D-IM0AnL3s6AAIXHgACByd4U-vSMOZrw2YEPQQ"},
+            {"name": "📄 جزوه دوم نظریه اعداد - بخش 2", "file_id": "BQACAgQAAxkBAAIBw2pyIZ_LmrAln5FmnMJxXTa6LjKZAAIxHgACByd4U3nQ3hlucQtmPQQ"},
         ],
     },
     "book_numerical": {
@@ -127,8 +127,8 @@ REFERENCES_SPECIALIZED = {
     "ref_probability_basis": {
         "title": "مبانی احتمال",
         "files": [
-            {"name": "📖 کتاب مرجع مبانی احتمال - فایل ۱", "file_id": "FILE_ID_REF_PROB_1"},
-            {"name": "📖 کتاب مرجع مبانی احتمال - فایل ۲", "file_id": "FILE_ID_REF_PROB_2"},
+            {"name": "📖 کتاب مرجع مبانی احتمال - شلدون راس ", "file_id": "BQACAgQAAxkBAAIEE2pzHTLBzQXwyud5S8WZ5Wnq02zoAAI3GQACdsrwUrizUoGQ8VAXPQQ"},
+            {"name": "📖 کتاب مرجع مبانی احتمال - حل مسائل ", "file_id": "BQACAgQAAxkBAAIEFWpzHTeY7l_lhGMCubPQdsXc6dC0AAI4GQACdsrwUoowH_Skwe6KPQQ"},
         ],
     },
     "ref_analysis1": {
@@ -145,19 +145,19 @@ REFERENCES_SPECIALIZED = {
     "ref_math1": {
         "title": "ریاضی عمومی ۱",
         "files": [
-            {"name": "📖 کتاب مرجع ریاضی عمومی ۱ - فایل ۱", "file_id": "FILE_ID_REF_M1_1"},
-            {"name": "📖 کتاب مرجع ریاضی عمومی ۱ - فایل ۲", "file_id": "FILE_ID_REF_M1_2"},
-            {"name": "📖 کتاب مرجع ریاضی عمومی ۱ - فایل ۳", "file_id": "FILE_ID_REF_M1_3"},
-            {"name": "📖 کتاب مرجع ریاضی عمومی ۱ - فایل ۴", "file_id": "FILE_ID_REF_M1_4"},
-            {"name": "📖 کتاب مرجع ریاضی عمومی ۱ - فایل ۵", "file_id": "FILE_ID_REF_M1_5"},
-            {"name": "📖 کتاب مرجع ریاضی عمومی ۱ - فایل ۶", "file_id": "FILE_ID_REF_M1_6"},
+            {"name": "📖 کتاب مرجع ریاضی عمومی ۱ - آدامز ", "file_id": "BQACAgQAAxkBAAIEA2pzHL07vfatStBYitIDdN-pEaaFAAJbEQACnptgUvMvmiHc64O3PQQ"},
+            {"name": "📖 کتاب مرجع ریاضی عمومی ۱ - حل مسائل آدامز ", "file_id": "BQACAgQAAxkBAAIEBWpzHMWkwIEESRrj-p7uxdySNyPiAAKVHgACF3KZU9XsZQW6FjpmPQQ"},
+            {"name": "📖 کتاب مرجع ریاضی عمومی ۱ - توماس ", "file_id": "BQACAgQAAxkBAAIEB2pzHMvcehVjvIfNVa76CbJNJkrAAAJAAAO8XXhTXkt56QcU5NY9BA"},
+            {"name": "📖 کتاب مرجع ریاضی عمومی ۱ - حل مسائل توماس ", "file_id": "BQACAgQAAxkBAAIECWpzHM8p78BORxVZWE85AnYb1_TqAAIKAAOJ1X8HEe1KXrDOltI9BA"},
+            {"name": "📖 کتاب مرجع ریاضی عمومی ۱ - انتشارات قلم ", "file_id": "BQACAgQAAxkBAAIEC2pzHNWHTX6rrh6wRXfkyKzmz1R5AALJEwACK0QQUqbq_vfdZzBUPQQ"},
+            {"name": "📖 کتاب مرجع ریاضی عمومی ۱ - فرامرزی ", "file_id": "BQACAgQAAxkBAAIEDWpzHOAcbI6Kl7zPKV02t55OINU3AAKWHgACF3KZUzBOAcchHlAvPQQ"},
         ],
     },
     "ref_math2": {
         "title": "ریاضی عمومی ۲",
         "files": [
-            {"name": "📖 کتاب مرجع ریاضی عمومی ۲ - فایل ۱", "file_id": "FILE_ID_REF_M2_1"},
-            {"name": "📖 کتاب مرجع ریاضی عمومی ۲ - فایل ۲", "file_id": "FILE_ID_REF_M2_2"},
+            {"name": "📖 کتاب مرجع ریاضی عمومی ۲ - استوارت ویرایش 6 ", "file_id": "BQACAgQAAxkBAAIED2pzHRwN48rm2vd4YXe70kQ_qhbFAAIiGwACYyXIUg49N7oqJT60PQQ"},
+            {"name": "📖 کتاب مرجع ریاضی عمومی ۲ - حل مسائل ", "file_id": "BQACAgQAAxkBAAIEEWpzHR8hjfcV7XbvIUEZiXjema_7AAIqGwACYyXIUtbtV4Qdrx53PQQ"},
         ],
     },
     "ref_eq": {
@@ -193,15 +193,15 @@ REFERENCES_SPECIALIZED = {
     "ref_linear": {
         "title": "جبرخطی",
         "files": [
-            {"name": "📖 کتاب مرجع جبرخطی - فایل ۱", "file_id": "FILE_ID_REF_LIN_1"},
-            {"name": "📖 کتاب مرجع جبرخطی - فایل ۲", "file_id": "FILE_ID_REF_LIN_2"},
+            {"name": "📖 کتاب مرجع جبرخطی -  شولتز", "file_id": "BQACAgQAAxkBAAIEF2pzHT79K2Ox6C0SzLv0yZk-vgrlAAK-FQACFurJU1H_4MAxBAjhPQQ"},
+            {"name": "📖 کتاب مرجع جبرخطی - هافمن ", "file_id": "BQACAgQAAxkBAAIEGWpzHUL7iOERh5Bq7YIP4p-NeYDRAAJiFQADyrBS4stqvxrxM3w9BA"},
         ],
     },
     "ref_algebraic_structures": {
         "title": "ساختارهای جبری",
         "files": [
-            {"name": "📖 کتاب مرجع ساختارهای جبری - فایل ۱", "file_id": "FILE_ID_REF_ALG_1"},
-            {"name": "📖 کتاب مرجع ساختارهای جبری - فایل ۲", "file_id": "FILE_ID_REF_ALG_2"},
+            {"name": "📖 کتاب مرجع ساختارهای جبری ", "file_id": "BQACAgQAAxkBAAIEH2pzHVEWSnV6aW_5U8YMCOjhh5Y5AALsHwACuQGIUMPtkQzE_9egPQQ"},
+            {"name": "📖 کتاب مرجع ساختارهای جبری - حل مسائل ", "file_id": "BQACAgQAAxkBAAIEIWpzHVQo4bhD-x-CBfltHBw61xmdAAJIHwACuQGQUHLVwRg89dxqPQQ"},
         ],
     },
     "ref_proof": {
@@ -234,11 +234,11 @@ REFERENCES_SPECIALIZED = {
     },
     "ref_number": {
         "title": "نظریه اعداد",
-        "files": [{"name": "📖 کتاب مرجع نظریه اعداد", "file_id": "FILE_ID_REF_NUM"}],
+        "files": [{"name": "📖 کتاب مرجع نظریه اعداد", "file_id": "BQACAgQAAxkBAAIEG2pzHUadAAFvxFGzll-fK2YQ6ZY6vwAC1BoAAkF_iVGkrwVX2UYa8j0E"}],
     },
     "ref_math_art": {
         "title": "ریاضی و هنر",
-        "files": [{"name": "📖 کتاب مرجع ریاضی و هنر", "file_id": "FILE_ID_REF_ART"}],
+        "files": [{"name": "📖 کتاب مرجع ریاضی و هنر", "file_id": "BQACAgQAAxkBAAIEHWpzHU080lTB8gV7wfq_PNdk-GISAAICFwAC0LvZUakZNz1cjUxuPQQ"}],
     },
 }
 
