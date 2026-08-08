@@ -451,7 +451,7 @@ HIGH_SCHOOL_MATH = {
                 "title": "رشته ریاضی و فیزیک",
                 "sub_items": {
                     "10_math": {
-                        "title": "ریاضی دهم",
+                        "title": "ریاضی دهم ریاضی",
                         "files": [
                             {"name": "📚 کتاب ریاضی دهم ریاضی", "file_id": "BQACAgQAAxkBAAIDDWpy9rEsL2BZPrAHD8Pba94abzepAAI9FQACXUUhUwqZgTZsiMcQPQQ"},
                             {"name": "📚 راهنمای معلم ریاضی دهم ریاضی", "file_id": "BQACAgQAAxkBAAIDD2py9rgOi7TGpN5Fltx4wU38LDJ0AAJIFQACXUUhUwGY2z25SkbOPQQ"}
@@ -538,7 +538,7 @@ HIGH_SCHOOL_MATH = {
     },
 }
 
-# بخش ویدیوهای آموزشی (اصلاح ویدیوهای انتگرال: حذف ۵ و ۶ اضافی و داشتن ۵ ویدیو)
+# بخش ویدیوهای آموزشی
 VIDEOS_DATA = {
     "vid_math1": {
         "title": "ریاضی عمومی ۱",
@@ -753,7 +753,6 @@ MAGAZINES_DATA = [
 # 🔘 توابع ساخت کیبوردها و منوها
 # ==========================================
 
-
 def get_join_channel_menu():
     markup = InlineKeyboardMarkup()
     channel_url = f"https://t.me/{CHANNEL_USERNAME.replace('@', '')}"
@@ -775,7 +774,7 @@ def get_main_reply_keyboard():
     btn5 = KeyboardButton("📄 جزوات دروس ریاضی 🟢")
     btn6 = KeyboardButton("📖 منابع و کتاب‌ها 🟤")
     btn7 = KeyboardButton("📞 ارسال فایل و گزارش 🟥")
-    btn8 = KeyboardButton("☎️ کانال‌های ارتباطی ")
+    btn8 = KeyboardButton("☎️ کانال‌های ارتباطی 🟦")
 
     keyboard.add(btn1, btn2)
     keyboard.add(btn3, btn4)
@@ -963,7 +962,7 @@ def get_useful_links_main_menu():
         ),
         InlineKeyboardButton(
             "🎓 تحصیلات تکمیلی",
-            url="LINK_HIGHER_EDUCATION_HERE",
+            url="https://www.sru.ac.ir",
         ),
         InlineKeyboardButton(
             "📢 کانال‌های رسمی دانشگاه", callback_data="links_uni_channels"
@@ -1184,12 +1183,6 @@ def send_welcome(message):
 def broadcast_message(message):
     if message.from_user.id != ADMIN_ID:
         return
-    
-    # دستور برای ارسال پیام همگانی توسط ادمین (فرمت: /sendall متن پیام یا ریپلای روی پیام)
-    target_msg = message.reply_to_message if message.reply_to_message else message
-    text_to_send = message.text.replace("/sendall", "").strip()
-    
-    # در اینجا می‌توانید لیست کاربران را ذخیره کرده و به آن‌ها پیام بفرستید
     bot.reply_to(message, "📢 قابلیت ارسال پیام همگانی برای کاربران فعال شد.")
 
 
@@ -1676,7 +1669,7 @@ def handle_reply_keyboard_buttons(message):
 
     text = message.text
 
-    if "چارت‌های درسی" in text:
+    if "چارت و تقویم آموزشی" in text:
         bot.send_message(
             message.chat.id,
             "📚 **بخش چارت‌های درسی و برنامه‌ها**\n\nگزینه مورد نظر خودت رو انتخاب کن:",
@@ -1692,7 +1685,7 @@ def handle_reply_keyboard_buttons(message):
             reply_markup=get_videos_main_menu(),
         )
 
-    elif "جزوات" in text:
+    elif "جزوات دروس ریاضی" in text:
         bot.send_message(
             message.chat.id,
             "📄 **بانک جزوات ریاضی**\n\nکدوم درس رو نیاز داری؟",
@@ -1700,7 +1693,7 @@ def handle_reply_keyboard_buttons(message):
             reply_markup=get_handouts_menu(),
         )
 
-    elif "منابع و رفرنس" in text:
+    elif "منابع و کتاب‌ها" in text:
         bot.send_message(
             message.chat.id,
             "📖 **بخش منابع و رفرنس‌ها**\n\nدسته‌بندی مورد نظر رو انتخاب کن:",
@@ -1724,7 +1717,7 @@ def handle_reply_keyboard_buttons(message):
             reply_markup=get_useful_links_main_menu(),
         )
 
-    elif "پشتیبانی" in text:
+    elif "ارسال فایل و گزارش" in text:
         sup_text = (
             "📞 **ارتباط با پشتیبانی و ارسال فایل**\n\nهر گونه پیشنهاد، انتقاد یا"
             " فایلی داری بفرست تا به دست ادمین برسه: 👇"
@@ -1732,7 +1725,7 @@ def handle_reply_keyboard_buttons(message):
         sent_msg = bot.send_message(message.chat.id, sup_text, parse_mode="Markdown")
         bot.register_next_step_handler(sent_msg, receive_user_file_or_message)
 
-    elif "راه‌های ارتباطی" in text:
+    elif "کانال‌های ارتباطی" in text:
         comm_text = (
             "☎️ **راه‌های ارتباطی با انجمن علمی ریاضی:**\n\n"
             "لطفاً یکی از راه‌های ارتباطی زیر را انتخاب کنید:"
@@ -1746,7 +1739,7 @@ def handle_reply_keyboard_buttons(message):
 
 
 # ==========================================
-# 📥 مدیریت دریافت فایل/پیام کاربر (اصلاح منطق پشتیبانی و ارسال سایر گزینه‌ها)
+# 📥 مدیریت دریافت فایل/پیام کاربر
 # ==========================================
 @bot.message_handler(
     content_types=["photo", "document", "video", "audio", "voice", "text"]
@@ -1798,17 +1791,14 @@ def handle_all_messages(message):
         )
         bot.reply_to(message, response_text, parse_mode="Markdown")
     else:
-        # بررسی اینکه آیا کاربر دکمه‌های منوی اصلی را زده است یا در حال ارسال پیام پشتیبانی است
         menu_buttons = [
-            "🔗 لینک‌های مفید 🔵", "🎙️ نشریات و پادکست 🟣", "🎬 ویدیوهای آموزشی 🔴",
-            "📚 چارت‌های درسی 🟢", "📄 جزوات 🟡", "📖 منابع و رفرنس 🟠",
-            "📞 پشتیبانی 🟤", "☎️ راه‌های ارتباطی ⚫"
+            "🔗 لینک‌های مفید 🔵", "🎙️ نشریات و پادکست 🟣", "🎬 ویدیوهای آموزشی 🟠",
+            "📚 چارت و تقویم آموزشی 🟡", "📄 جزوات دروس ریاضی 🟢", "📖 منابع و کتاب‌ها 🟤",
+            "📞 ارسال فایل و گزارش 🟥", "☎️ کانال‌های ارتباطی 🟦"
         ]
         if message.text in menu_buttons:
-            # اگر دکمه‌های منو را زد، پیام به ادمین ارسال نشود و هندلر مربوطه عمل کند
             return
         
-        # اگر کاربر مستقیماً پیام فرستاد (در حالت پشتیبانی) به ادمین ارسال شود
         receive_user_file_or_message(message)
 
 
@@ -1825,14 +1815,15 @@ def receive_user_file_or_message(message):
         bot.send_message(ADMIN_ID, header_text, parse_mode="Markdown")
         bot.forward_message(ADMIN_ID, message.chat.id, message.message_id)
         bot.reply_to(
-            message, "✅ پیام یا فایل شما با موفقیت به دست ادمین رسید. مرسی! 🌹"
+            message, "✅ پیام یا فایل شما با موفقیت به دست ادمین رسید."
         )
     except Exception as e:
         bot.reply_to(message, "❌ خطا در ارسال پیام به ادمین.")
-        print(f"Error: {e}")
 
 
-# اجرای اصلی ربات
+# ==========================================
+# ▶️ اجرای ربات
+# ==========================================
 if __name__ == "__main__":
-    print("Bot is running and waiting for messages...")
+    print("Bot is running...")
     bot.infinity_polling()
