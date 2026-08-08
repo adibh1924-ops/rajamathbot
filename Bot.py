@@ -748,6 +748,53 @@ MAGAZINES_DATA = [
     },
 ]
 
+# ==========================================
+# 🔗 بخش لینک‌های مربوط به انجمن‌های علمی و کانون‌ها (برای جای‌گذاری لینک‌های دلخواه شما)
+# ==========================================
+SCIENTIFIC_ASSOCIATIONS_LINKS = {
+    0: "https://t.me/example_link",  # دفتر مرکزی انجمن‌های علمی
+    1: "https://t.me/math_rajae",    # انجمن علمی ریاضی
+    2: "https://t.me/Sru_chemistry",  # انجمن علمی شیمی
+    3: "https://t.me/sru_Physics",  # انجمن علمی فیزیک
+    4: "https://t.me/SRU_SCIENCE_EDUCATION",  # انجمن علمی آموزش علوم
+    5: "https://t.me/SruAstronomy",  # انجمن علمی نجوم
+    6: "https://t.me/Srttu_SAFL",  # انجمن علمی زبان
+    7: "https://t.me/SRU_AIrobotic",  # انجمن علمی رباتیک و هوش مصنوعی
+    8: "https://t.me/Rajaee_Computer",  # انجمن علمی کامپیوتر
+    9: "https://t.me/sru_cmp_dev",  # انجمن علمی برنامه نویسی
+    10: "https://t.me/mobl_srttu", # انجمن علمی صنایع مبلمان
+    11: "https://t.me/RAJA_EE", # انجمن علمی برق
+    12: "https://t.me/SRTTUSAM", # انجمن علمی مواد و متالورژی
+    13: "https://t.me/civil_engineering_sru", # انجمن علمی عمران
+    14: "https://t.me/mehrazrajaii", # انجمن علمی معماری
+    15: "https://t.me/graphicsrttu", # انجمن علمی گرافیک
+    16: "https://t.me/SRU_SSA", # انجمن علمی علوم ورزشی
+    17: "https://t.me/srusport", # انجمن علمی تربیت بدنی
+    18: "https://t.me/mech_sru", # انجمن علمی مکانیک
+    19: "https://t.me/IEEE_SRTTU", # شاخه دانشجویی IEEE
+}
+
+CULTURAL_CANNONS_LINKS = {
+    0: "https://t.me/kanonfarhangisru",  # روابط عمومی کانون‌های فرهنگی هنری
+    1: "https://t.me/kanonketab_rajaee",  # کانون کتاب و کتابخوانی
+    2: "https://t.me/photography_rajaee",  # کانون عکاسی
+    3: "https://t.me/sruva",  # کانون هنرهای تجسمی
+    4: "https://t.me/fano_maharat_sru",  # کانون فن و مهارت
+    5: "https://t.me/DbjSRTTU",  # کانون دبیران جوان
+    6: "https://t.me/Negarkhooneh_art",  # کانون نقاشی
+    7: "https://t.me/gooyandegiSRTTU",  # کانون گویندگی و فن بیان
+    8: "https://t.me/RedCrescent_SRU",  # کانون هلال احمر
+    9: "https://t.me/Mahdaviat_Srttu",  # کانون مهدویت
+    10: "https://t.me/sru_poem", # کانون شعر و ادب
+    11: "https://t.me/hamyaran_sru", # کانون همیاران سلامت
+    12: "https://t.me/srttumusic", # کانون موسیقی
+    13: "https://t.me/karafarini_sru", # کانون کارآفرینی و فناوری
+    14: "https://t.me/Tourism_srttu", # کانون گردشگری
+    15: "https://t.me/charchob_theater", # کانون تئاتر
+    16: "https://t.me/rasaneh_sttru", # کانون رسانه
+    17: "https://t.me/rajaee_movie_photo", # کانون فیلم و عکس
+}
+
 
 # ==========================================
 # 🔘 توابع ساخت کیبوردها و منوها
@@ -961,10 +1008,6 @@ def get_useful_links_main_menu():
             callback_data="links_sru_sites",
         ),
         InlineKeyboardButton(
-            "🎓 تحصیلات تکمیلی",
-            url="https://www.sru.ac.ir",
-        ),
-        InlineKeyboardButton(
             "📢 کانال‌های رسمی دانشگاه", callback_data="links_uni_channels"
         ),
         InlineKeyboardButton(
@@ -1037,6 +1080,10 @@ def get_useful_links_uni_channels_menu():
         InlineKeyboardButton(
             "کانال نهاد رهبری", url="https://eitaa.com/nahadrajaee"
         ),
+        InlineKeyboardButton(
+            "🎓 تحصیلات تکمیلی",
+            url="https://eitaa.com/sru_pg",
+        ),
         InlineKeyboardButton("🔙 بازگشت", callback_data="menu_useful_links"),
     )
     return markup
@@ -1086,7 +1133,11 @@ def get_scientific_associations_menu():
         "انجمن علمی علوم ورزشی", "انجمن علمی تربیت بدنی", "انجمن علمی مکانیک", "شاخه دانشجویی IEEE"
     ]
     for idx, name in enumerate(items):
-        markup.add(InlineKeyboardButton(name, callback_data=f"sci_assoc_{idx}"))
+        url = SCIENTIFIC_ASSOCIATIONS_LINKS.get(idx, "")
+        if url:
+            markup.add(InlineKeyboardButton(name, url=url))
+        else:
+            markup.add(InlineKeyboardButton(name, callback_data=f"sci_assoc_{idx}"))
     markup.add(InlineKeyboardButton("🔙 بازگشت", callback_data="links_student_channels"))
     return markup
 
@@ -1102,7 +1153,11 @@ def get_cultural_cannons_menu():
         "کانون رسانه", "کانون فیلم و عکس"
     ]
     for idx, name in enumerate(items):
-        markup.add(InlineKeyboardButton(name, callback_data=f"cult_cannon_{idx}"))
+        url = CULTURAL_CANNONS_LINKS.get(idx, "")
+        if url:
+            markup.add(InlineKeyboardButton(name, url=url))
+        else:
+            markup.add(InlineKeyboardButton(name, callback_data=f"cult_cannon_{idx}"))
     markup.add(InlineKeyboardButton("🔙 بازگشت", callback_data="links_student_channels"))
     return markup
 
@@ -1287,9 +1342,19 @@ def handle_callback(call):
             reply_markup=get_cultural_cannons_menu(),
         )
 
-    elif call.data.startswith("sci_assoc_") or call.data.startswith("cult_cannon_"):
+    elif call.data.startswith("sci_assoc_"):
         bot.answer_callback_query(call.id)
-        bot.send_message(call.message.chat.id, "🔗 لینک مربوطه: [لینک دلخواه شما]")
+        idx = int(call.data.replace("sci_assoc_", ""))
+        url = SCIENTIFIC_ASSOCIATIONS_LINKS.get(idx, "")
+        if not url:
+            bot.send_message(call.message.chat.id, "🔗 لینک این مورد هنوز تنظیم نشده است.")
+
+    elif call.data.startswith("cult_cannon_"):
+        bot.answer_callback_query(call.id)
+        idx = int(call.data.replace("cult_cannon_", ""))
+        url = CULTURAL_CANNONS_LINKS.get(idx, "")
+        if not url:
+            bot.send_message(call.message.chat.id, "🔗 لینک این مورد هنوز تنظیم نشده است.")
 
     elif call.data == "menu_podcasts":
         bot.answer_callback_query(call.id)
