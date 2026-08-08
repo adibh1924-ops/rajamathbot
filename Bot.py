@@ -538,7 +538,7 @@ HIGH_SCHOOL_MATH = {
     },
 }
 
-# بخش ویدیوهای آموزشی (اصلاح ویدیوهای انتگرال: حذف ۵ و ۶ اضافی و داشتن ۵ ویدیو)
+# بخش ویدیوهای آموزشی
 VIDEOS_DATA = {
     "vid_math1": {
         "title": "ریاضی عمومی ۱",
@@ -963,7 +963,7 @@ def get_useful_links_main_menu():
         ),
         InlineKeyboardButton(
             "🎓 تحصیلات تکمیلی",
-            url="LINK_HIGHER_EDUCATION_HERE",
+            url="https://www.sru.ac.ir",
         ),
         InlineKeyboardButton(
             "📢 کانال‌های رسمی دانشگاه", callback_data="links_uni_channels"
@@ -1184,12 +1184,6 @@ def send_welcome(message):
 def broadcast_message(message):
     if message.from_user.id != ADMIN_ID:
         return
-    
-    # دستور برای ارسال پیام همگانی توسط ادمین (فرمت: /sendall متن پیام یا ریپلای روی پیام)
-    target_msg = message.reply_to_message if message.reply_to_message else message
-    text_to_send = message.text.replace("/sendall", "").strip()
-    
-    # در اینجا می‌توانید لیست کاربران را ذخیره کرده و به آن‌ها پیام بفرستید
     bot.reply_to(message, "📢 قابلیت ارسال پیام همگانی برای کاربران فعال شد.")
 
 
@@ -1655,7 +1649,7 @@ def handle_callback(call):
         "🎙️ نشریات و پادکست ",
         "🎬 ویدیوهای آموزشی ",
         "📚 چارت و تقویم آموزشی ",
-        "📄 جزوات ریاضی ",
+        "📄 جزوات دروس ریاضی 🟡",
         "📖 منابع و کتاب‌ها ",
         "📞 ارسال فایل و گزارش ",
         "☎️ کانال‌های ارتباطی ",
@@ -1676,7 +1670,7 @@ def handle_reply_keyboard_buttons(message):
 
     text = message.text
 
-    if "چارت‌های درسی" in text:
+    if "چارت و تقویم آموزشی" in text:
         bot.send_message(
             message.chat.id,
             "📚 **بخش چارت‌های درسی و برنامه‌ها**\n\nگزینه مورد نظر خودت رو انتخاب کن:",
@@ -1700,7 +1694,7 @@ def handle_reply_keyboard_buttons(message):
             reply_markup=get_handouts_menu(),
         )
 
-    elif "منابع و رفرنس" in text:
+    elif "منابع و کتاب‌ها" in text:
         bot.send_message(
             message.chat.id,
             "📖 **بخش منابع و رفرنس‌ها**\n\nدسته‌بندی مورد نظر رو انتخاب کن:",
@@ -1724,7 +1718,7 @@ def handle_reply_keyboard_buttons(message):
             reply_markup=get_useful_links_main_menu(),
         )
 
-    elif "پشتیبانی" in text:
+    elif "ارسال فایل و گزارش" in text:
         sup_text = (
             "📞 **ارتباط با پشتیبانی و ارسال فایل**\n\nهر گونه پیشنهاد، انتقاد یا"
             " فایلی داری بفرست تا به دست ادمین برسه: 👇"
@@ -1732,7 +1726,7 @@ def handle_reply_keyboard_buttons(message):
         sent_msg = bot.send_message(message.chat.id, sup_text, parse_mode="Markdown")
         bot.register_next_step_handler(sent_msg, receive_user_file_or_message)
 
-    elif "راه‌های ارتباطی" in text:
+    elif "کانال‌های ارتباطی" in text:
         comm_text = (
             "☎️ **راه‌های ارتباطی با انجمن علمی ریاضی:**\n\n"
             "لطفاً یکی از راه‌های ارتباطی زیر را انتخاب کنید:"
@@ -1746,7 +1740,7 @@ def handle_reply_keyboard_buttons(message):
 
 
 # ==========================================
-# 📥 مدیریت دریافت فایل/پیام کاربر (اصلاح منطق پشتیبانی و ارسال سایر گزینه‌ها)
+# 📥 مدیریت دریافت فایل/پیام کاربر
 # ==========================================
 @bot.message_handler(
     content_types=["photo", "document", "video", "audio", "voice", "text"]
@@ -1798,17 +1792,14 @@ def handle_all_messages(message):
         )
         bot.reply_to(message, response_text, parse_mode="Markdown")
     else:
-        # بررسی اینکه آیا کاربر دکمه‌های منوی اصلی را زده است یا در حال ارسال پیام پشتیبانی است
         menu_buttons = [
-            "🔗 لینک‌های مفید 🔵", "🎙️ نشریات و پادکست 🟣", "🎬 ویدیوهای آموزشی 🔴",
-            "📚 چارت‌های درسی 🟢", "📄 جزوات 🟡", "📖 منابع و رفرنس 🟠",
-            "📞 پشتیبانی 🟤", "☎️ راه‌های ارتباطی ⚫"
+            "🔗 لینک‌های مفید ", "🎙️ نشریات و پادکست ", "🎬 ویدیوهای آموزشی ",
+            "📚 چارت و تقویم آموزشی ", "📄 جزوات دروس ریاضی 🟡", "📖 منابع و کتاب‌ها ",
+            "📞 ارسال فایل و گزارش ", "☎️ کانال‌های ارتباطی "
         ]
         if message.text in menu_buttons:
-            # اگر دکمه‌های منو را زد، پیام به ادمین ارسال نشود و هندلر مربوطه عمل کند
             return
         
-        # اگر کاربر مستقیماً پیام فرستاد (در حالت پشتیبانی) به ادمین ارسال شود
         receive_user_file_or_message(message)
 
 
