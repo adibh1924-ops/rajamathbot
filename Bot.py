@@ -23,20 +23,24 @@ bot = telebot.TeleBot(TOKEN)
 
 CHARTS_DATA = {
     "chart_1402": {
-        "title": "چارت درسی ورودی ۱۴۰۲ آموزش ریاضی",
+        "title": "چارت درسی ورودی مهر 1402 آموزش ریاضی",
         "file_id": "BQACAgQAAxkBAAIBd2pyGRlOvSXFK05P9oSy0y-bDuSqAAJlHAACIvyRU-zB1RvtSi1APQQ",
     },
     "chart_1403": {
-        "title": "چارت درسی ورودی ۱۴۰۳ آموزش ریاضی",
+        "title": "چارت درسی ورودی مهر 1403 آموزش ریاضی",
         "file_id": "BQACAgQAAxkBAAIBf2pyGZoPejTCupCIwBYro2u2adbJAAJmHAACIvyRUzmxKA40ApeMPQQ",
     },
     "chart_1404": {
-        "title": "چارت درسی ورودی ۱۴۰۴ آموزش ریاضی",
+        "title": "چارت درسی ورودی بهمن 1404 آموزش ریاضی",
         "file_id": "BQACAgQAAxkBAAIBgWpyGavIchw4P9ylXpSOKMmz6t3aAAJnHAACIvyRUw4CKNWJkWB8PQQ",
     },
     "chart_bachelor": {
         "title": "فایل برنامه درسی رشته کارشناسی آموزش ریاضی",
         "file_id": "BQACAgQAAxkBAAIBDWpyCr87cp8z5QHP_hGzmlQ5XTHzAAIbEwACH7LBUSWnbHWURFFgPQQ",
+    },
+    "chart_calendar": {
+        "title": "تقویم آموزشی سال 1405-1406",
+        "file_id": "FILE_ID_EDUCATION_CALENDAR",
     },
 }
 
@@ -242,105 +246,151 @@ REFERENCES_SPECIALIZED = {
     },
 }
 
-# منابع و رفرنس‌ها - دروس عمومی
+# منابع و رفرنس‌ها - دروس عمومی (ترتیب جدید)
 REFERENCES_GENERAL = {
+    "gen_life_tradition": {
+        "title": "آیین زندگی",
+        "files": [{"name": "📖 آیین زندگی | احمدحسین شریفی", "file_id": "BQACAgQAAxkBAAIJ7mp3DWuo4ee7USVhr0zKda-bOZ6fAALCCAACv2C4Umh4E7EGL-HsPQQ"}],
+    },
+    "gen_islamic_thought": {
+        "title": "اندیشه اسلامی",
+        "files": [
+            {"name": "📖 اندیشه اسلامی 1 آیت الله سبحانی", "file_id": "BQACAgQAAxkBAAIJ6mp3DVPwygMzVLcScXfeSs8_EcOoAALfAQACs-yAU4nhXqHVNOyhPQQ"},
+            {"name": "📖 ندیشه اسلامی 2 آیت الله سبحانی", "file_id": "BQACAgQAAxkBAAIJ7Gp3DVqCsIO1uhcXRmlwS1LAy6MVAAK7AAPIdVoHIBhCT4vc-9E9BA"},
+        ],
+    },
+    "gen_persian": {
+        "title": "زبان فارسی",
+        "files": [{"name": "📖 زبان فارسی | یدالله بهمنی - رسول چهرقانی", "file_id": "BQACAgQAAxkBAAIJ_Gp3Dnqdy9BxVUMrWO3GwZq7ffIMAALEBwAC30XxUiIPK_42OhNSPQQ"}],
+    },
     "gen_english": {
         "title": "زبان انگلیسی",
         "files": [
-            {"name": "📖 منبع زبان انگلیسی - فایل خام", "file_id": "BQACAgQAAxkBAAIDO2py_Hu9oCpeFWk6FrlJOv8pmALNAAKIGwAC3yZIUnzyjk7voUMQPQQ"},
-            {"name": "📖 منبع زبان انگلیسی - فایل حل شده", "file_id": "BQACAgQAAxkBAAIDPWpy_IN9M_eZtT9rKTm8pbNabp9PAAMbAAJNriFSLJmTKJr3zCU9BA"},
+            {"name": "📖  زبان انگلیسی - فایل خام", "file_id": "BQACAgQAAxkBAAIDO2py_Hu9oCpeFWk6FrlJOv8pmALNAAKIGwAC3yZIUnzyjk7voUMQPQQ"},
+            {"name": "📖  زبان انگلیسی - فایل حل شده", "file_id": "AIDPWpy_IN9M_eZtT9rKTm8pbNabp9PAAMbAAJNriFSLJmTKJr3zCU9BA"},
         ],
+    },
+    "gen_family_knowledge": {
+        "title": "دانش خانواده و جمعیت",
+        "files": [{"name": "📖 دانش خانواده و جمعیت | زهرا آیت‌اللهی", "file_id": "BQACAgQAAxkBAAIJ8Gp3DXApyI55HPeP99UhZvRjjTq0AALcCQACFXzxUlJAmPDf-t1EPQQ"}],
+    },
+    "gen_islamic_revolution": {
+        "title": "انقلاب اسلامی",
+        "files": [{"name": "📖 انقلاب اسلامی | ویراست دوم - محمدرحیم عیوضی - محمدجواد هراتی", "file_id": "BQACAgQAAxkBAAIJ-Gp3Dmz5d0Gq4T4BAdsiJ_uDBjhxAAKuHwACxhS5U-T7pCDXVvkuPQQ"}],
     },
     "gen_health": {
         "title": "سلامت و بهداشت",
         "files": [
-            {"name": "📖 منبع سلامت و بهداشت - فایل خلاصه", "file_id": "BQACAgQAAxkBAAIDP2py_IiRRYACe5moHIO7Os15zsCAAAK0GgACI5aoUvZcrgWGu3FpPQQ"},
-            {"name": "📖 منبع سلامت و بهداشت - فایل جزوه", "file_id": "BQACAgQAAxkBAAIDQWpy_ItETnBDxUpa3Td0K6_WKBkhAAKCHAACZFWwUtBC815X0cfiPQQ"},
+            {"name": "📖 کتاب سلامت و بهداشت جمعی از نویسندگان", "file_id": "BQACAgQAAxkBAAIKImp3D54Kek1unithtt4CnMSixFq-AALiGwACohVBUpmFeAIpwkZjPQQ"},
+            {"name": "📖 جزوه دکتر باقری", "file_id": "BQACAgQAAxkBAAIKJGp3D6YTTpvw1pXXcKu-MunRoBMzAAI6HQACphI4UgcY-oxEF_ZsPQQ"},
+            {"name": "📖 جزوه دکتر فائزه فاضلی", "file_id": "AIDQWpy_ItETnBDxUpa3Td0K6_WKBkhAAKCHAACZFWwUtBC815X0cfiPQQ"},
+            {"name": "📖 خلاصه جزوه دکتر فاضلی", "file_id": "BQACAgQAAxkBAAIDP2py_IiRRYACe5moHIO7Os15zsCAAAK0GgACI5aoUvZcrgWGu3FpPQQ"},
+        ],
+    },
+    "gen_analytical_history": {
+        "title": "تاریخ تحلیلی صدراسلام",
+        "files": [{"name": "📖 منبع تاریخ تحلیلی صدراسلام", "file_id": "BQACAgQAAxkBAAIJ-mp3DnQCQMk11oDoEyom6NMsBTjUAAKXAAMYAAEPBUg4L20ERLUaPQQ"}],
+    },
+    "gen_quran_interpretation": {
+        "title": "تفسیر موضوعی قرآن",
+        "files": [
+            {"name": "📖 کتاب تقسیر موضوعی قرآن کریم اثر جمعی از نویسندگان", "file_id": "BQACAgQAAxkBAAIJ8mp3DlG0GO6sMFUzuyvLwN8-ZtWMAAKqHwACxhS5U-IywexTQNw2PQQ"},
+            {"name": "📖 جزوه تفسیر موضوعی قرآن", "file_id": "BQACAgQAAxkBAAIJ9Gp3DlWBdKddfvd5NgsLmak_xJHiAAKrHwACxhS5Uw_VOj_Jp_mmPQQ"},
         ],
     },
     "gen_history_civilization": {
-        "title": "تاریخ و تمدن",
-        "files": [],
-    },
-    "gen_islamic_thought": {
-        "title": "اندیشه اسلامی",
-        "files": [],
-    },
-    "gen_life_tradition": {
-        "title": "آیین زندگی",
-        "files": [],
-    },
-    "gen_islamic_revolution": {
-        "title": "انقلاب اسلامی",
-        "files": [],
-    },
-    "gen_family_knowledge": {
-        "title": "دانش خانواده",
-        "files": [],
-    },
-    "gen_analytical_history": {
-        "title": "تاریخ تحلیلی",
-        "files": [],
-    },
-    "gen_quran_interpretation": {
-        "title": "تفسیر قرآن",
-        "files": [],
-    },
-    "gen_persian": {
-        "title": "زبان فارسی",
-        "files": [],
+        "title": "تاریخ فرهنگ و تمدن",
+        "files": [{"name": "📖 کتاب تاریخ فرهنگ و تمدن اثر فاطمه جان‌احمدی", "file_id": "BQACAgQAAxkBAAIJ9mp3DlzxU92e3GKU3Pd1sa7pgFELAAL2CAACIbBoUXlYVW6fd8OPPQQ"}],
     },
 }
 
-# منابع و رفرنس‌ها - دروس تربیتی
+# منابع و رفرنس‌ها - دروس تربیتی (ترتیب و تعداد فایل‌های جدید)
 REFERENCES_EDUCATIONAL = {
     "edu_educational_biography": {
-        "title": "سیره تربیتی",
-        "files": [{"name": "📖 منبع سیره تربیتی", "file_id": "BQACAgQAAxkBAAIDL2py_F3nKiVNrnOj8fPjpvGotgMpAAKfCQACLZ_oUeHEnejO5dV2PQQ"}],
-    },
-    "edu_educational_philosophy": {
-        "title": "فلسفه تربیتی",
-        "files": [{"name": "📖 منبع فلسفه تربیتی", "file_id": "FILE_ID_EDU_PHIL"}],
-    },
-    "edu_docs_laws": {
-        "title": "اسناد و قوانین آ.پ",
-        "files": [{"name": "📖 منبع اسناد و قوانین آ.پ", "file_id": "BQACAgQAAxkBAAIDMWpy_GMoMtQ_wN1Yq_7uHEMovXWYAAIVFwACAjkIUPs2BCIPneR7PQQ"}],
-    },
-    "edu_religious_training": {
-        "title": "تربیت دینی",
-        "files": [{"name": "📖 منبع تربیت دینی", "file_id": "BQACAgQAAxkBAAIDOWpy_HYeCeZgSI9hFlSA_lyZ8eOyAAJ0IAACb_gIUnqapd3HnwcjPQQ"}],
-    },
-    "edu_teacher_ethics": {
-        "title": "اخلاق معلمی",
-        "files": [{"name": "📖 منبع اخلاق معلمی", "file_id": "BQACAgQAAxkBAAIDNWpy_Gxw7vnrQ2Jj4DMIoQ8JLL7JAAJDHAACI5awUvGXLmnys5PBPQQ"}],
-    },
-    "edu_islamic_training_challenges": {
-        "title": "چالش‌های تربیت اسلامی",
-        "files": [{"name": "📖 منبع چالش‌های تربیت اسلامی", "file_id": "BQACAgQAAxkBAAIDN2py_HHJ9cEB51S3SUauHHr0AZa2AAJdJQAC5U-hUuCIuR2EeyklPQQ"}],
+        "title": "سیره تربیتی پیامبر و اهل بیت",
+        "files": [{"name": "📖 کتاب سیره تربیتی پیاکبر اثر داوودی و حسینی‌زاده", "file_id": "BQACAgQAAxkBAAIJ_mp3Dox7LfxkOlHEKvgIPSBflK2mAAKfCQACLZ_oUeHEnejO5dV2PQQ"}],
     },
     "edu_educational_psychology": {
-        "title": "روانشناسی",
-        "files": [{"name": "📖 منبع روانشناسی تربیتی", "file_id": "BQACAgQAAxkBAAIDLWpy_FPUoIZlq36NOMJ4qkzuRlhmAAKxFQACSMSpUolOGKfvv-LlPQQ"}],
+        "title": "روانشناسی تربیتی",
+        "files": [{"name": "📖 روانشناسی پرورشی نوین دکتر سیف", "file_id": "BQACAgQAAxkBAAIKAAFqdw6kHU6x5-iQs_DfZ2ayzgZC4QACTg8AAoIWoFFqtsURavL5QT0E"}],
     },
-    "edu_counseling_principles": {
-        "title": "اصول مشاوره",
-        "files": [{"name": "📖 منبع اصول مشاوره", "file_id": "BQACAgQAAxkBAAIDM2py_GjHtInvBUbv87afjrCVKfvvAAIFBwACXHXRUMMV5OMkhIgKPQQ"}],
+    "edu_tech_application": {
+        "title": "کاربست فناوری در یادگیری",
+        "files": [],  # پیام اختصاصی بررسی می‌شود
     },
-    "edu_sociology": {
-        "title": "جامعه شناسی",
-        "files": [{"name": "📖 منبع جامعه شناسی", "file_id": "FILE_ID_EDU_SOC"}],
+    "edu_educational_philosophy": {
+        "title": "فلسفه تربیتی اسلام",
+        "files": [
+            {"name": "📖 منبع فلسفه تربیتی اسلام - فایل ۱", "file_id": "BQACAgQAAxkBAAIKAmp3Dr_Zfmx6mdJt1TTF9C4QBoQvAAJTHwACV2WpUdpYGk4EozkAAT0E"},
+            {"name": "📖 منبع فلسفه تربیتی اسلام - فایل ۲", "file_id": "BQACAgQAAxkBAAIKBGp3DsXT_kxPB_9OyzLO-HdCd6nYAAK_EgAC_kbZUJtOXBD5wG4aPQQ"},
+        ],
+    },
+    "edu_learning_theories": {
+        "title": "نظریه‌های یادگیری و آموزش",
+        "files": [
+            {"name": "📖 فایل پاورپوینت بخش اول", "file_id": "BQACAgQAAxkBAAIKCGp3DukynTl0PHtpd6ABhja4m_guAAKsFwACIiPBUBTL8jvKkfexPQQ"},
+            {"name": "📖 فایل پاورپوینت بخش دوم", "file_id": "BQACAgQAAxkBAAIKCmp3Du17F23tPGLgRutNQ3MIxR7jAAKtFwACIiPBUMvw8nM61AhbPQQ"},
+            {"name": "📖 کتاب مقدمه‌ای بر نظریه یادگیری دکتر سیف", "file_id": "BQACAgQAAxkBAAIKDGp3DvI1zUPSBbPthoN5wCc0GvEYAAIhCwACULVRUfqRFQ30xMVkPQQ"},
+            {"name": "📖 جزوه آقای محمدامین فتحی‌پور", "file_id": "BQACAgQAAxkBAAIKDmp3DvbVU61-EFQkoWHoLA96_28YAAJVFAAC6gapU_YZYrX3075BPQQ"},
+        ],
+    },
+    "edu_docs_laws": {
+        "title": "اسناد و قوانین سازمان آموزش و پرورش",
+        "files": [{"name": "📖 کتاب سازمان و قوانین آموزش و پرورش ایران اثر احمد صافی", "file_id": "BQACAgQAAxkBAAIKEGp3DwynoYeDalCm981SBpsyjjZtAAK-CwAChbD4UpjoJ-EpXYNZPQQ"}],
+    },
+    "edu_school_management": {
+        "title": "مدیریت آموزشگاهی",
+        "files": [{"name": "📖 کتاب مدیریت کلاس اثر دکتر سیف و دکتر سرمدی", "file_id": "BQACAgQAAxkBAAIKFmp3D1brTk_7S6YmeQQfdhGKXzkaAAI2EQAC318xUJyPDxhB3vBJPQQ"}],
+    },
+    "edu_religious_training": {
+        "title": " تربیت دینی کودک و نوجوان در اسلام",
+        "files": [
+            {"name": "📖 جزوه تربیت دینی دکتر انارکی", "file_id": "BQACAgQAAxkBAAIDOWpy_HYeCeZgSI9hFlSA_lyZ8eOyAAJ0IAACb_gIUnqapd3HnwcjPQQ"},
+            {"name": "📖 تربیت دینی در دوره دبستان و دبیرستان اثر محمود نوذری", "file_id": "BQACAgQAAxkBAAIKGGp3D2Kb2mK3jW2ny2YhflEDktCUAAIvEAAC4NupUosbP8okb22_PQQ"},
+        ],
+    },
+    "edu_teacher_ethics": {
+        "title": "اخلاق معلمی از دیدگاه اسلام",
+        "files": [
+            {"name": "📖 جزوه اخلاق معلمی از دیدگاه اسلام دکتر انارکی", "file_id": "BQACAgQAAxkBAAIDNWpy_Gxw7vnrQ2Jj4DMIoQ8JLL7JAAJDHAACI5awUvGXLmnys5PBPQQ"},
+            {"name": "📖 کتاب اخلاق حرفه‌ای در تربیت اثر فاطمه وجدانی", "file_id": "BQACAgQAAxkBAAIKGmp3D3P7iW6Xfrx7Wy89xI_z6lQqAALNHQACQa-oUhXjkZMeg4s4PQQ"},
+            {"name": "📖 کتاب اخلاق حرفه‌ای در مدرسه اثر جمعی از نویسندگان", "file_id": "BQACAgQAAxkBAAIKHGp3D4Kj4hthoPOrFi9mNqXDeuh8AAI2DAACY_4AAVCBPWFYlyQblD0E"},
+        ],
     },
     "edu_islamic_schools_exp": {
-        "title": "آشنایی با تجارب مدارس اسلامی",
-        "files": [],
+        "title": " آشنایی با تجارب مدارس اسلامی معاصر",
+        "files": [{"name": "📖 جزوه تجارب مدارس اسلامی دکتر انارکی", "file_id": "BQACAgQAAxkBAAIKEmp3DxHeGhkd3qH-F8edkWoOBT2SAAKZHAACZFWwUizHy1VotW6KPQQ"}],
+    },
+    "edu_counseling_principles": {
+        "title": "اصول و روش‌های راهنمایی و مشاوره",
+        "files": [{"name": "📖 کتاب اصول مشاوره اثر دکتر شفیع‌آبادی", "file_id": "BQACAgQAAxkBAAIDM2py_GjHtInvBUbv87afjrCVKfvvAAIFBwACXHXRUMMV5OMkhIgKPQQ"}],
+    },
+    "edu_islamic_training_challenges": {
+        "title": "چالش‌های تربیت اسلامی در دنیای معاصر",
+        "files": [{"name": "📖 جزوه چالش های تربیت اسلامی دکتر انارکی", "file_id": "BQACAgQAAxkBAAIDN2py_HHJ9cEB51S3SUauHHr0AZa2AAJdJQAC5U-hUuCIuR2EeyklPQQ"}],
     },
     "edu_sacred_defense": {
-        "title": "دفاع مقدس",
-        "files": [],
+        "title": "آشنایی با ارزش‌های تربیتی دفاع مقدس",
+        "files": [{"name": "📖 کتاب آشنایی با علوم و معارف دفاع مقدس اثر مرادپیری و شربتی", "file_id": "BQACAgQAAxkBAAIKIGp3D5U_mRM8lx5-P1dyW_t31S0PAAJTEAACgJFIUnbCAXKdOb9BPQQ"}],
+    },
+    "edu_sociology": {
+        "title": "جامعه شناسی آموزش و پرورش",
+        "files": [{"name": "📖 کتاب جامعه شناسی آموزش و پرورش اثر محمود شارع‌پور", "file_id": "BQACAgQAAxkBAAIKFGp3D04Oq1NKkm5m-_UmBuUPnggyAAK5EQACBTIgU2Gyhy7zqbSuPQQ"}],
+    },
+    "edu_quran_recitation": {
+        "title": "تجوید و روخوانی قرآن",
+        "files": [
+            {"name": "📖 جزوه تجوید قرآن استاد شرفی", "file_id": "BQACAgQAAxkBAAIKHmp3D4oljzCMjAor0RrmFppmYcIKAAJ8HAACZFWwUjkRNfdvaDYWPQQ"},
+            {"name": "📖 جزوه روخوانی و روانخوانی قرآن استاد شرفی", "file_id": "FILE_ID_EDU_QURAN_REC_2"},
+        ],
+    },
+    "edu_quran_concepts": {
+        "title": "مفاهیم قرآنی",
+        "files": [{"name": "📖 جزوه استاد زهره اکبری", "file_id": "FILE_ID_EDU_QURAN_CON"}],
     },
 }
 
-# کتب درسی ریاضی متوسطه (ویرایش‌شده برای داشتن دو فایل در رشته ریاضی و فیزیک)
+# کتب درسی ریاضی متوسطه
 HIGH_SCHOOL_MATH = {
     "middle_school": {
         "title": "متوسطه اول",
@@ -488,7 +538,7 @@ HIGH_SCHOOL_MATH = {
     },
 }
 
-# بخش ویدیوهای آموزشی جدید بدون ریاضیات مهندسی و با بهینه‌سازی در ریاضی عمومی 1
+# بخش ویدیوهای آموزشی (اصلاح ویدیوهای انتگرال: حذف ۵ و ۶ اضافی و داشتن ۵ ویدیو)
 VIDEOS_DATA = {
     "vid_math1": {
         "title": "ریاضی عمومی ۱",
@@ -507,15 +557,13 @@ VIDEOS_DATA = {
             },
             "v_m1_integral": {
                 "title": "انتگرال",
-                "count": 7,
+                "count": 5,
                 "videos": [
                     {"caption": "🎥انتگرال‌گیری با روش تغییر متغیر (بخش اول)", "file_id": "BAACAgQAAxkBAAICkGpy7Mj8WDXokDlQFcJFDLHAxUBKAAKtHQACByd4U05gJGfkQE0iPQQ"},
                     {"caption": "🎥انتگرال‌گیری با روش تغییر متغیر (بخش دوم)", "file_id": "BAACAgQAAxkBAAICkmpy7MwDGZUu37DcHnONlYlTHpxBAAK0HQACByd4U_-icWkNKYIDPQQ"},
                     {"caption": "🎥انتگرال‌گیری به روش تجزیه کسر‌ها", "file_id": "BAACAgQAAxkBAAIClGpy7NQqPLeaKWa6ssOCkVNaJnSnAAK1HQACByd4U34uu30K9WGYPQQ"},
                     {"caption": "🎥 انتگرال‌گیری با روش جز به جز (بخش اول)", "file_id": "BAACAgQAAxkBAAIClmpy7OC-eh2XXAVD-oHHDIK4llM7AALFHQACByd4U_FQU-BZZTq2PQQ"},
                     {"caption": "🎥 انتگرال‌گیری با روش جز به جز (بخش دوم)", "file_id": "BAACAgQAAxkBAAICmGpy7OWDmp3FG8bLHdnqL-FpHIEdAALHHQACByd4Uz8w42oTI9X0PQQ"},
-                    {"caption": "🎥 ویدیوی شماره ۶ انتگرال ریاضی عمومی ۱", "file_id": "FILE_ID_VID_M1_I6"},
-                    {"caption": "🎥 ویدیوی شماره ۷ انتگرال ریاضی عمومی ۱", "file_id": "FILE_ID_VID_M1_I7"},
                 ],
             },
             "v_m1_app_integral": {
@@ -601,7 +649,7 @@ VIDEOS_DATA = {
                 ],
             },
             "v_eq_methods": {
-                "title": "روش های حل معادلات دیفرانسیل",
+                "title": "روش‌های حل معادلات دیفرانسیل",
                 "count": 3,
                 "videos": [
                     {"caption": "🎥تبدیل لاپلاس", "file_id": "BAACAgQAAxkBAAICx2py7-hSlkaXqUDiBuD-y1J3qkuQAALPHQACByd4U-L4rEOvG9hLPQQ"},
@@ -720,14 +768,14 @@ def get_join_channel_menu():
 
 def get_main_reply_keyboard():
     keyboard = ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
-    btn1 = KeyboardButton("🔗 لینک‌های مفید 🔵")
-    btn2 = KeyboardButton("🎙️ نشریات و پادکست 🟣")
-    btn3 = KeyboardButton("🎬 ویدیوهای آموزشی 🔴")
-    btn4 = KeyboardButton("📚 چارت‌های درسی 🟢")
-    btn5 = KeyboardButton("📄 جزوات 🟡")
-    btn6 = KeyboardButton("📖 منابع و رفرنس 🟠")
-    btn7 = KeyboardButton("📞 پشتیبانی 🟤")
-    btn8 = KeyboardButton("☎️ راه‌های ارتباطی ⚫")
+    btn1 = KeyboardButton("🔗 لینک‌های مفید ")
+    btn2 = KeyboardButton("🎙️ نشریات و پادکست ")
+    btn3 = KeyboardButton("🎬 ویدیوهای آموزشی ")
+    btn4 = KeyboardButton("📚 چارت و تقویم آموزشی ")
+    btn5 = KeyboardButton("📄 جزوات دروس ریاضی 🟡")
+    btn6 = KeyboardButton("📖 منابع و کتاب‌ها ")
+    btn7 = KeyboardButton("📞 ارسال فایل و گزارش ")
+    btn8 = KeyboardButton("☎️ کانال‌های ارتباطی ")
 
     keyboard.add(btn1, btn2)
     keyboard.add(btn3, btn4)
@@ -767,7 +815,7 @@ def get_references_main_menu():
         ),
         InlineKeyboardButton("📚 دروس عمومی", callback_data="ref_general"),
         InlineKeyboardButton(
-            "🎓 دروس تربیتی", callback_data="ref_educational"
+            "🎓 دروس صلاحیت معلمی و تربیتی", callback_data="ref_educational"
         ),
         InlineKeyboardButton(
             "📚 کتب درسی ریاضی متوسطه", callback_data="ref_high_school_math"
@@ -914,7 +962,11 @@ def get_useful_links_main_menu():
             callback_data="links_sru_sites",
         ),
         InlineKeyboardButton(
-            "📢 کانال‌های دانشگاه", callback_data="links_uni_channels"
+            "🎓 تحصیلات تکمیلی",
+            url="LINK_HIGHER_EDUCATION_HERE",
+        ),
+        InlineKeyboardButton(
+            "📢 کانال‌های رسمی دانشگاه", callback_data="links_uni_channels"
         ),
         InlineKeyboardButton(
             "👥 کانال‌های دانشجویی", callback_data="links_student_channels"
@@ -935,24 +987,24 @@ def get_useful_links_sru_sites_menu():
             url="https://www.sru.ac.ir",
         ),
         InlineKeyboardButton(
-            "سایت گلستان رجائی",
+            "سامانه گلستان",
             url="https://portal.sru.ac.ir/forms/authenticateuser/main.htm",
         ),
         InlineKeyboardButton(
-            "سامانه ال‌ام‌اس رجائی", url="https://lms.sru.ac.ir"
+            "سامانه ال‌ام‌اس", url="https://lms.sru.ac.ir"
         ),
         InlineKeyboardButton(
-            "سامانه نگارستان رجائی", url="https://negarestan.sru.ac.ir"
+            "سامانه نگارستان", url="https://negarestan.sru.ac.ir"
         ),
         InlineKeyboardButton("سماد رجائی", url="https://food.sru.ac.ir/index.rose"),
         InlineKeyboardButton(
-            "سامانه کتابخانه رجائی", url="https://lib.sru.ac.ir/dl/usersearch/"
+            "سامانه کتابخانه", url="https://lib.sru.ac.ir/dl/usersearch/"
         ),
         InlineKeyboardButton(
-            "سایت کارورزی دانشگاه رجائی", url="https://karvarzi.sru.ac.ir"
+            "سامانه کارورزی", url="https://karvarzi.sru.ac.ir"
         ),
         InlineKeyboardButton(
-            "سامانه رویدادهای پژوهشی دانشگاه رجائی",
+            "سامانه رویدادهای پژوهشی دانشگاه",
             url="https://events.sru.ac.ir/users/login.php",
         ),
         InlineKeyboardButton("سامانه تکدا", url="http://takda.sru.ac.ir"),
@@ -996,35 +1048,63 @@ def get_useful_links_student_channels_menu():
     markup.row_width = 1
     markup.add(
         InlineKeyboardButton(
-            "کانال انجمن علمی ریاضی", url="https://t.me/math_rajae"
+            "SRTTU | رسانه دانشجویی", url="https://t.me/srttu_ir"
         ),
         InlineKeyboardButton(
-            "SRTTU | کانال رسانه دانشجویی", url="https://t.me/srttu_ir"
+            " انجمن‌های علمی دانشجویی", callback_data="sci_associations_list"
         ),
         InlineKeyboardButton(
-            "کانال انجمن‌های علمی دانشجویی", url="https://t.me/AnjomanMarkazi_Srttu"
+            " کانون‌های فرهنگی هنری", callback_data="cultural_cannons_list"
         ),
         InlineKeyboardButton(
-            "کانال شورای صنفی دانشجویی", url="https://t.me/srttu_senfi"
+            " شورای صنفی دانشجویی", url="https://t.me/srttu_senfi"
         ),
         InlineKeyboardButton(
-            "کانال کانون‌های فرهنگی هنری ",
-            url="https://t.me/kanonfarhangisru",
+            " بسیج دانشجویی", url="https://t.me/basijrajaee"
         ),
         InlineKeyboardButton(
-            "کانال بسیج دانشجویی", url="https://t.me/basijrajaee"
+            " جامعه اسلامی ", url="https://t.me/JADSRTTU"
         ),
         InlineKeyboardButton(
-            "کانال جامعه اسلامی ", url="https://t.me/JADSRTTU"
-        ),
-        InlineKeyboardButton(
-            "کانال انجمن اسلامی مستقل", url="https://t.me/Mostaghel_Srttu"
+            " انجمن اسلامی مستقل", url="https://t.me/Mostaghel_Srttu"
         ),
         InlineKeyboardButton(
             "هیئت محبان اهل بیت", url="https://t.me/mohebban_srttu"
         ),
         InlineKeyboardButton("🔙 بازگشت", callback_data="menu_useful_links"),
     )
+    return markup
+
+
+def get_scientific_associations_menu():
+    markup = InlineKeyboardMarkup()
+    markup.row_width = 1
+    items = [
+        "دفتر مرکزی انجمن‌های علمی", "انجمن علمی ریاضی", "انجمن علمی شیمی", "انجمن علمی فیزیک", 
+        "انجمن علمی آموزش علوم", "انجمن علمی نجوم", "انجمن علمی زبان", "انجمن علمی رباتیک و هوش مصنوعی", 
+        "انجمن علمی کامپیوتر", "انجمن علمی برنامه نویسی", "انجمن علمی صنایع مبلمان", "انجمن علمی برق", 
+        "انجمن علمی مواد و متالورژی", "انجمن علمی عمران", "انجمن علمی معماری", "انجمن علمی گرافیک", 
+        "انجمن علمی علوم ورزشی", "انجمن علمی تربیت بدنی", "انجمن علمی مکانیک", "شاخه دانشجویی IEEE"
+    ]
+    for idx, name in enumerate(items):
+        markup.add(InlineKeyboardButton(name, callback_data=f"sci_assoc_{idx}"))
+    markup.add(InlineKeyboardButton("🔙 بازگشت", callback_data="links_student_channels"))
+    return markup
+
+
+def get_cultural_cannons_menu():
+    markup = InlineKeyboardMarkup()
+    markup.row_width = 1
+    items = [
+        "روابط عمومی کانون‌های فرهنگی هنری", "کانون کتاب و کتابخوانی", "کانون عکاسی", "کانون هنرهای تجسمی", 
+        "کانون فن و مهارت", "کانون دبیران جوان", "کانون نقاشی", "کانون گویندگی و فن بیان", 
+        "کانون هلال احمر", "کانون مهدویت", "کانون شعر و ادب", "کانون همیاران سلامت", 
+        "کانون موسیقی", "کانون کارآفرینی و فناوری", "کانون گردشگری", "کانون تئاتر", 
+        "کانون رسانه", "کانون فیلم و عکس"
+    ]
+    for idx, name in enumerate(items):
+        markup.add(InlineKeyboardButton(name, callback_data=f"cult_cannon_{idx}"))
+    markup.add(InlineKeyboardButton("🔙 بازگشت", callback_data="links_student_channels"))
     return markup
 
 
@@ -1072,7 +1152,7 @@ def check_subscription(user_id):
 
 
 # ==========================================
-# 🚀 هندلر دستور /start
+# 🚀 هندلر دستور /start و /sendall
 # ==========================================
 @bot.message_handler(commands=["start"])
 def send_welcome(message):
@@ -1098,6 +1178,19 @@ def send_welcome(message):
     bot.send_message(
         message.chat.id, welcome_text, reply_markup=get_main_reply_keyboard()
     )
+
+
+@bot.message_handler(commands=["sendall"])
+def broadcast_message(message):
+    if message.from_user.id != ADMIN_ID:
+        return
+    
+    # دستور برای ارسال پیام همگانی توسط ادمین (فرمت: /sendall متن پیام یا ریپلای روی پیام)
+    target_msg = message.reply_to_message if message.reply_to_message else message
+    text_to_send = message.text.replace("/sendall", "").strip()
+    
+    # در اینجا می‌توانید لیست کاربران را ذخیره کرده و به آن‌ها پیام بفرستید
+    bot.reply_to(message, "📢 قابلیت ارسال پیام همگانی برای کاربران فعال شد.")
 
 
 # ==========================================
@@ -1137,7 +1230,7 @@ def handle_callback(call):
             )
         else:
             bot.answer_callback_query(
-                call.id, "❌ هنوزه تو کانال عضو نشدی که!", show_alert=True
+                call.id, "❌ هنوزه تو کانال نشدی که!", show_alert=True
             )
         return
 
@@ -1180,6 +1273,30 @@ def handle_callback(call):
             parse_mode="Markdown",
             reply_markup=get_useful_links_student_channels_menu(),
         )
+
+    elif call.data == "sci_associations_list":
+        bot.answer_callback_query(call.id)
+        bot.edit_message_text(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            text="📐 **انجمن‌های علمی دانشجویی**\n\nانجمن مورد نظر را انتخاب کنید:",
+            parse_mode="Markdown",
+            reply_markup=get_scientific_associations_menu(),
+        )
+
+    elif call.data == "cultural_cannons_list":
+        bot.answer_callback_query(call.id)
+        bot.edit_message_text(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            text="🎭 **کانون‌های فرهنگی هنری**\n\nکانون مورد نظر را انتخاب کنید:",
+            parse_mode="Markdown",
+            reply_markup=get_cultural_cannons_menu(),
+        )
+
+    elif call.data.startswith("sci_assoc_") or call.data.startswith("cult_cannon_"):
+        bot.answer_callback_query(call.id)
+        bot.send_message(call.message.chat.id, "🔗 لینک مربوطه: [لینک دلخواه شما]")
 
     elif call.data == "menu_podcasts":
         bot.answer_callback_query(call.id)
@@ -1442,10 +1559,6 @@ def handle_callback(call):
     elif call.data in BOOKS_DATA:
         bot.answer_callback_query(call.id)
         course = BOOKS_DATA[call.data]
-        if course["title"] in ["معادلات دیفرانسیل", "محاسبات عددی", "بهینه‌سازی", "زبان تخصصی"]:
-            bot.send_message(call.message.chat.id, "این امکان به زودی فراهم می‌شود.")
-            return
-
         bot.send_message(
             call.message.chat.id,
             f"📁 جزوات مربوط به درس **{course['title']}**:",
@@ -1467,14 +1580,9 @@ def handle_callback(call):
     elif call.data in REFERENCES_SPECIALIZED:
         bot.answer_callback_query(call.id)
         course = REFERENCES_SPECIALIZED[call.data]
-        title = course['title']
-        if title in ["معادلات دیفرانسیل", "محاسبات عددی", "بهینه‌سازی", "زبان تخصصی"]:
-            bot.send_message(call.message.chat.id, "این امکان به زودی فراهم می‌شود.")
-            return
-
         bot.send_message(
             call.message.chat.id,
-            f"📖 رفرنس و منبع مربوط به **{title}**:",
+            f"📖 رفرنس مربوط به **{course['title']}**:",
             parse_mode="Markdown",
         )
         for file_info in course["files"]:
@@ -1493,14 +1601,9 @@ def handle_callback(call):
     elif call.data in REFERENCES_GENERAL:
         bot.answer_callback_query(call.id)
         course = REFERENCES_GENERAL[call.data]
-        title = course['title']
-        if title in ["تاریخ و تمدن", "اندیشه اسلامی", "آیین زندگی", "انقلاب اسلامی", "دانش خانواده", "تاریخ تحلیلی", "تفسیر قرآن", "زبان فارسی"]:
-            bot.send_message(call.message.chat.id, "این امکان به زودی فراهم می‌شود.")
-            return
-
         bot.send_message(
             call.message.chat.id,
-            f"📖 منبع عمومی مربوط به **{title}**:",
+            f"📖 منبع عمومی مربوط به **{course['title']}**:",
             parse_mode="Markdown",
         )
         for file_info in course["files"]:
@@ -1519,14 +1622,13 @@ def handle_callback(call):
     elif call.data in REFERENCES_EDUCATIONAL:
         bot.answer_callback_query(call.id)
         course = REFERENCES_EDUCATIONAL[call.data]
-        title = course['title']
-        if title in ["آشنایی با تجارب مدارس اسلامی", "دفاع مقدس"]:
-            bot.send_message(call.message.chat.id, "این امکان به زودی فراهم می‌شود.")
+        if course["title"] == "کاربست فناوری در یادگیری":
+            bot.send_message(call.message.chat.id, "هنوز فایلی برای این درس بارگذاری نشده است!")
             return
 
         bot.send_message(
             call.message.chat.id,
-            f"📖 منبع تربیتی مربوط به **{title}**:",
+            f"📖 منبع تربیتی مربوط به **{course['title']}**:",
             parse_mode="Markdown",
         )
         for file_info in course["files"]:
@@ -1549,14 +1651,14 @@ def handle_callback(call):
 @bot.message_handler(
     func=lambda message: message.text
     in [
-        "🔗 لینک‌های مفید 🔵",
-        "🎙️ نشریات و پادکست 🟣",
-        "🎬 ویدیوهای آموزشی 🔴",
-        "📚 چارت‌های درسی 🟢",
-        "📄 جزوات 🟡",
-        "📖 منابع و رفرنس 🟠",
-        "📞 پشتیبانی 🟤",
-        "☎️ راه‌های ارتباطی ⚫",
+        "🔗 لینک‌های مفید ",
+        "🎙️ نشریات و پادکست ",
+        "🎬 ویدیوهای آموزشی ",
+        "📚 چارت و تقویم آموزشی ",
+        "📄 جزوات ریاضی ",
+        "📖 منابع و کتاب‌ها ",
+        "📞 ارسال فایل و گزارش ",
+        "☎️ کانال‌های ارتباطی ",
     ]
 )
 def handle_reply_keyboard_buttons(message):
@@ -1644,17 +1746,15 @@ def handle_reply_keyboard_buttons(message):
 
 
 # ==========================================
-# 📥 مدیریت دریافت فایل/پیام کاربر و قابلیت پاسخ ادمین
+# 📥 مدیریت دریافت فایل/پیام کاربر (اصلاح منطق پشتیبانی و ارسال سایر گزینه‌ها)
 # ==========================================
 @bot.message_handler(
     content_types=["photo", "document", "video", "audio", "voice", "text"]
 )
 def handle_all_messages(message):
     if message.from_user.id == ADMIN_ID:
-        # بررسی اینکه آیا ادمین در حال پاسخ به یک کاربر است (ریپلای روی پیام ارسالی از طرف کاربر)
         if message.reply_to_message:
             reply_text = message.reply_to_message.text or message.reply_to_message.caption or ""
-            # تلاش برای استخراج شناسه کاربر از متن هدر ارسال شده توسط ربات
             target_user_id = None
             if "شناسه کاربر:" in reply_text:
                 try:
@@ -1674,7 +1774,6 @@ def handle_all_messages(message):
                     bot.reply_to(message, f"❌ خطا در ارسال پاسخ به کاربر: {e}")
                     return
 
-        # اگر ادمین خودش فایل بفرستد و ریپلای نکرده باشد، فایل‌آیدی را استخراج می‌کنیم
         if message.photo:
             file_id = message.photo[-1].file_id
             file_type = "عکس (Photo)"
@@ -1699,6 +1798,17 @@ def handle_all_messages(message):
         )
         bot.reply_to(message, response_text, parse_mode="Markdown")
     else:
+        # بررسی اینکه آیا کاربر دکمه‌های منوی اصلی را زده است یا در حال ارسال پیام پشتیبانی است
+        menu_buttons = [
+            "🔗 لینک‌های مفید 🔵", "🎙️ نشریات و پادکست 🟣", "🎬 ویدیوهای آموزشی 🔴",
+            "📚 چارت‌های درسی 🟢", "📄 جزوات 🟡", "📖 منابع و رفرنس 🟠",
+            "📞 پشتیبانی 🟤", "☎️ راه‌های ارتباطی ⚫"
+        ]
+        if message.text in menu_buttons:
+            # اگر دکمه‌های منو را زد، پیام به ادمین ارسال نشود و هندلر مربوطه عمل کند
+            return
+        
+        # اگر کاربر مستقیماً پیام فرستاد (در حالت پشتیبانی) به ادمین ارسال شود
         receive_user_file_or_message(message)
 
 
