@@ -119,7 +119,6 @@ BOOKS_DATA = {
     },
 }
 
-# منابع و رفرنس‌ها - دروس تخصصی ریاضی
 REFERENCES_SPECIALIZED = {
     "ref_statistics_basis": {
         "title": "مبانی آمار",
@@ -246,7 +245,6 @@ REFERENCES_SPECIALIZED = {
     },
 }
 
-# منابع و رفرنس‌ها - دروس عمومی (ترتیب جدید)
 REFERENCES_GENERAL = {
     "gen_life_tradition": {
         "title": "آیین زندگی",
@@ -304,7 +302,6 @@ REFERENCES_GENERAL = {
     },
 }
 
-# منابع و رفرنس‌ها - دروس تربیتی (ترتیب و تعداد فایل‌های جدید)
 REFERENCES_EDUCATIONAL = {
     "edu_educational_biography": {
         "title": "سیره تربیتی پیامبر و اهل بیت",
@@ -316,7 +313,7 @@ REFERENCES_EDUCATIONAL = {
     },
     "edu_tech_application": {
         "title": "کاربست فناوری در یادگیری",
-        "files": [],  # پیام اختصاصی بررسی می‌شود
+        "files": [],
     },
     "edu_educational_philosophy": {
         "title": "فلسفه تربیتی اسلام",
@@ -390,7 +387,6 @@ REFERENCES_EDUCATIONAL = {
     },
 }
 
-# کتب درسی ریاضی متوسطه
 HIGH_SCHOOL_MATH = {
     "middle_school": {
         "title": "متوسطه اول",
@@ -538,7 +534,6 @@ HIGH_SCHOOL_MATH = {
     },
 }
 
-# بخش ویدیوهای آموزشی
 VIDEOS_DATA = {
     "vid_math1": {
         "title": "ریاضی عمومی ۱",
@@ -753,7 +748,6 @@ MAGAZINES_DATA = [
 # 🔘 توابع ساخت کیبوردها و منوها
 # ==========================================
 
-
 def get_join_channel_menu():
     markup = InlineKeyboardMarkup()
     channel_url = f"https://t.me/{CHANNEL_USERNAME.replace('@', '')}"
@@ -768,14 +762,14 @@ def get_join_channel_menu():
 
 def get_main_reply_keyboard():
     keyboard = ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
-    btn1 = KeyboardButton("🔗 لینک‌های مفید ")
-    btn2 = KeyboardButton("🎙️ نشریات و پادکست ")
-    btn3 = KeyboardButton("🎬 ویدیوهای آموزشی ")
-    btn4 = KeyboardButton("📚 چارت و تقویم آموزشی ")
-    btn5 = KeyboardButton("📄 جزوات دروس ریاضی 🟡")
-    btn6 = KeyboardButton("📖 منابع و کتاب‌ها ")
-    btn7 = KeyboardButton("📞 ارسال فایل و گزارش ")
-    btn8 = KeyboardButton("☎️ کانال‌های ارتباطی ")
+    btn1 = KeyboardButton("🔗 لینک‌های مفید")
+    btn2 = KeyboardButton("🎙️ نشریات و پادکست")
+    btn3 = KeyboardButton("🎬 ویدیوهای آموزشی")
+    btn4 = KeyboardButton("📚 چارت و تقویم آموزشی")
+    btn5 = KeyboardButton("📄 جزوات دروس ریاضی")
+    btn6 = KeyboardButton("📖 منابع و کتاب‌ها")
+    btn7 = KeyboardButton("📞 ارسال فایل و گزارش")
+    btn8 = KeyboardButton("☎️ کانال‌های ارتباطی")
 
     keyboard.add(btn1, btn2)
     keyboard.add(btn3, btn4)
@@ -982,31 +976,14 @@ def get_useful_links_sru_sites_menu():
     markup = InlineKeyboardMarkup()
     markup.row_width = 1
     markup.add(
-        InlineKeyboardButton(
-            "سایت دانشگاه تربیت دبیر شهید رجائی",
-            url="https://www.sru.ac.ir",
-        ),
-        InlineKeyboardButton(
-            "سامانه گلستان",
-            url="https://portal.sru.ac.ir/forms/authenticateuser/main.htm",
-        ),
-        InlineKeyboardButton(
-            "سامانه ال‌ام‌اس", url="https://lms.sru.ac.ir"
-        ),
-        InlineKeyboardButton(
-            "سامانه نگارستان", url="https://negarestan.sru.ac.ir"
-        ),
+        InlineKeyboardButton("سایت دانشگاه تربیت دبیر شهید رجائی", url="https://www.sru.ac.ir"),
+        InlineKeyboardButton("سامانه گلستان", url="https://portal.sru.ac.ir/forms/authenticateuser/main.htm"),
+        InlineKeyboardButton("سامانه ال‌ام‌اس", url="https://lms.sru.ac.ir"),
+        InlineKeyboardButton("سامانه نگارستان", url="https://negarestan.sru.ac.ir"),
         InlineKeyboardButton("سماد رجائی", url="https://food.sru.ac.ir/index.rose"),
-        InlineKeyboardButton(
-            "سامانه کتابخانه", url="https://lib.sru.ac.ir/dl/usersearch/"
-        ),
-        InlineKeyboardButton(
-            "سامانه کارورزی", url="https://karvarzi.sru.ac.ir"
-        ),
-        InlineKeyboardButton(
-            "سامانه رویدادهای پژوهشی دانشگاه",
-            url="https://events.sru.ac.ir/users/login.php",
-        ),
+        InlineKeyboardButton("سامانه کتابخانه", url="https://lib.sru.ac.ir/dl/usersearch/"),
+        InlineKeyboardButton("سامانه کارورزی", url="https://karvarzi.sru.ac.ir"),
+        InlineKeyboardButton("سامانه رویدادهای پژوهشی دانشگاه", url="https://events.sru.ac.ir/users/login.php"),
         InlineKeyboardButton("سامانه تکدا", url="http://takda.sru.ac.ir"),
         InlineKeyboardButton("🔙 بازگشت", callback_data="menu_useful_links"),
     )
@@ -1017,27 +994,13 @@ def get_useful_links_uni_channels_menu():
     markup = InlineKeyboardMarkup()
     markup.row_width = 1
     markup.add(
-        InlineKeyboardButton(
-            "کانال رسمی دانشگاه", url="https://eitaa.com/sruinfo"
-        ),
-        InlineKeyboardButton(
-            "کانال معاونت فرهنگی", url="https://eitaa.com/srufarhang"
-        ),
-        InlineKeyboardButton(
-            "کانال معاونت پژوهش و فناوری", url="https://eitaa.com/SRTTU_Research"
-        ),
-        InlineKeyboardButton(
-            "کانال مرکز آموزش‌های مجازی", url="https://eitaa.com/sru_elearning"
-        ),
-        InlineKeyboardButton(
-            "کانال امور دانشجویی", url="https://eitaa.com/portal_srttu1402"
-        ),
-        InlineKeyboardButton(
-            "کانال دانشکده علوم پایه", url="https://eitaa.com/science401"
-        ),
-        InlineKeyboardButton(
-            "کانال نهاد رهبری", url="https://eitaa.com/nahadrajaee"
-        ),
+        InlineKeyboardButton("کانال رسمی دانشگاه", url="https://eitaa.com/sruinfo"),
+        InlineKeyboardButton("کانال معاونت فرهنگی", url="https://eitaa.com/srufarhang"),
+        InlineKeyboardButton("کانال معاونت پژوهش و فناوری", url="https://eitaa.com/SRTTU_Research"),
+        InlineKeyboardButton("کانال مرکز آموزش‌های مجازی", url="https://eitaa.com/sru_elearning"),
+        InlineKeyboardButton("کانال امور دانشجویی", url="https://eitaa.com/portal_srttu1402"),
+        InlineKeyboardButton("کانال دانشکده علوم پایه", url="https://eitaa.com/science401"),
+        InlineKeyboardButton("کانال نهاد رهبری", url="https://eitaa.com/nahadrajaee"),
         InlineKeyboardButton("🔙 بازگشت", callback_data="menu_useful_links"),
     )
     return markup
@@ -1047,30 +1010,14 @@ def get_useful_links_student_channels_menu():
     markup = InlineKeyboardMarkup()
     markup.row_width = 1
     markup.add(
-        InlineKeyboardButton(
-            "SRTTU | رسانه دانشجویی", url="https://t.me/srttu_ir"
-        ),
-        InlineKeyboardButton(
-            " انجمن‌های علمی دانشجویی", callback_data="sci_associations_list"
-        ),
-        InlineKeyboardButton(
-            " کانون‌های فرهنگی هنری", callback_data="cultural_cannons_list"
-        ),
-        InlineKeyboardButton(
-            " شورای صنفی دانشجویی", url="https://t.me/srttu_senfi"
-        ),
-        InlineKeyboardButton(
-            " بسیج دانشجویی", url="https://t.me/basijrajaee"
-        ),
-        InlineKeyboardButton(
-            " جامعه اسلامی ", url="https://t.me/JADSRTTU"
-        ),
-        InlineKeyboardButton(
-            " انجمن اسلامی مستقل", url="https://t.me/Mostaghel_Srttu"
-        ),
-        InlineKeyboardButton(
-            "هیئت محبان اهل بیت", url="https://t.me/mohebban_srttu"
-        ),
+        InlineKeyboardButton("SRTTU | رسانه دانشجویی", url="https://t.me/srttu_ir"),
+        InlineKeyboardButton("انجمن‌های علمی دانشجویی", callback_data="sci_associations_list"),
+        InlineKeyboardButton("کانون‌های فرهنگی هنری", callback_data="cultural_cannons_list"),
+        InlineKeyboardButton("شورای صنفی دانشجویی", url="https://t.me/srttu_senfi"),
+        InlineKeyboardButton("بسیج دانشجویی", url="https://t.me/basijrajaee"),
+        InlineKeyboardButton("جامعه اسلامی", url="https://t.me/JADSRTTU"),
+        InlineKeyboardButton("انجمن اسلامی مستقل", url="https://t.me/Mostaghel_Srttu"),
+        InlineKeyboardButton("هیئت محبان اهل بیت", url="https://t.me/mohebban_srttu"),
         InlineKeyboardButton("🔙 بازگشت", callback_data="menu_useful_links"),
     )
     return markup
@@ -1112,27 +1059,12 @@ def get_communication_menu():
     markup = InlineKeyboardMarkup()
     markup.row_width = 1
     markup.add(
-        InlineKeyboardButton(
-            "💬 کانال تلگرام انجمن علمی ریاضی",
-            url="https://t.me/math_rajae",
-        ),
-        InlineKeyboardButton(
-            "📸 پیج اینستاگرام انجمن علمی ریاضی",
-            url="https://www.instagram.com/math.sru?igsh=MXZycndhemhkMXgzYg==",
-        ),
-        InlineKeyboardButton(
-            "🟢 کانال بله انجمن علمی ریاضی", url="https://ble.ir/join/J3i3XsLakw"
-        ),
-        InlineKeyboardButton(
-            " ایتا انجمن علمی ریاضی", url="https://eitaa.com/math_rajae"
-        ),
-        InlineKeyboardButton(
-            " روبیکا انجمن علمی ریاضی",
-            url="https://rubika.ir/Math_rajae",
-        ),
-        InlineKeyboardButton(
-            "🔙 بازگشت به منوی اصلی", callback_data="back_to_main"
-        ),
+        InlineKeyboardButton("💬 کانال تلگرام انجمن علمی ریاضی", url="https://t.me/math_rajae"),
+        InlineKeyboardButton("📸 پیج اینستاگرام انجمن علمی ریاضی", url="https://www.instagram.com/math.sru?igsh=MXZycndhemhkMXgzYg=="),
+        InlineKeyboardButton("🟢 کانال بله انجمن علمی ریاضی", url="https://ble.ir/join/J3i3XsLakw"),
+        InlineKeyboardButton("ایتا انجمن علمی ریاضی", url="https://eitaa.com/math_rajae"),
+        InlineKeyboardButton("روبیکا انجمن علمی ریاضی", url="https://rubika.ir/Math_rajae"),
+        InlineKeyboardButton("🔙 بازگشت به منوی اصلی", callback_data="back_to_main"),
     )
     return markup
 
@@ -1195,15 +1127,9 @@ def handle_callback(call):
     user_id = call.from_user.id
 
     if call.data != "check_sub_again" and not check_subscription(user_id):
-        bot.answer_callback_query(
-            call.id, "❌ اول باید تو کانال عضو بشی رفیق!", show_alert=True
-        )
-        warning_text = (
-            "❌ برای دسترسی به خدمات ربات، لطفاً ابتدا در کانال انجمن عضو شوید و سپس دکمه بررسی دوباره را بزنید:"
-        )
-        bot.send_message(
-            call.message.chat.id, warning_text, reply_markup=get_join_channel_menu()
-        )
+        bot.answer_callback_query(call.id, "❌ اول باید تو کانال عضو بشی رفیق!", show_alert=True)
+        warning_text = "❌ برای دسترسی به خدمات ربات، لطفاً ابتدا در کانال انجمن عضو شوید و سپس دکمه بررسی دوباره را بزنید:"
+        bot.send_message(call.message.chat.id, warning_text, reply_markup=get_join_channel_menu())
         return
 
     if call.data == "check_sub_again":
@@ -1212,10 +1138,7 @@ def handle_callback(call):
             bot.edit_message_text(
                 chat_id=call.message.chat.id,
                 message_id=call.message.message_id,
-                text=(
-                    "🎉 دمت گرم که عضو شدی! حالا از منوی پایین صفحه می‌تونی راحت کارتو"
-                    " پیش ببری 👇"
-                ),
+                text="🎉 دمت گرم که عضو شدی! حالا از منوی پایین صفحه می‌تونی راحت کارتو پیش ببری 👇",
             )
             bot.send_message(
                 call.message.chat.id,
@@ -1223,9 +1146,7 @@ def handle_callback(call):
                 reply_markup=get_main_reply_keyboard(),
             )
         else:
-            bot.answer_callback_query(
-                call.id, "❌ هنوزه تو کانال نشدی که!", show_alert=True
-            )
+            bot.answer_callback_query(call.id, "❌ هنوزه تو کانال نشدی که!", show_alert=True)
         return
 
     elif call.data == "menu_useful_links":
@@ -1640,19 +1561,19 @@ def handle_callback(call):
 
 
 # ==========================================
-# 📱 مدیریت کلیک روی دکمه‌های کیبورد پایین صفحه (Reply Keyboard)
+# 📱 مدیریت کلیک روی دکمه‌های کیبورد پایین صفحه
 # ==========================================
 @bot.message_handler(
     func=lambda message: message.text
     in [
-        "🔗 لینک‌های مفید ",
-        "🎙️ نشریات و پادکست ",
-        "🎬 ویدیوهای آموزشی ",
-        "📚 چارت و تقویم آموزشی ",
-        "📄 جزوات دروس ریاضی 🟡",
-        "📖 منابع و کتاب‌ها ",
-        "📞 ارسال فایل و گزارش ",
-        "☎️ کانال‌های ارتباطی ",
+        "🔗 لینک‌های مفید",
+        "🎙️ نشریات و پادکست",
+        "🎬 ویدیوهای آموزشی",
+        "📚 چارت و تقویم آموزشی",
+        "📄 جزوات دروس ریاضی",
+        "📖 منابع و کتاب‌ها",
+        "📞 ارسال فایل و گزارش",
+        "☎️ کانال‌های ارتباطی",
     ]
 )
 def handle_reply_keyboard_buttons(message):
@@ -1670,7 +1591,7 @@ def handle_reply_keyboard_buttons(message):
 
     text = message.text
 
-    if "چارت و تقویم آموزشی" in text:
+    if "چارت" in text:
         bot.send_message(
             message.chat.id,
             "📚 **بخش چارت‌های درسی و برنامه‌ها**\n\nگزینه مورد نظر خودت رو انتخاب کن:",
@@ -1793,9 +1714,9 @@ def handle_all_messages(message):
         bot.reply_to(message, response_text, parse_mode="Markdown")
     else:
         menu_buttons = [
-            "🔗 لینک‌های مفید ", "🎙️ نشریات و پادکست ", "🎬 ویدیوهای آموزشی ",
-            "📚 چارت و تقویم آموزشی ", "📄 جزوات دروس ریاضی 🟡", "📖 منابع و کتاب‌ها ",
-            "📞 ارسال فایل و گزارش ", "☎️ کانال‌های ارتباطی "
+            "🔗 لینک‌های مفید", "🎙️ نشریات و پادکست", "🎬 ویدیوهای آموزشی",
+            "📚 چارت و تقویم آموزشی", "📄 جزوات دروس ریاضی", "📖 منابع و کتاب‌ها",
+            "📞 ارسال فایل و گزارش", "☎️ کانال‌های ارتباطی"
         ]
         if message.text in menu_buttons:
             return
@@ -1815,15 +1736,14 @@ def receive_user_file_or_message(message):
     try:
         bot.send_message(ADMIN_ID, header_text, parse_mode="Markdown")
         bot.forward_message(ADMIN_ID, message.chat.id, message.message_id)
-        bot.reply_to(
-            message, "✅ پیام یا فایل شما با موفقیت به دست ادمین رسید. مرسی! 🌹"
-        )
+        bot.reply_to(message, "✅ پیام یا فایل شما با موفقیت به دست ادمین رسید. مرسی!")
     except Exception as e:
-        bot.reply_to(message, "❌ خطا در ارسال پیام به ادمین.")
-        print(f"Error: {e}")
+        print(f"Error forwarding message to admin: {e}")
 
 
-# اجرای اصلی ربات
+# ==========================================
+# ▶️ اجرای ربات
+# ==========================================
 if __name__ == "__main__":
-    print("Bot is running and waiting for messages...")
+    print("Bot is running...")
     bot.infinity_polling()
