@@ -752,7 +752,7 @@ MAGAZINES_DATA = [
 # 🔗 بخش لینک‌های مربوط به انجمن‌های علمی و کانون‌ها (برای جای‌گذاری لینک‌های دلخواه شما)
 # ==========================================
 SCIENTIFIC_ASSOCIATIONS_LINKS = {
-    0: "https://t.me/example_link",  # دفتر مرکزی انجمن‌های علمی
+    0: "https://t.me/AnjomanMarkazi_Srttu",  # دفتر مرکزی انجمن‌های علمی
     1: "https://t.me/math_rajae",    # انجمن علمی ریاضی
     2: "https://t.me/Sru_chemistry",  # انجمن علمی شیمی
     3: "https://t.me/sru_Physics",  # انجمن علمی فیزیک
@@ -814,14 +814,14 @@ def get_join_channel_menu():
 
 def get_main_reply_keyboard():
     keyboard = ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
-    btn1 = KeyboardButton("🔗 لینک‌های مفید 🔵")
-    btn2 = KeyboardButton("🎙️ نشریات و پادکست 🟣")
-    btn3 = KeyboardButton("🎬 ویدیوهای آموزشی 🟠")
-    btn4 = KeyboardButton("📚 چارت و تقویم آموزشی 🟡")
-    btn5 = KeyboardButton("📄 جزوات دروس ریاضی 🟢")
-    btn6 = KeyboardButton("📖 منابع و کتاب‌ها 🟤")
-    btn7 = KeyboardButton("📞 ارسال فایل و گزارش 🟥")
-    btn8 = KeyboardButton("☎️ کانال‌های ارتباطی 🟦")
+    btn1 = KeyboardButton("🔗 لینک‌های مفید")
+    btn2 = KeyboardButton("🎙️ نشریات و پادکست")
+    btn3 = KeyboardButton("🎬 ویدیوهای آموزشی")
+    btn4 = KeyboardButton("📅 چارت و تقویم آموزشی")
+    btn5 = KeyboardButton("📐 جزوات دروس ریاضی")
+    btn6 = KeyboardButton("📖 منابع و رفرنس‌ها")
+    btn7 = KeyboardButton("📬 ارسال فایل و گزارش")
+    btn8 = KeyboardButton("📢 کانال‌های ارتباطی")
 
     keyboard.add(btn1, btn2)
     keyboard.add(btn3, btn4)
@@ -1029,7 +1029,7 @@ def get_useful_links_sru_sites_menu():
             url="https://www.sru.ac.ir",
         ),
         InlineKeyboardButton(
-            "سامانه گلستان",
+            "سایت گلستان",
             url="https://portal.sru.ac.ir/forms/authenticateuser/main.htm",
         ),
         InlineKeyboardButton(
@@ -1081,7 +1081,7 @@ def get_useful_links_uni_channels_menu():
             "کانال نهاد رهبری", url="https://eitaa.com/nahadrajaee"
         ),
         InlineKeyboardButton(
-            "🎓 تحصیلات تکمیلی",
+            " کانال تحصیلات تکمیلی",
             url="https://eitaa.com/sru_pg",
         ),
         InlineKeyboardButton("🔙 بازگشت", callback_data="menu_useful_links"),
@@ -1167,15 +1167,15 @@ def get_communication_menu():
     markup.row_width = 1
     markup.add(
         InlineKeyboardButton(
-            "💬 کانال تلگرام انجمن علمی ریاضی",
+            " کانال تلگرام انجمن علمی ریاضی",
             url="https://t.me/math_rajae",
         ),
         InlineKeyboardButton(
-            "📸 پیج اینستاگرام انجمن علمی ریاضی",
+            " پیج اینستاگرام انجمن علمی ریاضی",
             url="https://www.instagram.com/math.sru?igsh=MXZycndhemhkMXgzYg==",
         ),
         InlineKeyboardButton(
-            "🟢 کانال بله انجمن علمی ریاضی", url="https://ble.ir/join/J3i3XsLakw"
+            " کانال بله انجمن علمی ریاضی", url="https://ble.ir/join/J3i3XsLakw"
         ),
         InlineKeyboardButton(
             " ایتا انجمن علمی ریاضی", url="https://eitaa.com/math_rajae"
@@ -1709,14 +1709,14 @@ def handle_callback(call):
 @bot.message_handler(
     func=lambda message: message.text
     in [
-        "🔗 لینک‌های مفید 🔵",
-        "🎙️ نشریات و پادکست 🟣",
-        "🎬 ویدیوهای آموزشی 🟠",
-        "📚 چارت و تقویم آموزشی 🟡",
-        "📄 جزوات دروس ریاضی 🟢",
-        "📖 منابع و کتاب‌ها 🟤",
-        "📞 ارسال فایل و گزارش 🟥",
-        "☎️ کانال‌های ارتباطی 🟦",
+        "🔗 لینک‌های مفید",
+        "🎙️ نشریات و پادکست",
+        "🎬 ویدیوهای آموزشی",
+        "📅 چارت و تقویم آموزشی",
+        "📐 جزوات دروس ریاضی",
+        "📖 منابع و رفرنس‌ها",
+        "📬 ارسال فایل و گزارش",
+        "📢 کانال‌های ارتباطی",
     ]
 )
 def handle_reply_keyboard_buttons(message):
@@ -1758,7 +1758,7 @@ def handle_reply_keyboard_buttons(message):
             reply_markup=get_handouts_menu(),
         )
 
-    elif "منابع و کتاب‌ها" in text:
+    elif "منابع و رفرنس‌ها" in text:
         bot.send_message(
             message.chat.id,
             "📖 **بخش منابع و رفرنس‌ها**\n\nدسته‌بندی مورد نظر رو انتخاب کن:",
@@ -1782,112 +1782,24 @@ def handle_reply_keyboard_buttons(message):
             reply_markup=get_useful_links_main_menu(),
         )
 
-    elif "ارسال فایل و گزارش" in text:
-        sup_text = (
-            "📞 **ارتباط با پشتیبانی و ارسال فایل**\n\nهر گونه پیشنهاد، انتقاد یا"
-            " فایلی داری بفرست تا به دست ادمین برسه: 👇"
-        )
-        sent_msg = bot.send_message(message.chat.id, sup_text, parse_mode="Markdown")
-        bot.register_next_step_handler(sent_msg, receive_user_file_or_message)
-
     elif "کانال‌های ارتباطی" in text:
-        comm_text = (
-            "☎️ **راه‌های ارتباطی با انجمن علمی ریاضی:**\n\n"
-            "لطفاً یکی از راه‌های ارتباطی زیر را انتخاب کنید:"
-        )
         bot.send_message(
             message.chat.id,
-            comm_text,
+            "📢 **راه‌های ارتباطی با انجمن علمی ریاضی:**\n\nکانال یا صفحه مورد نظر رو انتخاب کن:",
             parse_mode="Markdown",
             reply_markup=get_communication_menu(),
         )
 
-
-# ==========================================
-# 📥 مدیریت دریافت فایل/پیام کاربر
-# ==========================================
-@bot.message_handler(
-    content_types=["photo", "document", "video", "audio", "voice", "text"]
-)
-def handle_all_messages(message):
-    if message.from_user.id == ADMIN_ID:
-        if message.reply_to_message:
-            reply_text = message.reply_to_message.text or message.reply_to_message.caption or ""
-            target_user_id = None
-            if "شناسه کاربر:" in reply_text:
-                try:
-                    lines = reply_text.split("\n")
-                    for line in lines:
-                        if "شناسه کاربر:" in line:
-                            target_user_id = int(line.replace("شناسه کاربر:", "").replace("`", "").strip())
-                except Exception as e:
-                    print(f"Error extracting user ID: {e}")
-
-            if target_user_id:
-                try:
-                    bot.copy_message(chat_id=target_user_id, from_chat_id=message.chat.id, message_id=message.message_id)
-                    bot.reply_to(message, "✅ پاسخ شما با موفقیت به کاربر ارسال شد.")
-                    return
-                except Exception as e:
-                    bot.reply_to(message, f"❌ خطا در ارسال پاسخ به کاربر: {e}")
-                    return
-
-        if message.photo:
-            file_id = message.photo[-1].file_id
-            file_type = "عکس (Photo)"
-        elif message.document:
-            file_id = message.document.file_id
-            file_type = "سند/فایل (Document)"
-        elif message.video:
-            file_id = message.video.file_id
-            file_type = "ویدیو (Video)"
-        elif message.audio:
-            file_id = message.audio.file_id
-            file_type = "فایل صوتی / پادکست (Audio)"
-        elif message.voice:
-            file_id = message.voice.file_id
-            file_type = "وویس (Voice)"
-        else:
-            return
-
-        response_text = (
-            f"✅ فایل‌آیدیِ این {file_type}:\n\n`{file_id}`\n\n(برای کپی کردن کافیست"
-            " روی متن بالا ضربه بزنید)"
+    elif "ارسال فایل و گزارش" in text:
+        bot.send_message(
+            message.chat.id,
+            "📬 **ارسال فایل و گزارش**\n\nبرای ارسال پیشنهادات، انتقادات یا فایل‌های خود می‌توانید به ادمین پیام دهید.",
+            parse_mode="Markdown",
         )
-        bot.reply_to(message, response_text, parse_mode="Markdown")
-    else:
-        menu_buttons = [
-            "🔗 لینک‌های مفید 🔵", "🎙️ نشریات و پادکست 🟣", "🎬 ویدیوهای آموزشی 🟠",
-            "📚 چارت و تقویم آموزشی 🟡", "📄 جزوات دروس ریاضی 🟢", "📖 منابع و کتاب‌ها 🟤",
-            "📞 ارسال فایل و گزارش 🟥", "☎️ کانال‌های ارتباطی 🟦"
-        ]
-        if message.text in menu_buttons:
-            return
-        
-        receive_user_file_or_message(message)
-
-
-def receive_user_file_or_message(message):
-    if message.text == "/start":
-        send_welcome(message)
-        return
-
-    user_id = message.from_user.id
-    user_name = message.from_user.first_name
-    header_text = f"📩 پیام یا فایل جدید از طرف: [{user_name}](tg://user?id={user_id})\nشناسه کاربر: `{user_id}`"
-
-    try:
-        bot.send_message(ADMIN_ID, header_text, parse_mode="Markdown")
-        bot.forward_message(ADMIN_ID, message.chat.id, message.message_id)
-        bot.reply_to(
-            message, "✅ پیام یا فایل شما با موفقیت به دست ادمین رسید."
-        )
-    except Exception as e:
-        bot.reply_to(message, "❌ خطا در ارسال پیام به ادمین.")
 
 
 # ==========================================
-# ▶️ اجرای ربات
+# 🚀 اجرای ربات
 # ==========================================
 if __name__ == "__main__":
     print("Bot is running...")
